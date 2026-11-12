@@ -133,6 +133,23 @@ h1 span{font-style:italic;font-weight:500}
 .zoom{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
 .zoomwrap:hover .zoom{transform:scale(1.07)}
 .gold-num{color:var(--gold2) !important}
+/* franja cinematográfica Tú y tu bebé */
+.cine{position:relative;min-height:720px;display:flex;align-items:center;overflow:hidden;background:#071E2C;color:#fff}
+.cine-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 50%;transform:scale(1.12)}
+@supports (animation-timeline: view()){.cine-bg{animation:cineZoom linear both;animation-timeline:view();animation-range:entry 0% exit 100%}}
+@keyframes cineZoom{from{transform:scale(1.22) translateY(-3%)}to{transform:scale(1.04) translateY(3%)}}
+.cine::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,30,44,.96) 0%,rgba(7,30,44,.82) 42%,rgba(7,30,44,.35) 100%)}
+.cine::after{content:"";position:absolute;inset:28px;z-index:1;border:1px solid rgba(201,164,92,.35);border-radius:28px;pointer-events:none}
+.cine-in{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:110px 24px;width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:end}
+.cine h2{font-size:clamp(46px,6.4vw,92px) !important;line-height:.98 !important;color:#fff;margin:0}
+.cine h2 em{color:#29BCD0;font-weight:500}
+.cine-sig{font:italic 500 22px "Bodoni Moda",serif;color:#E3C98F}
+.cine-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(201,164,92,.35);border:1px solid rgba(201,164,92,.35);border-radius:22px;overflow:hidden;backdrop-filter:blur(10px)}
+.cine-stats div{background:rgba(7,30,44,.72);padding:22px 18px;display:flex;flex-direction:column;gap:6px}
+.cine-stats b{font:600 40px "Bodoni Moda",serif;color:#fff;line-height:1}
+.cine-stats span{font-size:13px;color:#B9D3DB;line-height:1.4}
+@media (max-width:700px){.cine::after{inset:12px}.cine-in{padding:80px 22px}.cine-stats b{font-size:30px}}
+.addr-link:hover{color:#FFFFFF !important;text-decoration:underline !important}
 .gold-tag{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9A7A35;background:rgba(201,164,92,.14);border:1px solid rgba(201,164,92,.45);padding:5px 10px;border-radius:999px;margin-bottom:4px}
 .dr-featured{border-color:rgba(201,164,92,.75) !important;box-shadow:0 0 0 1px rgba(201,164,92,.5),0 24px 50px rgba(11,42,60,.12)}
 #ginecologia h2 span{font-weight:500}
@@ -181,11 +198,11 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
 <div style="background: #0B2A3C; color: #CFE9EE; font-size: 13px;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
     <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
-      <span style="display: flex; gap: 8px; align-items: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Consulta general: 9:00 am a 3:00 pm y desde las 5:00 pm</span>
-      <span class="topbar-hide" style="display: flex; gap: 8px; align-items: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Calle Vicente Guerrero S/N, Chapa de Mota</span>
+      <span class="topbar-hide" style="display: flex; gap: 8px; align-items: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Consulta general: 9:00 am a 3:00 pm y desde las 5:00 pm</span>
+      <a class="addr-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=San+Miguel+Centro+M%C3%A9dico,+Calle+Vicente+Guerrero,+Chapa+de+Mota,+Estado+de+M%C3%A9xico,+54350" target="_blank" rel="noopener" style="display: flex; gap: 8px; align-items: center; color: #CFE9EE; text-decoration: none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Calle Vicente Guerrero S/N, Chapa de Mota · Cómo llegar</a>
     </div>
     <div style="display: flex; gap: 18px; align-items: center;">
-      <a href="tel:+525889931761" style="color: #FFFFFF; text-decoration: none; font-weight: 600;">Tel. 588 993 1761</a>
+      <a href="tel:+527124342542" style="color: #FFFFFF; text-decoration: none; font-weight: 600;">Tel. y WhatsApp 712 434 2542</a>
       <a href="https://www.facebook.com/s.miguelCentroMedico" aria-label="Facebook" style="display: flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"></path></svg></a>
       <a href="https://www.instagram.com/sanmiguel_cm/" aria-label="Instagram" style="display: flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".6"></circle></svg></a>
     </div>
@@ -217,15 +234,15 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
     
       <div class="slide" data-slide="0" style="position: absolute; inset: 0;">
         
-          <img class="kb" src="img/recepcion.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 58%;">
+          <img class="kb" src="img/fachada-frente.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 80%;">
         
         
         <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,42,60,.94) 0%, rgba(11,42,60,.78) 45%, rgba(11,42,60,.2) 100%);"></div>
         <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 116px 24px 0; height: 100%;">
           <div style="max-width: 660px; display: flex; flex-direction: column; gap: 24px;">
-            <span class="t1" style="display: inline-flex; align-self: flex-start; gap: 8px; align-items: center; background: rgba(41,188,208,.16); color: #7FDDEA; border: 1px solid rgba(41,188,208,.4); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;">Ginecología y Obstetricia</span>
-            <h1 class="t2" style="color: #FFFFFF; font-size: 60px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em;">Tú y tu bebé, <span style="color: #29BCD0;">en las mejores manos.</span></h1>
-            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Dr. Jesús Orlando Pérez García: control de embarazo, revisión ginecológica y ultrasonido estructural y obstétrico en 2D, 3D y 4D.</p>
+            <span class="t1" style="display: inline-flex; align-self: flex-start; gap: 8px; align-items: center; background: rgba(41,188,208,.16); color: #7FDDEA; border: 1px solid rgba(41,188,208,.4); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;">Nuevo en Chapa de Mota</span>
+            <h1 class="t2" style="color: #FFFFFF; font-size: 60px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em;">Todo lo que tu salud necesita, <span style="color: #29BCD0;">en un mismo lugar.</span></h1>
+            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Consulta médica, especialistas, laboratorio de análisis clínicos, farmacia y Unidad de Rehabilitación Integral, detrás de la iglesia.</p>
             <div class="t3" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
               <a class="btn" href="https://wa.me/527124342542" style="background: #29BCD0; color: #0B2A3C; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; display: flex; gap: 10px; align-items: center; min-height: 52px;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
@@ -241,15 +258,15 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
     
       <div class="slide" data-slide="1" style="position: absolute; inset: 0;">
         
-          <img class="kb" src="img/fachada-frente.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 80%;">
+          <img class="kb" src="img/recepcion.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 58%;">
         
         
         <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,42,60,.94) 0%, rgba(11,42,60,.78) 45%, rgba(11,42,60,.2) 100%);"></div>
         <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 116px 24px 0; height: 100%;">
           <div style="max-width: 660px; display: flex; flex-direction: column; gap: 24px;">
-            <span class="t1" style="display: inline-flex; align-self: flex-start; gap: 8px; align-items: center; background: rgba(41,188,208,.16); color: #7FDDEA; border: 1px solid rgba(41,188,208,.4); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;">Nuevo en Chapa de Mota</span>
-            <h1 class="t2" style="color: #FFFFFF; font-size: 60px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em;">Todo lo que tu salud necesita, <span style="color: #29BCD0;">en un mismo lugar.</span></h1>
-            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Consulta médica, especialistas, ultrasonidos, laboratorio, farmacia y rehabilitación, a un lado del Centro de Salud.</p>
+            <span class="t1" style="display: inline-flex; align-self: flex-start; gap: 8px; align-items: center; background: rgba(41,188,208,.16); color: #7FDDEA; border: 1px solid rgba(41,188,208,.4); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;">Especialistas cada semana</span>
+            <h1 class="t2" style="color: #FFFFFF; font-size: 60px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em;">Ya no tienes que viajar para ver <span style="color: #29BCD0;">a un especialista.</span></h1>
+            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Ginecología y obstetricia, pediatría, cardiología, nutrición, psicología, odontología y más. Agenda tu cita por WhatsApp.</p>
             <div class="t3" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
               <a class="btn" href="https://wa.me/527124342542" style="background: #29BCD0; color: #0B2A3C; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; display: flex; gap: 10px; align-items: center; min-height: 52px;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
@@ -273,7 +290,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
           <div style="max-width: 660px; display: flex; flex-direction: column; gap: 24px;">
             <span class="t1" style="display: inline-flex; align-self: flex-start; gap: 8px; align-items: center; background: rgba(41,188,208,.16); color: #7FDDEA; border: 1px solid rgba(41,188,208,.4); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;">Laboratorio y farmacia</span>
             <h1 class="t2" style="color: #FFFFFF; font-size: 60px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em;">Análisis clínicos desde <span style="color: #29BCD0;">las 7:00 am.</span></h1>
-            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Laboratorio de lunes a sábado de 7:00 am a 2:00 pm. Grupo sanguíneo y factor Rh a $100, sin ayuno. Farmacia de 7:00 am a 9:00 pm.</p>
+            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Laboratorio de lunes a sábado de 7:00 am a 2:00 pm y farmacia todos los días de 7:00 am a 9:00 pm.</p>
             <div class="t3" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
               <a class="btn" href="https://wa.me/527124342542" style="background: #29BCD0; color: #0B2A3C; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; display: flex; gap: 10px; align-items: center; min-height: 52px;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
@@ -332,12 +349,12 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
         <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">Agendar <span class="arrow">→</span></span>
       </a>
     
-      <a class="lift" href="tel:+525889931761" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 20px; padding: 26px; text-decoration: none; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 10px 30px rgba(11,42,60,.08);">
+      <a class="lift" href="tel:+527124342542" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 20px; padding: 26px; text-decoration: none; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 10px 30px rgba(11,42,60,.08);">
         <span style="width: 48px; height: 48px; border-radius: 14px; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>
         </span>
         <span style="font: 700 18px Manrope, sans-serif; color: #0B2A3C;">Llámanos</span>
-        <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Te atendemos y orientamos al 588 993 1761.</span>
+        <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Llama o escribe al 712 434 2542. Te atendemos y orientamos.</span>
         <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">Llamar <span class="arrow">→</span></span>
       </a>
     
@@ -350,13 +367,13 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
         <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">Ver horarios <span class="arrow">→</span></span>
       </a>
     
-      <a class="lift" href="#ubicacion" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 20px; padding: 26px; text-decoration: none; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 10px 30px rgba(11,42,60,.08);">
+      <a class="lift" href="https://www.google.com/maps/dir/?api=1&amp;destination=San+Miguel+Centro+M%C3%A9dico,+Calle+Vicente+Guerrero,+Chapa+de+Mota,+Estado+de+M%C3%A9xico,+54350" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 20px; padding: 26px; text-decoration: none; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 10px 30px rgba(11,42,60,.08);">
         <span style="width: 48px; height: 48px; border-radius: 14px; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zM12 7.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5"></path></svg>
         </span>
         <span style="font: 700 18px Manrope, sans-serif; color: #0B2A3C;">Cómo llegar</span>
-        <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">A un lado del Centro de Salud, Calle Vicente Guerrero.</span>
-        <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">Ver ubicación <span class="arrow">→</span></span>
+        <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Calle Vicente Guerrero S/N, a un lado del Centro de Salud.</span>
+        <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">Abrir en Maps <span class="arrow">→</span></span>
       </a>
     
   </div>
@@ -369,7 +386,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center; position: relative;">
     <div class="rv" style="display: flex; flex-direction: column; gap: 22px;">
       <span class="eyebrow" style="color: #E3C98F; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Ginecología y Obstetricia</span>
-      <h2 style="font-size: 50px; line-height: 1.08; font-weight: 800; letter-spacing: -.02em; color: #FFFFFF;">Tu salud y la de tu bebé, <span style="color: #29BCD0; font-style: italic;">en las mejores manos.</span></h2>
+      <h2 style="font-size: 50px; line-height: 1.08; font-weight: 800; letter-spacing: -.02em; color: #FFFFFF;">Acompañamiento experto <span style="color: #29BCD0; font-style: italic;">en cada etapa.</span></h2>
       <p style="font-size: 18px; line-height: 1.7; color: #CFE3EA;">El <strong style="color: #FFFFFF;">Dr. Jesús Orlando Pérez García</strong>, ginecólogo y obstetra, te acompaña en cada etapa: control de embarazo, revisiones ginecológicas y ultrasonido estructural y obstétrico, aquí en Chapa de Mota.</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px;">
           <div class="lift" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.16); border-radius: 18px; padding: 18px; display: flex; gap: 14px; align-items: flex-start;">
@@ -1162,6 +1179,30 @@ Pregunta por el día de consulta</span>
   </div>
 </section>
 
+<!-- TÚ Y TU BEBÉ (FRANJA CINEMATOGRÁFICA) -->
+<section class="cine" id="tu-bebe" aria-label="Ginecología y obstetricia: tú y tu bebé">
+  <img class="cine-bg" src="img/recepcion.jpg" alt="" loading="lazy">
+  <div class="cine-in">
+    <div class="rv" style="display: flex; flex-direction: column; gap: 26px;">
+      <span class="eyebrow" style="color: #E3C98F; font-weight: 700; font-size: 13px; letter-spacing: .2em; text-transform: uppercase;">Ginecología y Obstetricia</span>
+      <h2>Tú y tu bebé, <em>en las mejores manos.</em></h2>
+      <p style="font-size: 19px; line-height: 1.7; color: #D6EAF0; max-width: 560px;">Control de embarazo, revisión ginecológica y ultrasonido estructural y obstétrico con imágenes de alta resolución, aquí en Chapa de Mota.</p>
+      <span class="cine-sig">— Dr. Jesús Orlando Pérez García</span>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20agendar%20una%20cita%20de%20Ginecolog%C3%ADa%20con%20el%20Dr.%20Jes%C3%BAs%20Orlando%20P%C3%A9rez" style="background: linear-gradient(135deg,#E3C98F,#C9A45C); color: #0B2A3C; text-decoration: none; padding: 18px 30px; border-radius: 999px; font-weight: 700; font-size: 16px; min-height: 56px; display: flex; align-items: center; gap: 10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>Agenda tu cita
+        </a>
+        <a class="btn" href="#ginecologia" style="color: #FFFFFF; text-decoration: none; padding: 18px 28px; border-radius: 999px; font-weight: 600; font-size: 16px; border: 1.5px solid rgba(255,255,255,.55); min-height: 56px; display: flex; align-items: center;">Conoce al especialista</a>
+      </div>
+    </div>
+    <div class="rv cine-stats">
+      <div><b>2D</b><span>Imagen clara del desarrollo</span></div>
+      <div><b>3D</b><span>Detalle de tu bebé</span></div>
+      <div><b>4D</b><span>Movimiento en tiempo real</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- INSTALACIONES -->
 <section id="instalaciones" style="padding: 90px 0 100px; background: #F3FAFB;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 40px;">
@@ -1225,9 +1266,9 @@ Pregunta por el día de consulta</span>
             </span>
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <span style="font-weight: 700; font-size: 16px;">Dirección</span>
-              <span style="font-size: 15px; color: #4A6170; line-height: 1.5; white-space: pre-line;">Calle Vicente Guerrero S/N, Chapa de Mota
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=San+Miguel+Centro+M%C3%A9dico,+Calle+Vicente+Guerrero,+Chapa+de+Mota,+Estado+de+M%C3%A9xico,+54350" target="_blank" rel="noopener" style="font-size: 15px; color: #0E7A8A; line-height: 1.5; white-space: pre-line; font-weight: 500;">Calle Vicente Guerrero S/N, Chapa de Mota
 Estado de México, C.P. 54350
-A un lado del Centro de Salud</span>
+A un lado del Centro de Salud</a>
             </div>
           </div>
         
@@ -1236,9 +1277,9 @@ A un lado del Centro de Salud</span>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>
             </span>
             <div style="display: flex; flex-direction: column; gap: 4px;">
-              <span style="font-weight: 700; font-size: 16px;">WhatsApp y teléfono</span>
-              <span style="font-size: 15px; color: #4A6170; line-height: 1.5; white-space: pre-line;">WhatsApp: 712 434 2542
-Teléfono: 588 993 1761</span>
+              <span style="font-weight: 700; font-size: 16px;">Teléfono y WhatsApp</span>
+              <span style="font-size: 15px; color: #4A6170; line-height: 1.5; white-space: pre-line;">712 434 2542
+Llámanos o escríbenos por WhatsApp</span>
             </div>
           </div>
         
@@ -1266,11 +1307,12 @@ Farmacia: 7:00 am a 9:00 pm</span>
         
       </div>
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=San+Miguel+Centro+M%C3%A9dico+Vicente+Guerrero+Chapa+de+Mota" style="background: #0B2A3C; color: #FFFFFF; text-decoration: none; padding: 15px 24px; border-radius: 999px; font-weight: 600; min-height: 50px; display: flex; align-items: center;">Cómo llegar</a>
-        <a class="btn" href="tel:+525889931761" style="color: #0B2A3C; text-decoration: none; padding: 15px 24px; border-radius: 999px; font-weight: 600; border: 1.5px solid #0B2A3C; min-height: 50px; display: flex; align-items: center;">Llamar ahora</a>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=San+Miguel+Centro+M%C3%A9dico,+Calle+Vicente+Guerrero,+Chapa+de+Mota,+Estado+de+M%C3%A9xico,+54350" target="_blank" rel="noopener" style="background: #0B2A3C; color: #FFFFFF; text-decoration: none; padding: 15px 24px; border-radius: 999px; font-weight: 600; min-height: 50px; display: flex; align-items: center; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Abrir en Google Maps</a>
+        <a class="btn" href="https://waze.com/ul?q=Calle%20Vicente%20Guerrero%2C%20Chapa%20de%20Mota%2C%20Estado%20de%20M%C3%A9xico&amp;navigate=yes" target="_blank" rel="noopener" style="background: #33CCFF; color: #0B2A3C; text-decoration: none; padding: 15px 24px; border-radius: 999px; font-weight: 700; min-height: 50px; display: flex; align-items: center; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"></path></svg>Abrir en Waze</a>
+        <a class="btn" href="tel:+527124342542" style="color: #0B2A3C; text-decoration: none; padding: 15px 24px; border-radius: 999px; font-weight: 600; border: 1.5px solid #0B2A3C; min-height: 50px; display: flex; align-items: center;">Llamar ahora</a>
       </div>
     </div>
-    <div class="ph ph-dark rv mapbox" style="border-radius: 28px; min-height: 560px; font-size: 14px; position: relative; padding: 0;"><iframe title="Mapa de San Miguel Centro Médico" src="https://www.google.com/maps?q=Calle+Vicente+Guerrero,+Chapa+de+Mota,+Estado+de+M%C3%A9xico,+54350&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:28px"></iframe></div>
+    <div class="ph ph-dark rv mapbox" style="border-radius: 28px; min-height: 560px; font-size: 14px; position: relative; padding: 0;"><iframe title="Mapa de San Miguel Centro Médico" src="https://www.google.com/maps?q=Calle+Vicente+Guerrero,+Chapa+de+Mota,+Estado+de+M%C3%A9xico,+54350&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:28px"></iframe><div style="position:absolute;left:16px;right:16px;bottom:16px;display:flex;gap:10px;flex-wrap:wrap;z-index:2"><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=San+Miguel+Centro+M%C3%A9dico,+Calle+Vicente+Guerrero,+Chapa+de+Mota,+Estado+de+M%C3%A9xico,+54350" target="_blank" rel="noopener" style="background:#FFFFFF;color:#0B2A3C;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:0 8px 20px rgba(0,0,0,.2)">Google Maps</a><a class="btn" href="https://waze.com/ul?q=Calle%20Vicente%20Guerrero%2C%20Chapa%20de%20Mota%2C%20Estado%20de%20M%C3%A9xico&amp;navigate=yes" target="_blank" rel="noopener" style="background:#33CCFF;color:#0B2A3C;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:0 8px 20px rgba(0,0,0,.2)">Waze</a></div></div>
   </div>
 </section>
 
@@ -1291,7 +1333,7 @@ Farmacia: 7:00 am a 9:00 pm</span>
             </span>
           </button>
           
-            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Sí, nuestras consultas son con previa cita. Escríbenos por WhatsApp al 712 434 2542 o llámanos al 588 993 1761 y te damos el horario más cercano.</p>
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Sí, nuestras consultas son con previa cita. Escríbenos por WhatsApp al 712 434 2542 o llámanos a ese mismo número y te damos el horario más cercano.</p>
           
         </div>
       
@@ -1405,9 +1447,10 @@ Farmacia: 7:00 am a 9:00 pm</span>
       </div>
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <span style="color: #FFFFFF; font-weight: 700;">Contacto</span>
-        <span style="line-height: 1.6;">Calle Vicente Guerrero S/N, Chapa de Mota, Edo. de México, C.P. 54350. A un lado del Centro de Salud.</span>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=San+Miguel+Centro+M%C3%A9dico,+Calle+Vicente+Guerrero,+Chapa+de+Mota,+Estado+de+M%C3%A9xico,+54350" target="_blank" rel="noopener" style="color: #B9D3DB; line-height: 1.6;">Calle Vicente Guerrero S/N, Chapa de Mota, Edo. de México, C.P. 54350. A un lado del Centro de Salud.</a>
+        <span style="display: flex; gap: 14px;"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=San+Miguel+Centro+M%C3%A9dico,+Calle+Vicente+Guerrero,+Chapa+de+Mota,+Estado+de+M%C3%A9xico,+54350" target="_blank" rel="noopener" style="color: #29BCD0; font-weight: 600;">Google Maps</a><a href="https://waze.com/ul?q=Calle%20Vicente%20Guerrero%2C%20Chapa%20de%20Mota%2C%20Estado%20de%20M%C3%A9xico&amp;navigate=yes" target="_blank" rel="noopener" style="color: #29BCD0; font-weight: 600;">Waze</a></span>
         <a href="https://wa.me/527124342542" style="color: #B9D3DB; text-decoration: none;">WhatsApp 712 434 2542</a>
-        <a href="tel:+525889931761" style="color: #B9D3DB; text-decoration: none;">Tel. 588 993 1761</a>
+        <a href="tel:+527124342542" style="color: #B9D3DB; text-decoration: none;">Llamar al 712 434 2542</a>
         <a href="mailto:hola@centromedicosm.com.mx" style="color: #B9D3DB; text-decoration: none;">hola@centromedicosm.com.mx</a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 12px;">
