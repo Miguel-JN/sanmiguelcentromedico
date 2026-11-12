@@ -9,10 +9,15 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="San Miguel Centro Médico | Chapa de Mota">
 <meta property="og:description" content="Todo lo que tu salud necesita, en un mismo lugar. Consulta, especialistas, laboratorio, farmacia y rehabilitación.">
-<meta property="og:image" content="img/og.jpg">
+<meta property="og:image" content="https://sanmiguelcentromedico.vercel.app/img/og.jpg">
+<meta property="og:url" content="https://sanmiguelcentromedico.vercel.app/">
+<link rel="canonical" href="https://sanmiguelcentromedico.vercel.app/">
 <meta property="og:locale" content="es_MX">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&display=swap">
+<link rel="preload" as="image" href="img/fachada-frente.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap">
 <style>
@@ -74,14 +79,85 @@ p{margin:0}
 }
 </style>
 <style>
+/* ===== Acabado premium ===== */
+:root{--gold:#C9A45C;--gold2:#E3C98F;--navy:#0B2A3C;--cyan:#29BCD0}
+html{scroll-padding-top:90px}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2{font-family:"Bodoni Moda",Didot,"Times New Roman",serif !important;font-weight:600 !important;letter-spacing:-.01em !important}
+h1{line-height:1.06 !important}
+#inicio{height:780px !important}
+#inicio h1{font-size:58px !important}
+#inicio > div[style*="bottom: 120px"]{bottom:112px !important}
+h1 span{font-style:italic;font-weight:500}
+::selection{background:var(--cyan);color:var(--navy)}
+
+/* pantalla de entrada */
+#preloader{position:fixed;inset:0;z-index:9999;background:var(--navy);display:flex;align-items:center;justify-content:center;
+  animation:plOut .7s cubic-bezier(.7,0,.2,1) 2.4s forwards}
+#preloader.done{animation:plOut .7s cubic-bezier(.7,0,.2,1) forwards}
+.pl-in{display:flex;flex-direction:column;align-items:center;gap:22px}
+.pl-in img{width:120px;height:auto;animation:plLogo 1.1s cubic-bezier(.2,.7,.2,1) both}
+.pl-line{display:block;width:140px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform-origin:center;animation:plLine 1.2s .3s cubic-bezier(.2,.7,.2,1) both}
+@keyframes plLogo{from{opacity:0;transform:translateY(14px) scale(.92);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes plLine{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+@keyframes plOut{to{clip-path:inset(0 0 100% 0);visibility:hidden}}
+@media (prefers-reduced-motion: reduce){#preloader{display:none !important}}
+
+/* menú translúcido al bajar */
+#topnav{transition:background-color .4s ease,box-shadow .4s ease,backdrop-filter .4s ease}
+#topnav.scrolled{background:rgba(255,255,255,.78) !important;backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);box-shadow:0 10px 30px rgba(11,42,60,.08);border-bottom-color:rgba(201,164,92,.35) !important}
+#topnav img{transition:height .4s ease}
+#topnav.scrolled .brand img{height:46px !important}
+
+/* subtítulos con línea dorada */
+.eyebrow{display:inline-flex !important;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:38px;height:1px;background:var(--gold);transform-origin:left;animation:barGrow 1s .2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes barGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+[style*="text-align: center"] .eyebrow::after,.eyebrow.c::after{content:"";width:38px;height:1px;background:var(--gold)}
+
+/* hero: entrada con máscara y detalle dorado */
+.slide.on .t2{animation:maskUp 1.1s .2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes maskUp{from{clip-path:inset(0 0 100% 0);transform:translateY(30px)}to{clip-path:inset(0 0 0 0);transform:none}}
+.slide.on .t1{border-color:rgba(201,164,92,.55) !important;color:var(--gold2) !important;background:rgba(201,164,92,.12) !important}
+#inicio::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--gold),var(--cyan));opacity:.9;z-index:3}
+
+/* botones con brillo */
+.btn{position:relative;overflow:hidden;isolation:isolate;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,background-color .3s ease}
+.btn::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .8s cubic-bezier(.2,.7,.2,1);z-index:1;pointer-events:none}
+.btn:hover::after{left:135%}
+.btn:hover{box-shadow:0 14px 30px rgba(11,42,60,.18)}
+
+/* tarjetas más finas */
+.lift{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease,border-color .5s ease}
+.lift:hover{transform:translateY(-8px);box-shadow:0 26px 60px rgba(11,42,60,.14);border-color:rgba(201,164,92,.6) !important}
+.zoom{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.zoomwrap:hover .zoom{transform:scale(1.07)}
+.gold-num{color:var(--gold2) !important}
+article[style*="background: #0B2A3C; color: #FFFFFF; border: 1px solid #0B2A3C"]{box-shadow:0 0 0 1px rgba(201,164,92,.65),0 30px 60px rgba(11,42,60,.25)}
+article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="letter-spacing: .08em"]{color:var(--gold2) !important}
+
+/* fotos que se descubren como cortina */
+@supports (animation-timeline: view()){
+  .curtain{animation:curtain linear both;animation-timeline:view();animation-range:entry 5% cover 40%}
+  .curtain.d2{animation-range:entry 20% cover 50%}
+  .curtain img{animation:settle linear both;animation-timeline:view();animation-range:entry 0% cover 55%}
+}
+@keyframes curtain{from{clip-path:inset(100% 0 0 0 round 28px)}to{clip-path:inset(0 0 0 0 round 28px)}}
+@keyframes settle{from{transform:scale(1.18)}to{transform:scale(1)}}
+
+/* barra de progreso de lectura */
+@supports (animation-timeline: scroll()){
+  #readbar{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;background:linear-gradient(90deg,var(--cyan),var(--gold));transform-origin:left;animation:barGrow linear both;animation-timeline:scroll(root)}
+}
+
 .slide{display:none}
 .slide.on{display:block}
 .progress{display:none !important}
 .progress.on{display:block !important}
 @media (max-width:700px){
-  h1{font-size:36px !important}
+  #inicio h1,h1{font-size:38px !important}
   h2{font-size:31px !important}
-  #inicio{height:760px !important}
+  #inicio{height:800px !important}
   #inicio .slide > div:last-child{padding-top:56px !important}
   #inicio > div[style*="bottom: 120px"]{bottom:28px !important}
   section[style*="margin-top: -84px"]{margin-top:24px !important}
@@ -90,9 +166,11 @@ p{margin:0}
   #instalaciones [style*="span 2; grid-row"]{grid-row:span 1 !important}
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalClinic", "name": "San Miguel Centro Médico", "image": "img/og.jpg", "telephone": "+52 712 434 2542", "email": "hola@centromedicosm.com.mx", "address": {"@type": "PostalAddress", "streetAddress": "Calle Vicente Guerrero S/N", "addressLocality": "Chapa de Mota", "addressRegion": "Estado de México", "postalCode": "54350", "addressCountry": "MX"}, "sameAs": ["https://www.facebook.com/s.miguelCentroMedico", "https://www.instagram.com/sanmiguel_cm/"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalClinic", "name": "San Miguel Centro Médico", "image": "https://sanmiguelcentromedico.vercel.app/img/og.jpg", "url": "https://sanmiguelcentromedico.vercel.app/", "telephone": "+52 712 434 2542", "email": "hola@centromedicosm.com.mx", "address": {"@type": "PostalAddress", "streetAddress": "Calle Vicente Guerrero S/N", "addressLocality": "Chapa de Mota", "addressRegion": "Estado de México", "postalCode": "54350", "addressCountry": "MX"}, "sameAs": ["https://www.facebook.com/s.miguelCentroMedico", "https://www.instagram.com/sanmiguel_cm/"]}</script>
 </head>
 <body>
+<div id="readbar" aria-hidden="true"></div>
+<div id="preloader" aria-hidden="true"><div class="pl-in"><img src="img/logo-m-blanco.png" alt=""><span class="pl-line"></span></div></div>
 <div style="font-family: Inter, sans-serif; color: #0B2A3C; width: 100%; overflow-x: hidden;">
 
 <!-- BARRA SUPERIOR -->
@@ -111,15 +189,9 @@ p{margin:0}
 </div>
 
 <!-- NAVEGACIÓN -->
-<header style="background: #FFFFFF; border-bottom: 1px solid #E3EEF1; position: sticky; top: 0; z-index: 20;">
+<header id="topnav" style="background: #FFFFFF; border-bottom: 1px solid #E3EEF1; position: sticky; top: 0; z-index: 20;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
-    <a href="#inicio" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-      <img src="img/logo.png" alt="Logotipo de San Miguel Centro Médico" style="width: 56px; height: 56px; border-radius: 50%; display: block;">
-      <div style="display: flex; flex-direction: column; line-height: 1.1;">
-        <span style="font: 800 20px Manrope, sans-serif; color: #0B2A3C;">San Miguel</span>
-        <span style="font: 600 13px Inter, sans-serif; color: #0E7A8A; letter-spacing: .14em; text-transform: uppercase;">Centro Médico</span>
-      </div>
-    </a>
+    <a href="#inicio" class="brand" aria-label="San Miguel Centro Médico, inicio" style="display: flex; align-items: center; text-decoration: none;"><img src="img/logo-horizontal.png" alt="San Miguel Centro Médico" style="height: 54px; width: auto; display: block;"></a>
     <nav class="navlinks" style="display: flex; gap: 30px; align-items: center;" aria-label="Principal">
       <a class="navlink" href="#servicios">Servicios</a>
       <a class="navlink" href="#medicos">Especialistas</a>
@@ -140,7 +212,7 @@ p{margin:0}
     
       <div class="slide" data-slide="0" style="position: absolute; inset: 0;">
         
-          <img class="kb" src="img/fachada.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 64%;">
+          <img class="kb" src="img/fachada-frente.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 80%;">
         
         
         <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,42,60,.94) 0%, rgba(11,42,60,.78) 45%, rgba(11,42,60,.2) 100%);"></div>
@@ -164,7 +236,7 @@ p{margin:0}
     
       <div class="slide" data-slide="1" style="position: absolute; inset: 0;">
         
-          <img class="kb" src="img/consulta.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%;">
+          <img class="kb" src="img/recepcion.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 58%;">
         
         
         <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,42,60,.94) 0%, rgba(11,42,60,.78) 45%, rgba(11,42,60,.2) 100%);"></div>
@@ -188,7 +260,7 @@ p{margin:0}
     
       <div class="slide" data-slide="2" style="position: absolute; inset: 0;">
         
-          <img class="kb" src="img/fachada.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 20% 92%;">
+          <img class="kb" src="img/fachada-calle.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 74%;">
         
         
         <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,42,60,.94) 0%, rgba(11,42,60,.78) 45%, rgba(11,42,60,.2) 100%);"></div>
@@ -289,19 +361,19 @@ p{margin:0}
 <section id="nosotros" style="padding: 120px 0 100px;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 64px; align-items: center;">
     <div class="rv" style="position: relative; height: 560px;">
-      <div class="zoomwrap" style="position: absolute; left: 0; top: 0; width: 74%; height: 480px; border-radius: 28px; overflow: hidden;">
-        <img class="zoom" src="img/fachada.jpg" alt="Fachada de San Miguel Centro Médico en Chapa de Mota" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block;">
+      <div class="zoomwrap curtain" style="position: absolute; left: 0; top: 0; width: 74%; height: 480px; border-radius: 28px; overflow: hidden;">
+        <img class="zoom" src="img/recepcion.jpg" alt="Recepción de San Miguel Centro Médico con el logotipo dorado" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: 55% 55%; display: block;">
       </div>
-      <div style="position: absolute; right: 0; bottom: 0; width: 54%; height: 250px; border-radius: 28px; overflow: hidden; border: 6px solid #FFFFFF; box-shadow: 0 18px 40px rgba(11,42,60,.18);">
-        <img src="img/consulta.jpg" alt="Médico atendiendo a un paciente en consulta" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      <div class="curtain d2" style="position: absolute; right: 0; bottom: 0; width: 54%; height: 250px; border-radius: 28px; overflow: hidden; border: 6px solid #FFFFFF; box-shadow: 0 18px 40px rgba(11,42,60,.18);">
+        <img src="img/fachada-frente.jpg" alt="Fachada de San Miguel Centro Médico en Chapa de Mota" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 78%; display: block;">
       </div>
       <div style="position: absolute; left: 24px; bottom: 24px; background: #0B2A3C; color: #FFFFFF; border-radius: 20px; padding: 18px 22px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 18px 40px rgba(11,42,60,.25);">
-        <span style="font: 800 26px Manrope, sans-serif; color: #29BCD0;">Desde 2026</span>
+        <span class="gold-num" style="font: 800 26px Manrope, sans-serif; color: #29BCD0;">Desde 2026</span>
         <span style="font-size: 14px; color: #D6EAF0;">cuidando a Chapa de Mota</span>
       </div>
     </div>
     <div class="rv" style="display: flex; flex-direction: column; gap: 22px;">
-      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Quiénes somos</span>
+      <span class="eyebrow" style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Quiénes somos</span>
       <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Todo lo que tu salud necesita, en un mismo lugar.</h2>
       <p style="font-size: 18px; line-height: 1.7; color: #4A6170;">San Miguel Centro Médico abrió sus puertas el 2 de marzo de 2026 para que las familias de Chapa de Mota y sus alrededores tengan consulta médica, especialistas, laboratorio de análisis clínicos, farmacia y rehabilitación sin tener que salir del municipio.</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin-top: 8px;">
@@ -346,7 +418,7 @@ p{margin:0}
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px;">
     <div class="rv" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap;">
       <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
-        <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Servicios</span>
+        <span class="eyebrow" style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Servicios</span>
         <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Consulta, especialistas, laboratorio, farmacia y rehabilitación.</h2>
       </div>
       <a class="btn" href="https://wa.me/527124342542" style="color: #0B2A3C; text-decoration: none; padding: 14px 22px; border-radius: 999px; font-weight: 600; border: 1.5px solid #0B2A3C; min-height: 48px; display: flex; align-items: center;">Pregunta por un servicio</a>
@@ -518,7 +590,7 @@ p{margin:0}
 <section id="medicos" style="padding: 100px 0;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px;">
     <div class="rv" style="display: flex; flex-direction: column; gap: 14px; max-width: 700px;">
-      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Nuestros especialistas</span>
+      <span class="eyebrow" style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Nuestros especialistas</span>
       <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Los especialistas ya están en Chapa de Mota.</h2>
       <p style="font-size: 18px; line-height: 1.7; color: #4A6170;">Ya no tienes que viajar para ver a un especialista. Agenda tu cita por WhatsApp y te confirmamos el día de su consulta.</p>
     </div>
@@ -607,7 +679,7 @@ p{margin:0}
 <section id="horarios" style="padding: 100px 0 90px; background: #0B2A3C; color: #FFFFFF; overflow: hidden;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 44px;">
     <div class="rv" style="display: flex; flex-direction: column; gap: 14px; max-width: 700px;">
-      <span style="color: #29BCD0; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Horarios de atención</span>
+      <span class="eyebrow" style="color: #29BCD0; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Horarios de atención</span>
       <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em; color: #FFFFFF;">Te atendemos todos los días desde las 7:00 am.</h2>
       <p style="font-size: 18px; line-height: 1.7; color: #CFE3EA;">Nuestras consultas son con previa cita. Escríbenos por WhatsApp y te damos el horario más cercano.</p>
     </div>
@@ -740,7 +812,7 @@ Sábado: 9:00 am a 3:00 pm</span>
 <section id="paquetes" style="padding: 100px 0;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px;">
     <div class="rv" style="display: flex; flex-direction: column; gap: 14px; max-width: 700px;">
-      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Promociones</span>
+      <span class="eyebrow" style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Promociones</span>
       <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Sabes cuánto vas a pagar antes de venir.</h2>
       <p style="font-size: 18px; line-height: 1.7; color: #4A6170;">Paquetes preventivos con estudios y consulta incluidos. Pregunta por las promociones del mes.</p>
     </div>
@@ -834,15 +906,15 @@ Sábado: 9:00 am a 3:00 pm</span>
 <section id="instalaciones" style="padding: 90px 0 100px; background: #F3FAFB;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 40px;">
     <div class="rv" style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
-      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Instalaciones</span>
+      <span class="eyebrow" style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Instalaciones</span>
       <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Ven a conocer nuestras instalaciones.</h2>
     </div>
     <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 16px;">
-      <div class="rv zoomwrap" style="grid-column: span 2; grid-row: span 2; border-radius: 24px; overflow: hidden;">
-        <img class="zoom" src="img/fachada.jpg" alt="Edificio de San Miguel Centro Médico con su letrero" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 66%; display: block;">
+      <div class="zoomwrap curtain" style="grid-column: span 2; grid-row: span 2; border-radius: 24px; overflow: hidden;">
+        <img class="zoom" src="img/fachada-calle.jpg" alt="Edificio de San Miguel Centro Médico en Calle Vicente Guerrero" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block;">
       </div>
-      <div class="rv zoomwrap" style="grid-column: span 2; border-radius: 24px; overflow: hidden;">
-        <img class="zoom" src="img/consulta.jpg" alt="Consulta médica en San Miguel Centro Médico" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      <div class="zoomwrap curtain d2" style="grid-column: span 2; border-radius: 24px; overflow: hidden;">
+        <img class="zoom" src="img/recepcion.jpg" alt="Pasillo y recepción con piso de mármol" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block;">
       </div>
       <div class="rv lift" style="border-radius: 24px; background: #0B2A3C; color: #FFFFFF; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
         <span style="font: 800 40px Manrope, sans-serif; color: #29BCD0;">5 en 1</span>
@@ -860,7 +932,7 @@ Sábado: 9:00 am a 3:00 pm</span>
 <section style="padding: 100px 0;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
     <div class="rv" style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Síguenos</span>
+      <span class="eyebrow" style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Síguenos</span>
       <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Entérate de especialistas, promociones y horarios.</h2>
       <p style="font-size: 18px; line-height: 1.7; color: #4A6170;">Cada semana publicamos qué especialistas vienen a Chapa de Mota y las promociones del mes.</p>
     </div>
@@ -883,7 +955,7 @@ Sábado: 9:00 am a 3:00 pm</span>
 <section id="ubicacion" style="padding: 100px 0; background: #F3FAFB;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; align-items: stretch;">
     <div class="rv" style="display: flex; flex-direction: column; gap: 22px;">
-      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Ubicación</span>
+      <span class="eyebrow" style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Ubicación</span>
       <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Detrás de la iglesia, en el centro de Chapa de Mota.</h2>
       <div style="display: flex; flex-direction: column; gap: 14px;">
         
@@ -945,7 +1017,7 @@ Farmacia: todos los días de 7:00 am a 9:00 pm</span>
 <section style="padding: 100px 0;">
   <div style="max-width: 860px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px;">
     <div class="rv" style="display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center;">
-      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Preguntas frecuentes</span>
+      <span class="eyebrow" style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Preguntas frecuentes</span>
       <h2 style="font-size: 40px; line-height: 1.15; font-weight: 800; letter-spacing: -.02em;">Resolvemos tus dudas.</h2>
     </div>
     <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -1046,10 +1118,7 @@ Farmacia: todos los días de 7:00 am a 9:00 pm</span>
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px;">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
       <div style="display: flex; flex-direction: column; gap: 16px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <img src="img/logo.png" alt="Logotipo de San Miguel Centro Médico" style="width: 52px; height: 52px; border-radius: 50%; display: block;">
-          <span style="font: 800 19px Manrope, sans-serif; color: #FFFFFF;">San Miguel<br><span style="font: 600 12px Inter, sans-serif; color: #29BCD0; letter-spacing: .14em;">CENTRO MÉDICO</span></span>
-        </div>
+        <img src="img/logo-horizontal-blanco.png" alt="San Miguel Centro Médico" style="height: 56px; width: auto; display: block; align-self: flex-start;">
         <p style="font-size: 14px; line-height: 1.7;">Atención médica, especialidades, laboratorio, farmacia y Unidad de Rehabilitación Integral en Chapa de Mota, Estado de México.</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -1094,6 +1163,14 @@ Farmacia: todos los días de 7:00 am a 9:00 pm</span>
 </div>
 
 <script>
+(function(){
+  var pl=document.getElementById('preloader');
+  function hidePl(){ if(pl){ setTimeout(function(){ pl.classList.add('done'); setTimeout(function(){ pl.style.display='none'; },800); },900); } }
+  if(document.readyState==='complete') hidePl(); else window.addEventListener('load',hidePl);
+  var nav=document.getElementById('topnav');
+  function onScroll(){ if(nav) nav.classList.toggle('scrolled', window.scrollY>40); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+})();
 (function(){
   var slides=[].slice.call(document.querySelectorAll('[data-slide]'));
   var dots=[].slice.call(document.querySelectorAll('[data-dot]'));
