@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>San Miguel Centro Médico | Chapa de Mota</title>
+<meta name="description" content="Centro médico en Chapa de Mota: consulta médica, especialistas, laboratorio de análisis clínicos, farmacia y rehabilitación en un mismo lugar. Agenda por WhatsApp al 712 434 2542.">
+<meta name="theme-color" content="#0B2A3C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="San Miguel Centro Médico | Chapa de Mota">
+<meta property="og:description" content="Todo lo que tu salud necesita, en un mismo lugar. Consulta, especialistas, laboratorio, farmacia y rehabilitación.">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+html{scroll-behavior:smooth}
+a{color:#0E7A8A}a:hover{color:#0B2A3C}
+*{box-sizing:border-box}
+h1,h2,h3,h4{font-family:Manrope,Inter,sans-serif;margin:0}
+p{margin:0}
+
+/* Placeholders de foto */
+.ph{position:relative;overflow:hidden;background-color:#EAF6F8;background-image:repeating-linear-gradient(135deg,rgba(41,188,208,.10) 0 14px,rgba(41,188,208,0) 14px 28px);border:2px dashed #8CCFD9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#0E7A8A;font:600 13px/1.3 Inter,sans-serif;letter-spacing:.04em;text-transform:uppercase;text-align:center;padding:16px}
+.ph-dark{background-color:#0F3347;background-image:repeating-linear-gradient(135deg,rgba(41,188,208,.10) 0 18px,rgba(41,188,208,0) 18px 36px);border-color:rgba(140,207,217,.45);color:#8CCFD9}
+
+/* Animaciones de entrada */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.slide-in{animation:fadeIn .9s ease both}
+.slide-in .kb{animation:kenburns 7s ease-out both}
+.slide-in .t1{animation:fadeUp .8s .15s ease both}
+.slide-in .t2{animation:fadeUp .8s .3s ease both}
+.slide-in .t3{animation:fadeUp .8s .45s ease both}
+.progress{transform-origin:left;animation:bar 6s linear both}
+.load-up{animation:fadeUp .9s .2s ease both}
+.wa{animation:pulse 2.2s infinite, floaty 4s ease-in-out infinite}
+.track{animation:marquee 28s linear infinite}
+.track:hover{animation-play-state:paused}
+
+/* Revelado al hacer scroll (navegadores modernos) */
+@supports (animation-timeline: view()){
+  .rv{animation:fadeUp linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+
+/* Interacciones */
+.lift{transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease}
+.lift:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,42,60,.12);border-color:#29BCD0}
+.zoom{transition:transform .6s ease}
+.zoomwrap:hover .zoom{transform:scale(1.06)}
+.btn{transition:background-color .25s ease, color .25s ease, transform .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.navlink{color:#0B2A3C;text-decoration:none;font:500 15px Inter,sans-serif;position:relative;padding:6px 0}
+.navlink::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:#29BCD0;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.navlink:hover::after{transform:scaleX(1)}
+.navlink:hover{color:#0B2A3C}
+.arrow{transition:transform .3s ease}
+.lift:hover .arrow{transform:translateX(5px)}
+
+@media (max-width:900px){
+  .navlinks{display:none !important}
+  .topbar-hide{display:none !important}
+}
+</style>
+<style>
+.slide{display:none}
+.slide.on{display:block}
+.progress{display:none !important}
+.progress.on{display:block !important}
+@media (max-width:700px){
+  h1{font-size:36px !important}
+  h2{font-size:31px !important}
+  #inicio{height:760px !important}
+  #inicio .slide > div:last-child{padding-top:56px !important}
+  #inicio > div[style*="bottom: 120px"]{bottom:28px !important}
+  section[style*="margin-top: -84px"]{margin-top:24px !important}
+  header a.btn{padding:12px 16px !important;font-size:14px !important}
+  #instalaciones [style*="repeat(4"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  #instalaciones [style*="span 2; grid-row"]{grid-row:span 1 !important}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalClinic", "name": "San Miguel Centro Médico", "image": "img/og.jpg", "telephone": "+52 712 434 2542", "email": "hola@centromedicosm.com.mx", "address": {"@type": "PostalAddress", "streetAddress": "Calle Vicente Guerrero S/N", "addressLocality": "Chapa de Mota", "addressRegion": "Estado de México", "postalCode": "54350", "addressCountry": "MX"}, "sameAs": ["https://www.facebook.com/s.miguelCentroMedico", "https://www.instagram.com/sanmiguel_cm/"]}</script>
+</head>
+<body>
+<div style="font-family: Inter, sans-serif; color: #0B2A3C; width: 100%; overflow-x: hidden;">
+
+<!-- BARRA SUPERIOR -->
+<div style="background: #0B2A3C; color: #CFE9EE; font-size: 13px;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
+    <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+      <span style="display: flex; gap: 8px; align-items: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Consulta: lunes a viernes, 10:00 am a 8:00 pm</span>
+      <span class="topbar-hide" style="display: flex; gap: 8px; align-items: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Calle Vicente Guerrero S/N, Chapa de Mota</span>
+    </div>
+    <div style="display: flex; gap: 18px; align-items: center;">
+      <a href="tel:+525889931761" style="color: #FFFFFF; text-decoration: none; font-weight: 600;">Tel. 588 993 1761</a>
+      <a href="https://www.facebook.com/s.miguelCentroMedico" aria-label="Facebook" style="display: flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"></path></svg></a>
+      <a href="https://www.instagram.com/sanmiguel_cm/" aria-label="Instagram" style="display: flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".6"></circle></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVEGACIÓN -->
+<header style="background: #FFFFFF; border-bottom: 1px solid #E3EEF1; position: sticky; top: 0; z-index: 20;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+    <a href="#inicio" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+      <img src="img/logo.png" alt="Logotipo de San Miguel Centro Médico" style="width: 56px; height: 56px; border-radius: 50%; display: block;">
+      <div style="display: flex; flex-direction: column; line-height: 1.1;">
+        <span style="font: 800 20px Manrope, sans-serif; color: #0B2A3C;">San Miguel</span>
+        <span style="font: 600 13px Inter, sans-serif; color: #0E7A8A; letter-spacing: .14em; text-transform: uppercase;">Centro Médico</span>
+      </div>
+    </a>
+    <nav class="navlinks" style="display: flex; gap: 30px; align-items: center;" aria-label="Principal">
+      <a class="navlink" href="#servicios">Servicios</a>
+      <a class="navlink" href="#medicos">Especialistas</a>
+      <a class="navlink" href="#horarios">Horarios</a>
+      <a class="navlink" href="#paquetes">Promociones</a>
+      <a class="navlink" href="#ubicacion">Ubicación</a>
+    </nav>
+    <a class="btn" href="https://wa.me/527124342542" style="background: #0B2A3C; color: #FFFFFF; text-decoration: none; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; display: flex; gap: 10px; align-items: center; min-height: 48px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 11h18"></path></svg>
+      Agendar cita
+    </a>
+  </div>
+</header>
+
+<!-- HERO CON CARRUSEL -->
+<section id="inicio" style="position: relative; height: 680px; background: #0B2A3C; overflow: hidden;">
+  
+    
+      <div class="slide" data-slide="0" style="position: absolute; inset: 0;">
+        
+          <img class="kb" src="img/fachada.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 64%;">
+        
+        
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,42,60,.94) 0%, rgba(11,42,60,.78) 45%, rgba(11,42,60,.2) 100%);"></div>
+        <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 116px 24px 0; height: 100%;">
+          <div style="max-width: 660px; display: flex; flex-direction: column; gap: 24px;">
+            <span class="t1" style="display: inline-flex; align-self: flex-start; gap: 8px; align-items: center; background: rgba(41,188,208,.16); color: #7FDDEA; border: 1px solid rgba(41,188,208,.4); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;">Nuevo en Chapa de Mota</span>
+            <h1 class="t2" style="color: #FFFFFF; font-size: 60px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em;">Todo lo que tu salud necesita, <span style="color: #29BCD0;">en un mismo lugar.</span></h1>
+            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Consulta médica, especialistas, laboratorio de análisis clínicos, farmacia y Unidad de Rehabilitación Integral, detrás de la iglesia.</p>
+            <div class="t3" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+              <a class="btn" href="https://wa.me/527124342542" style="background: #29BCD0; color: #0B2A3C; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; display: flex; gap: 10px; align-items: center; min-height: 52px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+                Agenda por WhatsApp
+              </a>
+              <a class="btn" href="#servicios" style="color: #FFFFFF; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 16px; border: 1.5px solid rgba(255,255,255,.5); min-height: 52px; display: flex; align-items: center;">Ver servicios</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  
+    
+      <div class="slide" data-slide="1" style="position: absolute; inset: 0;">
+        
+          <img class="kb" src="img/consulta.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%;">
+        
+        
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,42,60,.94) 0%, rgba(11,42,60,.78) 45%, rgba(11,42,60,.2) 100%);"></div>
+        <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 116px 24px 0; height: 100%;">
+          <div style="max-width: 660px; display: flex; flex-direction: column; gap: 24px;">
+            <span class="t1" style="display: inline-flex; align-self: flex-start; gap: 8px; align-items: center; background: rgba(41,188,208,.16); color: #7FDDEA; border: 1px solid rgba(41,188,208,.4); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;">Especialistas cada semana</span>
+            <h1 class="t2" style="color: #FFFFFF; font-size: 60px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em;">Ya no tienes que viajar para ver <span style="color: #29BCD0;">a un especialista.</span></h1>
+            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Ginecología y obstetricia, pediatría, cardiología, nutrición, psicología, odontología y más. Agenda tu cita por WhatsApp.</p>
+            <div class="t3" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+              <a class="btn" href="https://wa.me/527124342542" style="background: #29BCD0; color: #0B2A3C; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; display: flex; gap: 10px; align-items: center; min-height: 52px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+                Agenda por WhatsApp
+              </a>
+              <a class="btn" href="#servicios" style="color: #FFFFFF; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 16px; border: 1.5px solid rgba(255,255,255,.5); min-height: 52px; display: flex; align-items: center;">Ver servicios</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  
+    
+      <div class="slide" data-slide="2" style="position: absolute; inset: 0;">
+        
+          <img class="kb" src="img/fachada.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 20% 92%;">
+        
+        
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,42,60,.94) 0%, rgba(11,42,60,.78) 45%, rgba(11,42,60,.2) 100%);"></div>
+        <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 116px 24px 0; height: 100%;">
+          <div style="max-width: 660px; display: flex; flex-direction: column; gap: 24px;">
+            <span class="t1" style="display: inline-flex; align-self: flex-start; gap: 8px; align-items: center; background: rgba(41,188,208,.16); color: #7FDDEA; border: 1px solid rgba(41,188,208,.4); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;">Laboratorio y farmacia</span>
+            <h1 class="t2" style="color: #FFFFFF; font-size: 60px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em;">Análisis clínicos desde <span style="color: #29BCD0;">las 7:00 am.</span></h1>
+            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Laboratorio de lunes a sábado de 7:00 am a 1:00 pm y farmacia todos los días de 7:00 am a 9:00 pm.</p>
+            <div class="t3" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+              <a class="btn" href="https://wa.me/527124342542" style="background: #29BCD0; color: #0B2A3C; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; display: flex; gap: 10px; align-items: center; min-height: 52px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+                Agenda por WhatsApp
+              </a>
+              <a class="btn" href="#servicios" style="color: #FFFFFF; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 16px; border: 1.5px solid rgba(255,255,255,.5); min-height: 52px; display: flex; align-items: center;">Ver servicios</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 120px;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; gap: 12px; align-items: center;">
+      
+        <button type="button" data-dot="0" aria-label="Ir a la diapositiva 1" style="background: none; border: none; padding: 12px 0; cursor: pointer; width: 72px;">
+          <span style="display: block; height: 4px; border-radius: 4px; background: rgba(255,255,255,.28); overflow: hidden;">
+            
+              <span class="progress" data-prog="0" style="display: block; height: 4px; background: #29BCD0;"></span>
+            
+          </span>
+        </button>
+      
+        <button type="button" data-dot="1" aria-label="Ir a la diapositiva 2" style="background: none; border: none; padding: 12px 0; cursor: pointer; width: 72px;">
+          <span style="display: block; height: 4px; border-radius: 4px; background: rgba(255,255,255,.28); overflow: hidden;">
+            
+              <span class="progress" data-prog="1" style="display: block; height: 4px; background: #29BCD0;"></span>
+            
+          </span>
+        </button>
+      
+        <button type="button" data-dot="2" aria-label="Ir a la diapositiva 3" style="background: none; border: none; padding: 12px 0; cursor: pointer; width: 72px;">
+          <span style="display: block; height: 4px; border-radius: 4px; background: rgba(255,255,255,.28); overflow: hidden;">
+            
+              <span class="progress" data-prog="2" style="display: block; height: 4px; background: #29BCD0;"></span>
+            
+          </span>
+        </button>
+      
+      <span style="color: #D6EAF0; font-size: 13px; margin-left: 8px; font-weight: 600;"><span id="slideNum">01</span> / 03</span>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESOS RÁPIDOS -->
+<section style="position: relative; z-index: 5; margin-top: -84px;">
+  <div class="load-up" style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+    
+      <a class="lift" href="https://wa.me/527124342542" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 20px; padding: 26px; text-decoration: none; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 10px 30px rgba(11,42,60,.08);">
+        <span style="width: 48px; height: 48px; border-radius: 14px; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+        </span>
+        <span style="font: 700 18px Manrope, sans-serif; color: #0B2A3C;">Agenda tu cita</span>
+        <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Escríbenos por WhatsApp al 712 434 2542.</span>
+        <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">Escribir <span class="arrow">→</span></span>
+      </a>
+    
+      <a class="lift" href="tel:+525889931761" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 20px; padding: 26px; text-decoration: none; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 10px 30px rgba(11,42,60,.08);">
+        <span style="width: 48px; height: 48px; border-radius: 14px; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>
+        </span>
+        <span style="font: 700 18px Manrope, sans-serif; color: #0B2A3C;">Llámanos</span>
+        <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Te atendemos y orientamos al 588 993 1761.</span>
+        <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">Llamar <span class="arrow">→</span></span>
+      </a>
+    
+      <a class="lift" href="#horarios" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 20px; padding: 26px; text-decoration: none; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 10px 30px rgba(11,42,60,.08);">
+        <span style="width: 48px; height: 48px; border-radius: 14px; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7 15h10"></path></svg>
+        </span>
+        <span style="font: 700 18px Manrope, sans-serif; color: #0B2A3C;">Laboratorio clínico</span>
+        <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Lunes a sábado de 7:00 am a 1:00 pm.</span>
+        <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">Ver horarios <span class="arrow">→</span></span>
+      </a>
+    
+      <a class="lift" href="#ubicacion" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 20px; padding: 26px; text-decoration: none; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 10px 30px rgba(11,42,60,.08);">
+        <span style="width: 48px; height: 48px; border-radius: 14px; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zM12 7.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5"></path></svg>
+        </span>
+        <span style="font: 700 18px Manrope, sans-serif; color: #0B2A3C;">Cómo llegar</span>
+        <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Detrás de la iglesia, junto a la plaza gastronómica.</span>
+        <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">Ver ubicación <span class="arrow">→</span></span>
+      </a>
+    
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" style="padding: 120px 0 100px;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 64px; align-items: center;">
+    <div class="rv" style="position: relative; height: 560px;">
+      <div class="zoomwrap" style="position: absolute; left: 0; top: 0; width: 74%; height: 480px; border-radius: 28px; overflow: hidden;">
+        <img class="zoom" src="img/fachada.jpg" alt="Fachada de San Miguel Centro Médico en Chapa de Mota" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block;">
+      </div>
+      <div style="position: absolute; right: 0; bottom: 0; width: 54%; height: 250px; border-radius: 28px; overflow: hidden; border: 6px solid #FFFFFF; box-shadow: 0 18px 40px rgba(11,42,60,.18);">
+        <img src="img/consulta.jpg" alt="Médico atendiendo a un paciente en consulta" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div style="position: absolute; left: 24px; bottom: 24px; background: #0B2A3C; color: #FFFFFF; border-radius: 20px; padding: 18px 22px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 18px 40px rgba(11,42,60,.25);">
+        <span style="font: 800 26px Manrope, sans-serif; color: #29BCD0;">Desde 2026</span>
+        <span style="font-size: 14px; color: #D6EAF0;">cuidando a Chapa de Mota</span>
+      </div>
+    </div>
+    <div class="rv" style="display: flex; flex-direction: column; gap: 22px;">
+      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Quiénes somos</span>
+      <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Todo lo que tu salud necesita, en un mismo lugar.</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: #4A6170;">San Miguel Centro Médico abrió sus puertas el 2 de marzo de 2026 para que las familias de Chapa de Mota y sus alrededores tengan consulta médica, especialistas, laboratorio de análisis clínicos, farmacia y rehabilitación sin tener que salir del municipio.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin-top: 8px;">
+        
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>
+            </span>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-weight: 700; font-size: 16px;">Todo en un lugar</span>
+              <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Consulta, estudios y medicamentos.</span>
+            </div>
+          </div>
+        
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>
+            </span>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-weight: 700; font-size: 16px;">Especialistas</span>
+              <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Sin salir de Chapa de Mota.</span>
+            </div>
+          </div>
+        
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>
+            </span>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-weight: 700; font-size: 16px;">Cerca de ti</span>
+              <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">En el centro, detrás de la iglesia.</span>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" style="padding: 100px 0; background: #F3FAFB;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px;">
+    <div class="rv" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap;">
+      <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
+        <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Servicios</span>
+        <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Consulta, especialistas, laboratorio, farmacia y rehabilitación.</h2>
+      </div>
+      <a class="btn" href="https://wa.me/527124342542" style="color: #0B2A3C; text-decoration: none; padding: 14px 22px; border-radius: 999px; font-weight: 600; border: 1.5px solid #0B2A3C; min-height: 48px; display: flex; align-items: center;">Pregunta por un servicio</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+      
+        <article class="lift rv zoomwrap" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 190px;">
+            
+              <img class="zoom" src="img/consulta.jpg" alt="Médico atendiendo a un paciente" style="width: 100%; height: 190px; object-fit: cover; display: block;">
+            
+            
+          </div>
+          <div style="padding: 26px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a5 5 0 0 0 10 0v-2M21 12a2 2 0 1 0 0-.01"></path></svg>
+              </span>
+              <h3 style="font-size: 20px; font-weight: 700;">Atención médica</h3>
+            </div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Consulta de medicina general para toda la familia: diagnóstico, tratamiento y seguimiento.</p>
+            <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Lunes a viernes, 10:00 am a 8:00 pm
+            </span>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 190px;">
+            
+            
+              <div class="zoom" style="height: 190px; background: #0F3347; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 34px solid rgba(41,188,208,.10); right: -70px; top: -90px;" aria-hidden="true"></div>
+                <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: floaty 4s ease-in-out infinite;"><path d="M12 20s-7-4.4-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.6-9 9-9 9zM3 12h4l2-3 3 6 2-3h7"></path></svg>
+              </div>
+            
+          </div>
+          <div style="padding: 26px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.6-9 9-9 9zM3 12h4l2-3 3 6 2-3h7"></path></svg>
+              </span>
+              <h3 style="font-size: 20px; font-weight: 700;">Ginecología y obstetricia</h3>
+            </div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Control de embarazo y ultrasonido obstétrico, estructural, pélvico y endovaginal.</p>
+            <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Con previa cita
+            </span>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 190px;">
+            
+            
+              <div class="zoom" style="height: 190px; background: #0F3347; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 34px solid rgba(41,188,208,.10); right: -70px; top: -90px;" aria-hidden="true"></div>
+                <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: floaty 4s ease-in-out infinite;"><path d="M12 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M8 21v-6l-2-3 3-3h6l3 3-2 3v6"></path></svg>
+              </div>
+            
+          </div>
+          <div style="padding: 26px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M8 21v-6l-2-3 3-3h6l3 3-2 3v6"></path></svg>
+              </span>
+              <h3 style="font-size: 20px; font-weight: 700;">Pediatría</h3>
+            </div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Pediatra neonatóloga para la salud de recién nacidos, bebés y niños.</p>
+            <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Con previa cita
+            </span>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 190px;">
+            
+            
+              <div class="zoom" style="height: 190px; background: #0F3347; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 34px solid rgba(41,188,208,.10); right: -70px; top: -90px;" aria-hidden="true"></div>
+                <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: floaty 4s ease-in-out infinite;"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7 15h10"></path></svg>
+              </div>
+            
+          </div>
+          <div style="padding: 26px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7 15h10"></path></svg>
+              </span>
+              <h3 style="font-size: 20px; font-weight: 700;">Laboratorio de análisis clínicos</h3>
+            </div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Estudios de sangre y orina en alianza con Humana CDI, Centro de Diagnóstico Integral.</p>
+            <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Lunes a sábado, 7:00 am a 1:00 pm
+            </span>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 190px;">
+            
+            
+              <div class="zoom" style="height: 190px; background: #0F3347; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 34px solid rgba(41,188,208,.10); right: -70px; top: -90px;" aria-hidden="true"></div>
+                <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: floaty 4s ease-in-out infinite;"><path d="M10.5 20.5a5 5 0 0 1-7-7l6-6a5 5 0 0 1 7 7zM8.5 8.5l7 7"></path></svg>
+              </div>
+            
+          </div>
+          <div style="padding: 26px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 20.5a5 5 0 0 1-7-7l6-6a5 5 0 0 1 7 7zM8.5 8.5l7 7"></path></svg>
+              </span>
+              <h3 style="font-size: 20px; font-weight: 700;">Farmacia</h3>
+            </div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Surte tu receta en el mismo lugar de tu consulta.</p>
+            <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Todos los días, 7:00 am a 9:00 pm
+            </span>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 190px;">
+            
+            
+              <div class="zoom" style="height: 190px; background: #0F3347; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 34px solid rgba(41,188,208,.10); right: -70px; top: -90px;" aria-hidden="true"></div>
+                <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: floaty 4s ease-in-out infinite;"><path d="M13 4a2 2 0 1 0 0 .01M7 21l3-6 3 2v4M10 15l1-5 4 2 3 1M8 10l3-2"></path></svg>
+              </div>
+            
+          </div>
+          <div style="padding: 26px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0 .01M7 21l3-6 3 2v4M10 15l1-5 4 2 3 1M8 10l3-2"></path></svg>
+              </span>
+              <h3 style="font-size: 20px; font-weight: 700;">Unidad de Rehabilitación Integral</h3>
+            </div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Fisioterapia, terapia física y servicio quirofísico.</p>
+            <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Martes, 9:00 am a 5:00 pm
+            </span>
+          </div>
+        </article>
+      
+    </div>
+    <div class="rv" style="display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center;">
+      <span style="font-weight: 700; font-size: 17px;">También contamos con</span>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+        
+          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Cardiología</span>
+        
+          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Odontología</span>
+        
+          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Nutrición</span>
+        
+          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Psicología</span>
+        
+          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Vasectomía</span>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIALISTAS -->
+<section id="medicos" style="padding: 100px 0;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px;">
+    <div class="rv" style="display: flex; flex-direction: column; gap: 14px; max-width: 700px;">
+      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Nuestros especialistas</span>
+      <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Los especialistas ya están en Chapa de Mota.</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: #4A6170;">Ya no tienes que viajar para ver a un especialista. Agenda tu cita por WhatsApp y te confirmamos el día de su consulta.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+      
+        <article class="lift rv zoomwrap" style="border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 290px;">
+            <div class="zoom" style="height: 290px; background: #E6F7FA; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; border: 40px solid rgba(41,188,208,.14); left: -90px; bottom: -150px;" aria-hidden="true"></div>
+              <span style="width: 120px; height: 120px; border-radius: 50%; background: #0B2A3C; display: flex; align-items: center; justify-content: center; position: relative;">
+                <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.6-9 9-9 9zM3 12h4l2-3 3 6 2-3h7"></path></svg>
+              </span>
+            </div>
+          </div>
+          <div style="padding: 22px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1;">
+            <span style="font: 700 18px Manrope, sans-serif;">Dr. Jesús Orlando Pérez García</span>
+            <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Ginecología y Obstetricia</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Ultrasonido obstétrico, estructural, pélvico y endovaginal.</span>
+            <a class="btn" href="https://wa.me/527124342542" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 290px;">
+            <div class="zoom" style="height: 290px; background: #E6F7FA; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; border: 40px solid rgba(41,188,208,.14); left: -90px; bottom: -150px;" aria-hidden="true"></div>
+              <span style="width: 120px; height: 120px; border-radius: 50%; background: #0B2A3C; display: flex; align-items: center; justify-content: center; position: relative;">
+                <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M8 21v-6l-2-3 3-3h6l3 3-2 3v6"></path></svg>
+              </span>
+            </div>
+          </div>
+          <div style="padding: 22px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1;">
+            <span style="font: 700 18px Manrope, sans-serif;">Pediatra Neonatóloga</span>
+            <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Pediatría</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Salud de recién nacidos, bebés y niños. Pregunta por el próximo día de consulta.</span>
+            <a class="btn" href="https://wa.me/527124342542" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 290px;">
+            <div class="zoom" style="height: 290px; background: #E6F7FA; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; border: 40px solid rgba(41,188,208,.14); left: -90px; bottom: -150px;" aria-hidden="true"></div>
+              <span style="width: 120px; height: 120px; border-radius: 50%; background: #0B2A3C; display: flex; align-items: center; justify-content: center; position: relative;">
+                <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a5 5 0 0 0 10 0v-2M21 12a2 2 0 1 0 0-.01"></path></svg>
+              </span>
+            </div>
+          </div>
+          <div style="padding: 22px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1;">
+            <span style="font: 700 18px Manrope, sans-serif;">Especialista en Cardiología</span>
+            <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Cardiología</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Chequeo cardiovascular preventivo. Consulta en sábado con previa cita.</span>
+            <a class="btn" href="https://wa.me/527124342542" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 290px;">
+            <div class="zoom" style="height: 290px; background: #E6F7FA; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; border: 40px solid rgba(41,188,208,.14); left: -90px; bottom: -150px;" aria-hidden="true"></div>
+              <span style="width: 120px; height: 120px; border-radius: 50%; background: #0B2A3C; display: flex; align-items: center; justify-content: center; position: relative;">
+                <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7c-1-2-4-2.5-6-1-2.5 2-2 6.5 0 10 1.3 2.3 3 4 4.5 4 1 0 1-.5 1.5-.5s.5.5 1.5.5c1.5 0 3.2-1.7 4.5-4 2-3.5 2.5-8 0-10-2-1.5-5-1-6 1zM12 7c0-2 1-3.5 3-4"></path></svg>
+              </span>
+            </div>
+          </div>
+          <div style="padding: 22px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1;">
+            <span style="font: 700 18px Manrope, sans-serif;">Especialista en Nutrición</span>
+            <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Nutrición</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Lunes de 3:00 a 6:00 pm y sábados de 9:00 am a 3:00 pm.</span>
+            <a class="btn" href="https://wa.me/527124342542" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
+          </div>
+        </article>
+      
+    </div>
+    <div class="rv" style="background: #F3FAFB; border: 1px dashed #8CCFD9; border-radius: 22px; padding: 26px 30px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;">
+      <div style="display: flex; flex-direction: column; gap: 6px; max-width: 720px;">
+        <span style="font: 700 19px Manrope, sans-serif;">¿Eres médico especialista?</span>
+        <span style="font-size: 15px; color: #4A6170; line-height: 1.6;">Aún contamos con consultorios y horarios disponibles para médicos de especialidad. Escríbenos y conoce nuestras instalaciones.</span>
+      </div>
+      <a class="btn" href="https://wa.me/527124342542" style="background: #0B2A3C; color: #FFFFFF; text-decoration: none; padding: 14px 22px; border-radius: 999px; font-weight: 600; min-height: 48px; display: flex; align-items: center;">Quiero informes</a>
+    </div>
+  </div>
+</section>
+
+<!-- HORARIOS -->
+<section id="horarios" style="padding: 100px 0 90px; background: #0B2A3C; color: #FFFFFF; overflow: hidden;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 44px;">
+    <div class="rv" style="display: flex; flex-direction: column; gap: 14px; max-width: 700px;">
+      <span style="color: #29BCD0; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Horarios de atención</span>
+      <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em; color: #FFFFFF;">Te atendemos todos los días desde las 7:00 am.</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: #CFE3EA;">Nuestras consultas son con previa cita. Escríbenos por WhatsApp y te damos el horario más cercano.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+      
+        <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a5 5 0 0 0 10 0v-2M21 12a2 2 0 1 0 0-.01"></path></svg>
+            </span>
+            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Atención médica</span>
+          </div>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lunes a viernes
+10:00 am a 8:00 pm</span>
+        </div>
+      
+        <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 20.5a5 5 0 0 1-7-7l6-6a5 5 0 0 1 7 7zM8.5 8.5l7 7"></path></svg>
+            </span>
+            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Farmacia</span>
+          </div>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Todos los días
+7:00 am a 9:00 pm</span>
+        </div>
+      
+        <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7 15h10"></path></svg>
+            </span>
+            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Laboratorio clínico</span>
+          </div>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lunes a sábado
+7:00 am a 1:00 pm</span>
+        </div>
+      
+        <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"></path></svg>
+            </span>
+            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Atención dental</span>
+          </div>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lun a vie: 10:00 am a 1:30 pm y 4:00 a 6:30 pm
+Sábado: 8:00 am a 2:00 pm</span>
+        </div>
+      
+        <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7c-1-2-4-2.5-6-1-2.5 2-2 6.5 0 10 1.3 2.3 3 4 4.5 4 1 0 1-.5 1.5-.5s.5.5 1.5.5c1.5 0 3.2-1.7 4.5-4 2-3.5 2.5-8 0-10-2-1.5-5-1-6 1zM12 7c0-2 1-3.5 3-4"></path></svg>
+            </span>
+            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Nutrición</span>
+          </div>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lunes: 3:00 a 6:00 pm
+Sábado: 9:00 am a 3:00 pm</span>
+        </div>
+      
+        <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0 .01M7 21l3-6 3 2v4M10 15l1-5 4 2 3 1M8 10l3-2"></path></svg>
+            </span>
+            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Terapia física</span>
+          </div>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Martes
+9:00 am a 5:00 pm</span>
+        </div>
+      
+    </div>
+  </div>
+  <div style="margin-top: 56px; overflow: hidden; width: 100%; border-top: 1px solid rgba(207,227,234,.14); border-bottom: 1px solid rgba(207,227,234,.14); padding: 22px 0;">
+    <div class="track" style="display: flex; gap: 48px; width: max-content; align-items: center;">
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Atención médica <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Ginecología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Pediatría <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Cardiología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Odontología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Nutrición <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Psicología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Fisioterapia <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Laboratorio <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Farmacia <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Vasectomía <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Rehabilitación <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Atención médica <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Ginecología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Pediatría <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Cardiología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Odontología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Nutrición <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Psicología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Fisioterapia <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Laboratorio <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Farmacia <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Vasectomía <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Rehabilitación <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+    </div>
+  </div>
+</section>
+
+<!-- PAQUETES -->
+<section id="paquetes" style="padding: 100px 0;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px;">
+    <div class="rv" style="display: flex; flex-direction: column; gap: 14px; max-width: 700px;">
+      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Promociones</span>
+      <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Sabes cuánto vas a pagar antes de venir.</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: #4A6170;">Paquetes preventivos con estudios y consulta incluidos. Pregunta por las promociones del mes.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: stretch;">
+      
+        <article class="lift rv" style="background: #FFFFFF; color: #0B2A3C; border: 1px solid #E3EEF1; border-radius: 26px; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+          
+          <h3 style="font-size: 24px; font-weight: 800;">Check-up general</h3>
+          <p style="font-size: 15px; line-height: 1.6; opacity: .85;">Conoce tu estado de salud: arma tu paquete con los estudios que necesitas.</p>
+          <div style="display: flex; align-items: baseline; gap: 6px;">
+            <span style="font: 800 30px Manrope, sans-serif;">Pregúntanos</span>
+            <span style="font-size: 14px; opacity: .8;"></span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; flex-grow: 1;">
+            
+              <span style="display: flex; gap: 10px; align-items: center; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Laboratorio de análisis clínicos
+              </span>
+            
+              <span style="display: flex; gap: 10px; align-items: center; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Consulta médica
+              </span>
+            
+              <span style="display: flex; gap: 10px; align-items: center; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Revisión de resultados
+              </span>
+            
+          </div>
+          <a class="btn" href="https://wa.me/527124342542" style="background: #0B2A3C; color: #FFFFFF; text-decoration: none; text-align: center; padding: 15px; border-radius: 999px; font-weight: 700; min-height: 50px;">Reservar paquete</a>
+        </article>
+      
+        <article class="lift rv" style="background: #0B2A3C; color: #FFFFFF; border: 1px solid #0B2A3C; border-radius: 26px; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+          
+            <span style="align-self: flex-start; background: #0B2A3C; color: #29BCD0; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 999px; letter-spacing: .08em; text-transform: uppercase;">Más solicitado</span>
+          
+          <h3 style="font-size: 24px; font-weight: 800;">Paquete ginecológico</h3>
+          <p style="font-size: 15px; line-height: 1.6; opacity: .85;">Revisión preventiva completa con el Dr. Jesús Orlando Pérez García.</p>
+          <div style="display: flex; align-items: baseline; gap: 6px;">
+            <span style="font: 800 40px Manrope, sans-serif;">$1,400</span>
+            <span style="font-size: 14px; opacity: .8;">MXN</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; flex-grow: 1;">
+            
+              <span style="display: flex; gap: 10px; align-items: center; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Papanicolaou
+              </span>
+            
+              <span style="display: flex; gap: 10px; align-items: center; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Colposcopía
+              </span>
+            
+              <span style="display: flex; gap: 10px; align-items: center; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Consulta ginecológica
+              </span>
+            
+          </div>
+          <a class="btn" href="https://wa.me/527124342542" style="background: #29BCD0; color: #0B2A3C; text-decoration: none; text-align: center; padding: 15px; border-radius: 999px; font-weight: 700; min-height: 50px;">Reservar paquete</a>
+        </article>
+      
+        <article class="lift rv" style="background: #FFFFFF; color: #0B2A3C; border: 1px solid #E3EEF1; border-radius: 26px; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+          
+          <h3 style="font-size: 24px; font-weight: 800;">Chequeo cardiovascular</h3>
+          <p style="font-size: 15px; line-height: 1.6; opacity: .85;">Tu salud cardiovascular es prioridad: revisión preventiva con cardiología.</p>
+          <div style="display: flex; align-items: baseline; gap: 6px;">
+            <span style="font: 800 30px Manrope, sans-serif;">Pregúntanos</span>
+            <span style="font-size: 14px; opacity: .8;"></span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; flex-grow: 1;">
+            
+              <span style="display: flex; gap: 10px; align-items: center; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Consulta de cardiología
+              </span>
+            
+              <span style="display: flex; gap: 10px; align-items: center; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Revisión preventiva
+              </span>
+            
+              <span style="display: flex; gap: 10px; align-items: center; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Consulta en sábado
+              </span>
+            
+          </div>
+          <a class="btn" href="https://wa.me/527124342542" style="background: #0B2A3C; color: #FFFFFF; text-decoration: none; text-align: center; padding: 15px; border-radius: 999px; font-weight: 700; min-height: 50px;">Reservar paquete</a>
+        </article>
+      
+    </div>
+  </div>
+</section>
+
+<!-- INSTALACIONES -->
+<section id="instalaciones" style="padding: 90px 0 100px; background: #F3FAFB;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 40px;">
+    <div class="rv" style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
+      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Instalaciones</span>
+      <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Ven a conocer nuestras instalaciones.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 16px;">
+      <div class="rv zoomwrap" style="grid-column: span 2; grid-row: span 2; border-radius: 24px; overflow: hidden;">
+        <img class="zoom" src="img/fachada.jpg" alt="Edificio de San Miguel Centro Médico con su letrero" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 66%; display: block;">
+      </div>
+      <div class="rv zoomwrap" style="grid-column: span 2; border-radius: 24px; overflow: hidden;">
+        <img class="zoom" src="img/consulta.jpg" alt="Consulta médica en San Miguel Centro Médico" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div class="rv lift" style="border-radius: 24px; background: #0B2A3C; color: #FFFFFF; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+        <span style="font: 800 40px Manrope, sans-serif; color: #29BCD0;">5 en 1</span>
+        <span style="font-size: 15px; line-height: 1.5; color: #CFE3EA;">Consulta, especialistas, laboratorio, farmacia y rehabilitación en el mismo edificio.</span>
+      </div>
+      <div class="rv lift" style="border-radius: 24px; background: #29BCD0; color: #0B2A3C; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+        <span style="font: 800 40px Manrope, sans-serif;">7:00 am</span>
+        <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Abrimos todos los días desde temprano: farmacia y laboratorio.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REDES -->
+<section style="padding: 100px 0;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
+    <div class="rv" style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
+      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Síguenos</span>
+      <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Entérate de especialistas, promociones y horarios.</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: #4A6170;">Cada semana publicamos qué especialistas vienen a Chapa de Mota y las promociones del mes.</p>
+    </div>
+    <a class="lift rv" href="https://www.facebook.com/s.miguelCentroMedico" style="text-decoration: none; background: #0B2A3C; border-radius: 26px; padding: 34px; display: flex; flex-direction: column; gap: 18px; color: #FFFFFF;">
+      <span style="width: 56px; height: 56px; border-radius: 16px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"></path></svg></span>
+      <span style="font: 800 24px Manrope, sans-serif;">Facebook</span>
+      <span style="color: #CFE3EA; font-size: 16px;">San Miguel Centro Médico</span>
+      <span style="display: flex; gap: 6px; align-items: center; color: #29BCD0; font-weight: 600;">Seguir página <span class="arrow">→</span></span>
+    </a>
+    <a class="lift rv" href="https://www.instagram.com/sanmiguel_cm/" style="text-decoration: none; background: #F3FAFB; border: 1px solid #E3EEF1; border-radius: 26px; padding: 34px; display: flex; flex-direction: column; gap: 18px; color: #0B2A3C;">
+      <span style="width: 56px; height: 56px; border-radius: 16px; background: #0B2A3C; display: flex; align-items: center; justify-content: center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".6"></circle></svg></span>
+      <span style="font: 800 24px Manrope, sans-serif;">Instagram</span>
+      <span style="color: #4A6170; font-size: 16px;">@sanmiguel_cm</span>
+      <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600;">Ver publicaciones <span class="arrow">→</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section id="ubicacion" style="padding: 100px 0; background: #F3FAFB;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; align-items: stretch;">
+    <div class="rv" style="display: flex; flex-direction: column; gap: 22px;">
+      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Ubicación</span>
+      <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em;">Detrás de la iglesia, en el centro de Chapa de Mota.</h2>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        
+          <div style="display: flex; gap: 16px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 18px; padding: 18px 20px;">
+            <span style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zM12 7.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5"></path></svg>
+            </span>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-weight: 700; font-size: 16px;">Dirección</span>
+              <span style="font-size: 15px; color: #4A6170; line-height: 1.5; white-space: pre-line;">Calle Vicente Guerrero S/N, Chapa de Mota
+Estado de México, C.P. 54350
+Detrás de la iglesia, a un lado de la plaza gastronómica</span>
+            </div>
+          </div>
+        
+          <div style="display: flex; gap: 16px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 18px; padding: 18px 20px;">
+            <span style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>
+            </span>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-weight: 700; font-size: 16px;">WhatsApp y teléfono</span>
+              <span style="font-size: 15px; color: #4A6170; line-height: 1.5; white-space: pre-line;">WhatsApp: 712 434 2542
+Teléfono: 588 993 1761</span>
+            </div>
+          </div>
+        
+          <div style="display: flex; gap: 16px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 18px; padding: 18px 20px;">
+            <span style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M12 7v5l3 2"></path></svg>
+            </span>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-weight: 700; font-size: 16px;">Horario de consulta</span>
+              <span style="font-size: 15px; color: #4A6170; line-height: 1.5; white-space: pre-line;">Lunes a viernes: 10:00 am a 8:00 pm
+Farmacia: todos los días de 7:00 am a 9:00 pm</span>
+            </div>
+          </div>
+        
+          <div style="display: flex; gap: 16px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 18px; padding: 18px 20px;">
+            <span style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #E6F7FA; display: flex; align-items: center; justify-content: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18v14H3zM3 6l9 7 9-7"></path></svg>
+            </span>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-weight: 700; font-size: 16px;">Correo</span>
+              <span style="font-size: 15px; color: #4A6170; line-height: 1.5; white-space: pre-line;">hola@centromedicosm.com.mx</span>
+            </div>
+          </div>
+        
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=San+Miguel+Centro+M%C3%A9dico+Vicente+Guerrero+Chapa+de+Mota" style="background: #0B2A3C; color: #FFFFFF; text-decoration: none; padding: 15px 24px; border-radius: 999px; font-weight: 600; min-height: 50px; display: flex; align-items: center;">Cómo llegar</a>
+        <a class="btn" href="tel:+525889931761" style="color: #0B2A3C; text-decoration: none; padding: 15px 24px; border-radius: 999px; font-weight: 600; border: 1.5px solid #0B2A3C; min-height: 50px; display: flex; align-items: center;">Llamar ahora</a>
+      </div>
+    </div>
+    <div class="ph ph-dark rv mapbox" style="border-radius: 28px; min-height: 560px; font-size: 14px; position: relative; padding: 0;"><iframe title="Mapa de San Miguel Centro Médico" src="https://www.google.com/maps?q=Calle+Vicente+Guerrero,+Chapa+de+Mota,+Estado+de+M%C3%A9xico,+54350&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:28px"></iframe></div>
+  </div>
+</section>
+
+<!-- PREGUNTAS FRECUENTES -->
+<section style="padding: 100px 0;">
+  <div style="max-width: 860px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px;">
+    <div class="rv" style="display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center;">
+      <span style="color: #0E7A8A; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Preguntas frecuentes</span>
+      <h2 style="font-size: 40px; line-height: 1.15; font-weight: 800; letter-spacing: -.02em;">Resolvemos tus dudas.</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      
+        <div class="rv faq" data-faq="0" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
+          <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
+            ¿Necesito cita para consulta?
+            <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </span>
+          </button>
+          
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Sí, nuestras consultas son con previa cita. Escríbenos por WhatsApp al 712 434 2542 o llámanos al 588 993 1761 y te damos el horario más cercano.</p>
+          
+        </div>
+      
+        <div class="rv faq" data-faq="1" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
+          <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
+            ¿Qué especialidades tienen?
+            <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </span>
+          </button>
+          
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Ginecología y obstetricia, pediatría (pediatra neonatóloga), cardiología, odontología, nutrición, psicología, fisioterapia y vasectomía, además de consulta de medicina general.</p>
+          
+        </div>
+      
+        <div class="rv faq" data-faq="2" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
+          <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
+            ¿En qué horario funciona el laboratorio?
+            <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </span>
+          </button>
+          
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">El laboratorio de análisis clínicos atiende de lunes a sábado de 7:00 am a 1:00 pm.</p>
+          
+        </div>
+      
+        <div class="rv faq" data-faq="3" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
+          <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
+            ¿Dónde se encuentran?
+            <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </span>
+          </button>
+          
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">En Calle Vicente Guerrero S/N, Chapa de Mota, detrás de la iglesia y a un lado de la plaza gastronómica.</p>
+          
+        </div>
+      
+        <div class="rv faq" data-faq="4" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
+          <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
+            ¿Cuánto cuesta una consulta?
+            <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </span>
+          </button>
+          
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">El costo depende del servicio o la especialidad. Escríbenos por WhatsApp al 712 434 2542 y te damos el precio exacto y el horario disponible.</p>
+          
+        </div>
+      
+        <div class="rv faq" data-faq="5" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
+          <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
+            Soy médico, ¿puedo dar consulta con ustedes?
+            <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </span>
+          </button>
+          
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Sí. Aún contamos con espacios y horarios disponibles para médicos de especialidad. Escríbenos por WhatsApp para conocer las instalaciones.</p>
+          
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="padding: 0 24px 100px;">
+  <div class="rv" style="max-width: 1200px; margin: 0 auto; background: #0B2A3C; border-radius: 32px; padding: 64px 56px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; position: relative; overflow: hidden;">
+    <div style="position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%; border: 40px solid rgba(41,188,208,.12);" aria-hidden="true"></div>
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 620px; position: relative;">
+      <h2 style="font-size: 40px; line-height: 1.15; font-weight: 800; color: #FFFFFF; letter-spacing: -.02em;">¿Listo para tu consulta?</h2>
+      <p style="font-size: 18px; color: #CFE3EA; line-height: 1.6;">Escríbenos por WhatsApp al 712 434 2542 y te damos tu cita. Corre la voz: ya hay centro médico de especialidades en Chapa de Mota.</p>
+    </div>
+    <a class="btn" href="https://wa.me/527124342542" style="position: relative; background: #29BCD0; color: #0B2A3C; text-decoration: none; padding: 18px 30px; border-radius: 999px; font-weight: 700; font-size: 17px; min-height: 56px; display: flex; align-items: center; gap: 10px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+      Agendar por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- PIE DE PÁGINA -->
+<footer style="background: #071E2C; color: #B9D3DB; padding: 72px 0 32px;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="img/logo.png" alt="Logotipo de San Miguel Centro Médico" style="width: 52px; height: 52px; border-radius: 50%; display: block;">
+          <span style="font: 800 19px Manrope, sans-serif; color: #FFFFFF;">San Miguel<br><span style="font: 600 12px Inter, sans-serif; color: #29BCD0; letter-spacing: .14em;">CENTRO MÉDICO</span></span>
+        </div>
+        <p style="font-size: 14px; line-height: 1.7;">Atención médica, especialidades, laboratorio, farmacia y Unidad de Rehabilitación Integral en Chapa de Mota, Estado de México.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="color: #FFFFFF; font-weight: 700;">Enlaces</span>
+        <a href="#servicios" style="color: #B9D3DB; text-decoration: none;">Servicios</a>
+        <a href="#medicos" style="color: #B9D3DB; text-decoration: none;">Especialistas</a>
+        <a href="#horarios" style="color: #B9D3DB; text-decoration: none;">Horarios</a>
+        <a href="#paquetes" style="color: #B9D3DB; text-decoration: none;">Promociones</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="color: #FFFFFF; font-weight: 700;">Contacto</span>
+        <span style="line-height: 1.6;">Calle Vicente Guerrero S/N, Chapa de Mota, Edo. de México, C.P. 54350</span>
+        <a href="https://wa.me/527124342542" style="color: #B9D3DB; text-decoration: none;">WhatsApp 712 434 2542</a>
+        <a href="tel:+525889931761" style="color: #B9D3DB; text-decoration: none;">Tel. 588 993 1761</a>
+        <a href="mailto:hola@centromedicosm.com.mx" style="color: #B9D3DB; text-decoration: none;">hola@centromedicosm.com.mx</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="color: #FFFFFF; font-weight: 700;">Síguenos</span>
+        <div style="display: flex; gap: 10px;">
+          <a href="https://www.facebook.com/s.miguelCentroMedico" aria-label="Facebook" style="width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"></path></svg></a>
+          <a href="https://www.instagram.com/sanmiguel_cm/" aria-label="Instagram" style="width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".6"></circle></svg></a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=San+Miguel+Centro+M%C3%A9dico+Vicente+Guerrero+Chapa+de+Mota" aria-label="Ver en Google Maps" style="width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></a>
+        </div>
+        <span style="font-size: 14px;">@sanmiguel_cm</span>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px;">
+      <span>© 2026 San Miguel Centro Médico. Todos los derechos reservados.</span>
+      <div style="display: flex; gap: 20px;">
+        <a href="#" style="color: #B9D3DB;">Aviso de privacidad</a>
+        <a href="#" style="color: #B9D3DB;">Términos de uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a class="wa" href="https://wa.me/527124342542" aria-label="Escríbenos por WhatsApp al 712 434 2542" style="position: fixed; right: 24px; bottom: 24px; z-index: 50; width: 64px; height: 64px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center;">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path><path d="M9 9.5c.5 2 2.5 4 4.5 4.5l1-1 2 1v1.5c-3.5.5-8-4-7.5-7.5H10l1 2z"></path></svg>
+</a>
+
+</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('[data-slide]'));
+  var dots=[].slice.call(document.querySelectorAll('[data-dot]'));
+  var progs=[].slice.call(document.querySelectorAll('[data-prog]'));
+  var num=document.getElementById('slideNum');
+  var cur=0, timer=null;
+  function show(i){
+    cur=i;
+    slides.forEach(function(s,k){
+      s.classList.remove('on','slide-in');
+      if(k===i){ s.classList.add('on'); void s.offsetWidth; s.classList.add('slide-in'); }
+    });
+    progs.forEach(function(p,k){
+      p.classList.remove('on');
+      if(k===i){ void p.offsetWidth; p.classList.add('on'); }
+    });
+    dots.forEach(function(d,k){ d.setAttribute('aria-current', k===i ? 'true' : 'false'); });
+    if(num) num.textContent='0'+(i+1);
+  }
+  function start(){ clearInterval(timer); timer=setInterval(function(){ show((cur+1)%slides.length); },6000); }
+  dots.forEach(function(d,k){ d.addEventListener('click',function(){ show(k); start(); }); });
+  show(0); start();
+
+  var items=[].slice.call(document.querySelectorAll('.faq'));
+  function setFaq(el,open){
+    el.style.borderColor=open?'#29BCD0':'#E3EEF1';
+    el.querySelector('.faq-a').hidden=!open;
+    el.querySelector('.faq-q').setAttribute('aria-expanded',open?'true':'false');
+    var ic=el.querySelector('.faq-ic');
+    ic.style.background=open?'#0B2A3C':'#E6F7FA';
+    ic.style.transform=open?'rotate(45deg)':'rotate(0deg)';
+    el.querySelector('.faq-sv').setAttribute('stroke',open?'#29BCD0':'#0E7A8A');
+  }
+  items.forEach(function(el,k){
+    setFaq(el,k===0);
+    el.querySelector('.faq-q').addEventListener('click',function(){
+      var willOpen=el.querySelector('.faq-a').hidden;
+      items.forEach(function(o){ setFaq(o,false); });
+      if(willOpen){ setFaq(el,true); var a=el.querySelector('.faq-a'); a.classList.remove('slide-in'); void a.offsetWidth; a.classList.add('slide-in'); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
