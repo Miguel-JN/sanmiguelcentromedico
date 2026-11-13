@@ -6,7 +6,7 @@
 <title>San Miguel Centro Médico · Panel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Mundo visual único: noche clínica, vidrio esmerilado, aqua médico + oro para el reparto */
@@ -17,6 +17,7 @@
   --good:#34d399; --warn:#fbbf24; --bad:#fb7185; --wa:#25d366;
   --font-display:'Sora', 'Segoe UI', system-ui, sans-serif;
   --font-body:'Manrope', 'Segoe UI', system-ui, sans-serif;
+  --font-serif:'Bodoni Moda', 'Didot', Georgia, serif;
   --r:20px; color-scheme:dark;
   /* Layout: barra lateral de vidrio + lienzo de tarjetas en rejilla */
 }
@@ -63,7 +64,7 @@ a{color:var(--accent)}
 
 .main{display:flex;flex-direction:column;min-width:0;height:100%}
 .top{display:flex;align-items:center;gap:14px;padding:22px 30px 14px;flex-wrap:wrap}
-.top h1{font-size:26px;font-weight:600}
+.top h1{font-family:var(--font-serif);font-size:32px;font-weight:500;letter-spacing:0}
 .top .sub{color:var(--muted);font-size:13px}
 .top .sp{flex:1}
 .content{flex:1;overflow-y:auto;padding:6px 30px 40px;scroll-behavior:smooth}
@@ -120,7 +121,8 @@ a{color:var(--accent)}
 .btn.danger:hover{color:var(--bad);border-color:rgba(251,113,133,.4)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .seg{display:inline-flex;padding:4px;gap:2px;border-radius:13px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
-.seg button{border:0;background:transparent;padding:7px 12px;border-radius:9px;font-weight:700;font-size:12.5px;color:var(--muted);cursor:pointer;transition:all .25s}
+.seg{max-width:100%;overflow-x:auto}
+.seg button{white-space:nowrap;border:0;background:transparent;padding:7px 12px;border-radius:9px;font-weight:700;font-size:12.5px;color:var(--muted);cursor:pointer;transition:all .25s}
 .seg button.on{background:rgba(64,212,230,.16);color:var(--text);box-shadow:inset 0 0 0 1px rgba(64,212,230,.3)}
 .input,select.input{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:12px;padding:9px 12px;outline:none;transition:border-color .2s,box-shadow .2s}
 .input:focus{border-color:rgba(64,212,230,.5);box-shadow:0 0 0 4px rgba(64,212,230,.1)}
@@ -254,6 +256,63 @@ table.tbl{width:100%;border-collapse:collapse;min-width:640px}
 .big{font-family:var(--font-display);font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
 .paid{cursor:pointer;border:0}
 
+/* Toques premium */
+.serif{font-family:var(--font-serif);font-weight:500;letter-spacing:0}
+.gold{color:var(--gold)}
+.eyebrow{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.hero-row{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:18px;margin-bottom:18px}
+.today{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.today .t{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.today .t small{display:block;color:var(--muted);font-size:11.5px;font-weight:600}
+.today .t b{font-family:var(--font-display);font-size:21px;font-weight:600}
+.nextc{display:flex;align-items:center;gap:14px;margin-top:14px;padding:12px 14px;border-radius:14px;background:linear-gradient(90deg,rgba(242,200,121,.1),rgba(242,200,121,.02));border:1px solid rgba(242,200,121,.25)}
+.lema{font-family:var(--font-serif);font-style:italic;font-size:22px;line-height:1.25;color:#f3e6c8;margin:4px 0 0}
+.clock{font-family:var(--font-display);font-variant-numeric:tabular-nums;color:var(--muted);font-size:12.5px}
+.goal{display:flex;align-items:center;gap:20px}
+.ring{position:relative;width:150px;height:150px;flex:none}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .ctr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .ctr b{font-family:var(--font-serif);font-size:30px;font-weight:500}
+.ring .ctr small{color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.goal dl{margin:0;display:grid;gap:10px}
+.goal dt{color:var(--muted);font-size:11.5px;font-weight:600}
+.goal dd{margin:0;font-family:var(--font-display);font-weight:600;font-size:16px}
+.featured{border-color:rgba(242,200,121,.45)!important;background:linear-gradient(150deg,rgba(242,200,121,.11),rgba(255,255,255,.02) 55%)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 80px -35px rgba(242,200,121,.35)!important}
+.mono{width:64px;height:64px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--font-serif);font-size:24px;color:#fff;position:relative;background:radial-gradient(circle at 30% 25%,color-mix(in srgb,var(--c) 70%,#fff),var(--c) 55%,color-mix(in srgb,var(--c) 50%,#000));box-shadow:0 0 0 3px rgba(4,18,26,.9),0 0 0 4px color-mix(in srgb,var(--c) 70%,transparent),0 12px 30px -8px color-mix(in srgb,var(--c) 60%,transparent)}
+.mono.lg{width:92px;height:92px;font-size:34px}
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.doc-h{display:flex;gap:14px;align-items:center}
+.doc-h h3{font-family:var(--font-serif);font-size:19px;font-weight:500;line-height:1.2}
+.doc-h small{color:var(--muted);font-size:12.5px;font-weight:600}
+.doc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.doc-stats small{display:block;color:var(--muted);font-size:11px}
+.doc-stats b{font-family:var(--font-display);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.hero-doc{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center}
+.hero-doc .big{font-family:var(--font-serif);font-weight:500}
+.promo-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-bottom:26px}
+.promo{border-color:rgba(242,200,121,.4)!important;background:linear-gradient(145deg,rgba(242,200,121,.14),rgba(242,200,121,.02) 60%)!important}
+.promo .pp{font-family:var(--font-serif);font-size:34px;color:#f6dfae;line-height:1.1;margin-top:6px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:26px 0 14px}
+.sec-h h2{font-family:var(--font-serif);font-weight:500;font-size:22px}
+.sec-h span{color:var(--muted);font-size:12.5px}
+.sec-h::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.rank{display:flex;flex-direction:column;gap:12px}
+.rank .r{display:flex;align-items:center;gap:12px}
+.rank .r .mono{width:36px;height:36px;font-size:14px;box-shadow:0 0 0 2px rgba(4,18,26,.9),0 0 0 3px color-mix(in srgb,var(--c) 60%,transparent)}
+.rank .r .grow{flex:1;min-width:0}
+.rank .r .grow b{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank .r .grow small{color:var(--muted);font-size:11.5px}
+.conf{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--warn);background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);padding:2px 8px;border-radius:99px}
+#splash{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(800px 500px at 50% 40%,#0b3a44,#04121a 70%);transition:opacity .6s ease,visibility .6s}
+#splash img{width:96px;height:96px;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+#splash b{font-family:var(--font-serif);font-size:30px;font-weight:500;color:#f3e6c8;animation:rise .9s .15s cubic-bezier(.2,.8,.2,1) both}
+#splash span{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);animation:fade 1s .3s both}
+#splash i{width:140px;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);background-size:200% 100%;animation:shine 1.2s linear infinite}
+#splash.out{opacity:0;visibility:hidden}
+@keyframes shine{from{background-position:200% 0}to{background-position:-200% 0}}
+@media (max-width:960px){.hero-row,.hero-doc{grid-template-columns:minmax(0,1fr)}.today{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 /* Modal */
 .mback{position:fixed;inset:0;z-index:50;background:rgba(2,10,14,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:16px;animation:fade .2s ease}
 .modal{width:min(620px,100%);max-height:calc(100% - 20px);overflow-y:auto;padding:24px;background:linear-gradient(150deg,rgba(14,48,58,.94),rgba(6,26,33,.96));animation:rise .3s cubic-bezier(.2,.8,.2,1)}
@@ -330,6 +389,7 @@ table.tbl{width:100%;border-collapse:collapse;min-width:640px}
 </style>
 </head>
 <body>
+<div id="splash" aria-hidden="true"><img id="splash-img" alt=""><b>San Miguel</b><span>Centro Médico</span><i></i></div>
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="app">
   <aside class="side glass" id="side"></aside>
@@ -394,6 +454,9 @@ heart:'<path d="M12 20s-7-4.5-9-9.5C1.7 6.8 4.3 4 7.2 4c2 0 3.6 1.2 4.8 3 1.2-1.
 clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
 copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>',
 upload:'<path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>',
+doc:'<circle cx="12" cy="7" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/><path d="M12 14v5M9.5 16.5h5"/>',
+star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
 phone:'<path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/>',
 };
 const ic=(n,extra='')=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ${extra}>${IC[n]||''}</svg>`;
@@ -407,23 +470,42 @@ const ORIG_C={'WhatsApp':'#25d366','Recomendación':'#f2c879','Facebook':'#60a5f
 const CAT_G=['Renta','Nómina','Insumos médicos','Luz, agua e internet','Publicidad','Mantenimiento','Limpieza','Impuestos','Honorarios','Otros'];
 const CAT_C=['#38bdf8','#40d4e6','#f2c879','#a78bfa','#25d366','#fb923c','#94a3b8','#fb7185','#f472b6','#64748b'];
 const METODOS=['Efectivo','Tarjeta','Transferencia'];
-const CAT_S=['Consulta','Especialidad','Dental','Rehabilitación','Laboratorio','Farmacia','Estudios','Procedimiento','Otros'];
-const SVC_C={'Dental':'#60a5fa','Rehabilitación':'#fb923c','Laboratorio':'#a78bfa','Farmacia':'#34d399','Consulta':'#40d4e6','Especialidad':'#38bdf8','Estudios':'#a78bfa','Procedimiento':'#f2c879','Otros':'#94a3b8'};
-const COLS=['servicios','pacientes','citas','ventas','gastos','whatsapp'];
+const CAT_S=['Consulta','Especialidad','Paquete','Imagen','Laboratorio','Rehabilitación','Salud mental','Dental','Farmacia','Procedimiento','Otros'];
+const SVC_C={'Paquete':'#f2c879','Imagen':'#c084fc','Salud mental':'#f472b6','Dental':'#60a5fa','Rehabilitación':'#fb923c','Laboratorio':'#a78bfa','Farmacia':'#34d399','Consulta':'#40d4e6','Especialidad':'#38bdf8','Estudios':'#a78bfa','Procedimiento':'#f2c879','Otros':'#94a3b8'};
+const COLS=['servicios','medicos','pacientes','citas','ventas','gastos','whatsapp'];
 const OPS=['pacientes','citas','ventas','gastos','whatsapp'];
 const APERTURA='2026-03-02';
-/* Catálogo real publicado en Instagram @sanmiguel_cm (sin precios publicados) */
-const REAL_SVCS=[
- {id:'medicina-general',nombre:'Consulta de medicina general',categoria:'Consulta',precio:0,duracion:30,horario:'Miércoles, jueves y viernes · 5:00 pm a 9:00 pm',descripcion:'Atención médica general, con previa cita.'},
- {id:'ginecologia',nombre:'Consulta de ginecología',categoria:'Especialidad',precio:0,duracion:40,horario:'Martes y jueves · 8:00 am a 12:00 pm',descripcion:'Disponible desde el 2 de marzo de 2026.'},
- {id:'pediatria',nombre:'Pediatría y neonatología',categoria:'Especialidad',precio:0,duracion:30,horario:'Domingos 11:00 am a 5:00 pm · Lunes 8:00 am a 12:00 pm',descripcion:'Consulta con pediatra neonatóloga.'},
- {id:'nutricion',nombre:'Consulta de nutrición',categoria:'Especialidad',precio:0,duracion:45,horario:'Lunes 3:00 pm a 6:00 pm · Sábados 9:00 am a 3:00 pm',descripcion:'Nutriólogo.'},
- {id:'dental',nombre:'Atención dental',categoria:'Dental',precio:0,duracion:45,horario:'Lunes a viernes 10:00 am a 1:30 pm y 4:00 pm a 6:30 pm · Sábados 8:00 am a 2:00 pm',descripcion:''},
- {id:'terapia-fisica',nombre:'Terapia física y quirofísica (URI)',categoria:'Rehabilitación',precio:0,duracion:50,horario:'Martes · 9:00 am a 5:00 pm',descripcion:'Unidad de Rehabilitación Integral.'},
- {id:'laboratorio',nombre:'Análisis clínicos',categoria:'Laboratorio',precio:0,duracion:15,horario:'Todos los días · 7:00 am a 1:00 pm',descripcion:'Laboratorio de análisis clínicos.'},
- {id:'farmacia',nombre:'Farmacia',categoria:'Farmacia',precio:0,duracion:5,horario:'Horario de la clínica',descripcion:'Venta de medicamentos.'},
+/* Catálogo real (Instagram, Facebook y anuncios de WhatsApp de la clínica, nov 2026) */
+const REAL_MEDS=[
+ {id:'m-perez',nombre:'Dr. Jesús Orlando Pérez García',especialidad:'Ginecología y Obstetricia',horario:'Martes y jueves · 8:00 am a 12:00 pm',destacado:true,color:'#f2c879',notas:'Ultrasonido estructural y obstétrico 2D, 3D y 4D. Paquete ginecológico.'},
+ {id:'m-mendez',nombre:'Dr. Héctor Méndez Blas',especialidad:'Radiología e Imagen',horario:'Previa cita',destacado:false,color:'#a78bfa',notas:'Ultrasonidos de abdomen, renales, pélvicos, Doppler y obstétricos.'},
+ {id:'m-alaniz',nombre:'Dra. Adriana Alaniz',especialidad:'Pediatría',horario:'Domingos 11:00 am a 5:00 pm · Lunes 8:00 am a 12:00 pm',destacado:false,color:'#38bdf8',notas:'Cuidando la salud de tus peques.'},
+ {id:'m-lorenzo',nombre:'Lic. Karina Lorenzo Narváez',especialidad:'Nutrición',horario:'Lunes 3:00 a 6:00 pm · Sábados 9:00 am a 3:00 pm',destacado:false,color:'#34d399',notas:''},
+ {id:'m-casimiro',nombre:'Lic. Dianei Citlalli Casimiro Santillán',especialidad:'Terapia física',horario:'Lunes a jueves · 10:00 am a 7:00 pm',destacado:false,color:'#fb923c',notas:'Esguinces, lesiones musculares y deportivas, masaje descontracturante, parálisis facial.'},
+ {id:'m-martinez',nombre:'Luis Freddy Martínez Ángeles',especialidad:'Quirofísico',horario:'Previa cita',destacado:false,color:'#f472b6',notas:'Esguinces, lesiones musculares, masajes, parálisis facial.'},
+ {id:'m-mondragon',nombre:'Griselda Mondragón González',especialidad:'Psicoterapia y Tanatología',horario:'Previa cita',destacado:false,color:'#40d4e6',notas:'También auriculoterapia.'},
 ];
-const DEMO_PRECIOS={'medicina-general':300,'ginecologia':600,'pediatria':500,'nutricion':450,'dental':550,'terapia-fisica':400,'laboratorio':380,'farmacia':260};
+const REAL_SVCS=[
+ {id:'medicina-general',nombre:'Consulta médica general',categoria:'Consulta',precio:0,duracion:30,horario:'9:00 am a 3:00 pm y desde las 5:00 pm',medicoId:'',descripcion:'Con previa cita.'},
+ {id:'medicina-interna',nombre:'Consulta de medicina interna',categoria:'Especialidad',precio:0,duracion:40,horario:'Previa cita',medicoId:'',descripcion:'Médico internista.'},
+ {id:'ginecologia',nombre:'Consulta de ginecología y obstetricia',categoria:'Especialidad',precio:0,duracion:40,horario:'Martes y jueves · 8:00 am a 12:00 pm',medicoId:'m-perez',descripcion:'Especialidad prioritaria de la clínica.'},
+ {id:'paquete-gineco',nombre:'Paquete ginecológico',categoria:'Paquete',precio:1400,duracion:60,horario:'Martes y jueves · 8:00 am a 12:00 pm',medicoId:'m-perez',promo:true,descripcion:'Papanicolaou + colposcopía + consulta.'},
+ {id:'us-obstetrico',nombre:'Ultrasonido obstétrico y estructural 2D · 3D · 4D',categoria:'Imagen',precio:0,duracion:40,horario:'Previa cita',medicoId:'m-mendez',promo:true,descripcion:'Desarrollo del bebé en detalle, detección temprana de anomalías. Estructural de 18 a 24 semanas. Porque cada imagen importa.'},
+ {id:'ultrasonidos',nombre:'Ultrasonido general y Doppler',categoria:'Imagen',precio:0,duracion:30,horario:'Previa cita',medicoId:'m-mendez',descripcion:'Abdomen, renal y pélvico, tiroides, mama, testicular, endovaginal, tejidos blandos, Doppler carotídeo y de miembro pélvico.'},
+ {id:'pediatria',nombre:'Consulta pediátrica',categoria:'Especialidad',precio:0,duracion:30,horario:'Domingos 11:00 am a 5:00 pm · Lunes 8:00 am a 12:00 pm',medicoId:'m-alaniz',descripcion:'Pediatría y neonatología.'},
+ {id:'nutricion',nombre:'Consulta de nutrición',categoria:'Especialidad',precio:0,duracion:45,horario:'Lunes 3:00 a 6:00 pm · Sábados 9:00 am a 3:00 pm',medicoId:'m-lorenzo',descripcion:''},
+ {id:'terapia-fisica',nombre:'Terapia física',categoria:'Rehabilitación',precio:0,duracion:50,horario:'Lunes a jueves · 10:00 am a 7:00 pm',medicoId:'m-casimiro',descripcion:'Esguinces, lesiones musculares y deportivas, masaje descontracturante, parálisis facial.'},
+ {id:'quirofisico',nombre:'Quirofísico',categoria:'Rehabilitación',precio:0,duracion:45,horario:'Previa cita',medicoId:'m-martinez',descripcion:'Esguinces, lesiones musculares, masajes, parálisis facial.'},
+ {id:'psicoterapia',nombre:'Psicoterapia y tanatología',categoria:'Salud mental',precio:0,duracion:50,horario:'Previa cita',medicoId:'m-mondragon',descripcion:''},
+ {id:'auriculoterapia',nombre:'Auriculoterapia',categoria:'Salud mental',precio:0,duracion:30,horario:'Previa cita',medicoId:'m-mondragon',descripcion:''},
+ {id:'dental',nombre:'Consulta dental',categoria:'Dental',precio:0,duracion:45,horario:'L a V 10:00 am a 1:30 pm y 4:00 a 6:30 pm · Sáb 8:00 am a 2:00 pm',medicoId:'',descripcion:'Horario por confirmar.'},
+ {id:'laboratorio',nombre:'Análisis clínicos',categoria:'Laboratorio',precio:0,duracion:15,horario:'Lunes a sábado · 7:00 am a 2:00 pm',medicoId:'',descripcion:'Biometría hemática, química sanguínea, estudios ginecológicos, hormonales y EGO.'},
+ {id:'grupo-sanguineo',nombre:'Grupo sanguíneo y factor Rh',categoria:'Laboratorio',precio:100,duracion:10,horario:'Lunes a sábado · 7:00 am a 2:00 pm',medicoId:'',promo:true,descripcion:'Precio especial. No requiere ayuno.'},
+ {id:'farmacia',nombre:'Farmacia',categoria:'Farmacia',precio:0,duracion:5,horario:'Todos los días · 7:00 am a 9:00 pm',medicoId:'',descripcion:'Genérico, patente, material de curación y cuidado personal.'},
+ {id:'cardiologia',nombre:'Cardiología',categoria:'Especialidad',precio:0,duracion:40,horario:'Por confirmar',medicoId:'',porConfirmar:true,descripcion:'Aparece en anuncios; falta confirmar si sigue.'},
+ {id:'traumatologia',nombre:'Traumatología',categoria:'Especialidad',precio:0,duracion:40,horario:'Por confirmar',medicoId:'',porConfirmar:true,descripcion:'Aparece en anuncios; falta confirmar si sigue.'},
+];
+const DEMO_PRECIOS={'medicina-general':300,'medicina-interna':500,'ginecologia':600,'paquete-gineco':1400,'us-obstetrico':950,'ultrasonidos':750,'pediatria':500,'nutricion':450,'terapia-fisica':400,'quirofisico':400,'psicoterapia':500,'auriculoterapia':300,'dental':550,'laboratorio':380,'grupo-sanguineo':100,'farmacia':260,'cardiologia':700,'traumatologia':650};
 
 /* ================= Datos de ejemplo ================= */
 function genDemo(){
@@ -431,12 +513,12 @@ function genDemo(){
   const pick=a=>a[Math.floor(R()*a.length)];
   const wpick=(items,w)=>{let t=R()*w.reduce((a,b)=>a+b,0);for(let i=0;i<items.length;i++){t-=w[i];if(t<=0)return items[i]}return items[0]};
   const servicios=REAL_SVCS.map(x=>({...x,precio:DEMO_PRECIOS[x.id]||300}));
-  const sw=[30,12,10,7,12,7,16,10];
+  const sw=[26,3,9,4,5,5,9,5,7,4,3,2,9,14,4,10,0,0];const medicos=REAL_MEDS.map(x=>({...x}));
   const N1=['María','José','Guadalupe','Juan','Ana','Luis','Fernanda','Carlos','Sofía','Miguel','Valeria','Jorge','Daniela','Alejandro','Camila','Ricardo','Paola','Eduardo','Andrea','Fernando','Lucía','Roberto','Gabriela','Héctor','Mariana','Diego','Ximena','Arturo','Regina','Óscar','Patricia','Raúl','Verónica','Sergio','Claudia','Iván','Natalia','Emilio','Rosa','Javier'];
   const N2=['Hernández','García','Martínez','López','González','Pérez','Rodríguez','Sánchez','Ramírez','Cruz','Flores','Gómez','Morales','Vázquez','Reyes','Jiménez','Torres','Díaz','Gutiérrez','Ruiz','Mendoza','Aguilar','Ortiz','Castillo','Romero','Álvarez','Chávez','Rivera','Juárez','Ramos'];
   const pacientes=[];const used=new Set();
   for(let i=0;i<190;i++){let n;do{n=pick(N1)+' '+pick(N2)+' '+pick(N2)}while(used.has(n));used.add(n);
-    pacientes.push({id:'p'+i,nombre:n,telefono:(R()<.7?'712 ':'588 ')+(100+Math.floor(R()*900))+' '+(1000+Math.floor(R()*9000)),email:'',origen:wpick(ORIGENES,[50,20,12,8,4,6]),nacimiento:'',notas:'',creado:ymd(addDays(today(),-Math.floor(R()*Math.max(1,dayDiff(parse(APERTURA),today())))))});}
+    pacientes.push({id:'p'+i,nombre:n,telefono:(R()<.75?'712 ':'761 ')+(100+Math.floor(R()*900))+' '+(1000+Math.floor(R()*9000)),email:'',origen:wpick(ORIGENES,[50,20,12,8,4,6]),nacimiento:'',notas:'',creado:ymd(addDays(today(),-Math.floor(R()*Math.max(1,dayDiff(parse(APERTURA),today())))))});}
   const t=today();const whatsapp=[],citas=[],ventas=[],gastos=[];const K0=-Math.max(0,dayDiff(parse(APERTURA),t));
   for(let k=K0;k<=0;k++){const d=addDays(t,k);const dw=d.getDay();const f=[.45,1.25,1.15,1.1,1.05,1,.75][dw];
     const conv=Math.round((5+(k-K0)*0.035)*f+R()*4);const ag=Math.round(conv*(.3+R()*.16));
@@ -462,14 +544,14 @@ function genDemo(){
     if(R()<.6)add(22,pick(['Mantenimiento de aire acondicionado','Mantenimiento de equipo de laboratorio','Reparación de plomería']),'Mantenimiento',1200+R()*2600,'Efectivo');
     add(25,'Honorarios contador','Honorarios',1800);
   }
-  return {servicios,pacientes,citas,ventas,gastos,whatsapp};
+  return {servicios,medicos,pacientes,citas,ventas,gastos,whatsapp};
 }
 
 /* ================= Estado ================= */
-const DEFAULT_CFG={direccion:'Calle Vicente Guerrero S/N, a un lado de la plaza gastronómica, Chapa de Mota, Edo. de México, C.P. 54350',telefono:'588 993 1761',whatsapp:'712 434 2542',instagram:'@sanmiguel_cm',apertura:APERTURA,clinica:'San Miguel Centro Médico',socioNombre:'Socio',miNombre:'Yo',socioPct:70,moneda:'MXN',logo:'',iniciado:false,pagados:{}};
+const DEFAULT_CFG={direccion:'Atrás de la iglesia, a un lado del Centro de Salud. Chapa de Mota, Estado de México, C.P. 54350',telefono:'712 434 2542',lema:'Todo lo que tu salud necesita, en un mismo lugar',frase:'Tu salud, nuestra prioridad',correo:'hola@centromedicosm.com.mx',web:'sanmiguelcentromedico.vercel.app',metaMensual:110000,catalogo2:false,whatsapp:'712 434 2542',instagram:'@sanmiguel_cm',apertura:APERTURA,clinica:'San Miguel Centro Médico',socioNombre:'Socio',miNombre:'Yo',socioPct:70,moneda:'MXN',logo:'',iniciado:false,pagados:{}};
 const S={mode:'demo',view:'resumen',period:'mes',cfg:{...DEFAULT_CFG},agenda:null,selDay:TODAY,q:'',origen:'Todos',limit:40,db:null,dbState:'connecting',ready:{},pickedDemo:false,canWrite:true};
 let DEMO=genDemo();
-const LIVE={servicios:[],pacientes:[],citas:[],ventas:[],gastos:[],whatsapp:[]};
+const LIVE={medicos:[],servicios:[],pacientes:[],citas:[],ventas:[],gastos:[],whatsapp:[]};
 const D=()=>S.mode==='demo'?DEMO:LIVE;
 const pct1=()=>Math.min(100,Math.max(0,+S.cfg.socioPct||0))/100;
 S.agenda=new Date(today().getFullYear(),today().getMonth(),1);
@@ -477,6 +559,14 @@ S.agenda=new Date(today().getFullYear(),today().getMonth(),1);
 const byId=(col,id)=>D()[col].find(x=>x.id===id);
 const pName=id=>byId('pacientes',id)?.nombre||'Paciente';
 const sName=id=>byId('servicios',id)?.nombre||'Servicio';
+const medOfSvc=id=>byId('servicios',id)?.medicoId||'';
+const mObj=id=>D().medicos.find(m=>m.id===id);
+const mono=(m,cls='',sz=0)=>`<div class="mono ${cls}" style="--c:${m?.color||'#40d4e6'}${sz?`;width:${sz}px;height:${sz}px;font-size:${Math.round(sz*.4)}px`:''}">${esc(initials((m?.nombre||'?').replace(/^(Dra?\.|Lic\.)\s*/,'')))}</div>`;
+function medStats(r){const d=D();const out={};const blank=()=>({citas:0,aten:0,noas:0,pac:new Set(),ing:0,n:0});
+  d.medicos.forEach(m=>out[m.id]=blank());out['']=blank();
+  d.citas.forEach(c=>{if(!inR(c.fecha,r)||c.estado==='Cancelada')return;const k=medOfSvc(c.servicioId);const o=out[k]||(out[k]=blank());o.citas++;if(c.estado==='Atendida'){o.aten++;o.pac.add(c.pacienteId)}if(c.estado==='No asistió')o.noas++});
+  d.ventas.forEach(v=>{if(!inR(v.fecha,r))return;const k=medOfSvc(v.servicioId);const o=out[k]||(out[k]=blank());o.ing+=+v.monto||0;o.n++});
+  return out}
 
 /* ================= Periodos ================= */
 const PERIODS=[['mes','Este mes'],['mesAnt','Mes anterior'],['30d','30 días'],['90d','90 días'],['anio','Este año']];
@@ -504,6 +594,7 @@ function series(arr,bk,f,df='fecha'){return bk.map(b=>sum(arr.filter(x=>x[df]>=b
 let CHARTS={};let chartN=0;
 function niceMax(v){if(v<=0)return 1;const e=Math.pow(10,Math.floor(Math.log10(v)));const f=v/e;return (f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*e}
 function lineChart({labels,full,series:ss,h=260,fmt=compact,tipFmt=money,type='area'}){
+  if(!ss.some(x=>x.values.some(v=>v)))return `<div class="empty" style="padding:${Math.round(h/4)}px 10px"><b>Sin movimientos en este periodo</b>La gráfica aparece en cuanto registres datos.</div>`;
   const id='ch'+(chartN++);const W=760,H=h,pl=46,pr=12,pt=14,pb=28;
   const max=niceMax(Math.max(1,...ss.flatMap(s=>s.values)));const n=labels.length;
   const x=i=>pl+(n<=1?(W-pl-pr)/2:i*(W-pl-pr)/(n-1));const y=v=>pt+(H-pt-pb)*(1-v/max);
@@ -553,14 +644,15 @@ function split(ut){const p=pct1();const base=Math.max(0,ut);return{socio:base*p,
 
 /* ================= Vistas ================= */
 const VIEWS={
-resumen:{t:'Resumen',s:()=>'Así va la clínica · '+periodLabel(S.period),ic:'home'},
+resumen:{t:'Resumen',s:()=>'Tablero de dirección · '+periodLabel(S.period),ic:'home'},
 whatsapp:{t:'WhatsApp',s:()=>'Conversaciones que llegan y cuántas se convierten en cita',ic:'wa'},
 agenda:{t:'Agenda',s:()=>'Calendario de citas y días con más demanda',ic:'cal'},
 pacientes:{t:'Pacientes',s:()=>'Expediente comercial de cada paciente',ic:'users'},
 ventas:{t:'Ventas',s:()=>'Cobros registrados · '+periodLabel(S.period),ic:'cash'},
 gastos:{t:'Gastos',s:()=>'Egresos de la clínica · '+periodLabel(S.period),ic:'receipt'},
 utilidades:{t:'Utilidades y reparto',s:()=>'Ingresos − gastos, y lo que corresponde a cada socio',ic:'pie'},
-servicios:{t:'Servicios',s:()=>'Catálogo, precios y desempeño',ic:'steth'},
+equipo:{t:'Equipo médico',s:()=>'Especialistas, agenda y desempeño · '+periodLabel(S.period),ic:'doc'},
+servicios:{t:'Servicios',s:()=>'Catálogo, promociones y desempeño',ic:'steth'},
 ajustes:{t:'Ajustes',s:()=>'Clínica, socios, logo y datos',ic:'gear'},
 };
 
@@ -578,7 +670,25 @@ function vResumen(){const d=D();const r=range(S.period),pr=prevRange(S.period),c
   const cats=CAT_G.map((c,i)=>({k:c,v:sum(F.g.filter(x=>x.categoria===c),'monto'),c:CAT_C[i]})).filter(x=>x.v>0).sort((a,b)=>b.v-a.v).slice(0,6);
   const nuevos=d.pacientes.filter(x=>x.creado&&inR(x.creado,r));const ori=ORIGENES.map(o=>({k:o,v:nuevos.filter(x=>x.origen===o).length,c:ORIG_C[o]})).filter(x=>x.v).sort((a,b)=>b.v-a.v);
   const fstep=(l,v,max,c,extra='')=>`<div class="fstep" style="--c:${c}"><div class="fill" style="width:${max?Math.max(4,v/max*100):4}%"></div><span>${l}</span><b>${intf(v)}${extra?`<small>${extra}</small>`:''}</b></div>`;
+  const t0=today();const mA=new Date(t0.getFullYear(),t0.getMonth(),1),mB=new Date(t0.getFullYear(),t0.getMonth()+1,0);const FM=fin({a:mA,b:mB});
+  const meta=+S.cfg.metaMensual||0;const dim=mB.getDate(),dd=t0.getDate();const proy=FM.ing/dd*dim;const avance=meta?FM.ing/meta:0;
+  const hoyC=d.citas.filter(c=>c.fecha===TODAY&&c.estado!=='Cancelada');const hoyIng=sum(d.ventas.filter(v=>v.fecha===TODAY),'monto');const hoyWa=d.whatsapp.find(x=>x.fecha===TODAY);
+  const ahora=new Date();const hm=pad(ahora.getHours())+':'+pad(ahora.getMinutes());
+  const nx=d.citas.filter(c=>(c.fecha>TODAY||(c.fecha===TODAY&&c.hora>=hm))&&(c.estado==='Agendada'||c.estado==='Confirmada')).sort((a,b)=>(a.fecha+a.hora).localeCompare(b.fecha+b.hora))[0];
+  const nxm=nx&&mObj(medOfSvc(nx.servicioId));
+  const RC=2*Math.PI*62;const prog=Math.min(1,avance);
+  const ms=medStats(r);const rk=d.medicos.map(m=>({m,...ms[m.id]})).sort((a,b)=>b.ing-a.ing).slice(0,5);const rkMax=Math.max(1,...rk.map(x=>x.ing));
   return `
+  <div class="hero-row">
+    <div class="glass card rv" style="--i:0"><div style="display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap"><div style="flex:1;min-width:240px"><div class="eyebrow">${esc(S.cfg.clinica)} · Chapa de Mota</div><p class="lema">${esc(S.cfg.lema||'')}</p></div><div class="clock" id="clock">${esc(clockText())}</div></div>
+      <div class="today"><div class="t"><small>Citas hoy</small><b class="num">${hoyC.length}</b></div><div class="t"><small>Atendidas hoy</small><b class="num">${hoyC.filter(c=>c.estado==='Atendida').length}</b></div><div class="t"><small>Cobrado hoy</small><b class="num">${money(hoyIng)}</b></div><div class="t"><small>WhatsApp hoy</small><b class="num">${hoyWa?intf(hoyWa.conversaciones):'—'}</b></div></div>
+      ${nx?`<div class="nextc">${mono(nxm||{nombre:sName(nx.servicioId),color:'#40d4e6'})}<div style="flex:1;min-width:0"><div class="eyebrow">Próxima cita · ${nx.fecha===TODAY?'hoy':DOWL[parse(nx.fecha).getDay()]+' '+parse(nx.fecha).getDate()} a las ${esc(nx.hora)}</div><b style="display:block;margin-top:2px">${esc(pName(nx.pacienteId))}</b><small class="muted">${esc(sName(nx.servicioId))}${nxm?' · '+esc(nxm.nombre):''}</small></div>${pill(nx.estado)}</div>`:''}
+    </div>
+    <div class="glass card rv featured" style="--i:1">${cardH('Meta de ingresos',MESL[t0.getMonth()],`<button class="btn icon ghost" data-act="edit-meta" aria-label="Cambiar meta">${ic('edit')}</button>`)}
+      <div class="goal"><div class="ring"><svg viewBox="0 0 150 150"><circle cx="75" cy="75" r="62" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="12"/><circle class="arc" style="--c:${RC}" cx="75" cy="75" r="62" fill="none" stroke="url(#gg)" stroke-width="12" stroke-linecap="round" stroke-dasharray="${(prog*RC).toFixed(1)} ${RC}"/><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dfae"/><stop offset="1" stop-color="#c99a4a"/></linearGradient></defs></svg><div class="ctr"><b class="num">${Math.round(avance*100)}%</b><small>de la meta</small></div></div>
+      <dl><div><dt>Meta del mes</dt><dd class="num">${meta?money(meta):'Sin meta'}</dd></div><div><dt>Llevamos</dt><dd class="num">${money(FM.ing)}</dd></div><div><dt>Cierre proyectado</dt><dd class="num" style="color:${!meta||proy>=meta?'var(--good)':'var(--warn)'}">${money(proy)}</dd></div></dl></div>
+      <div class="muted" style="font-size:12px;margin-top:12px">${meta?(proy>=meta?'Al ritmo actual, el mes supera la meta.':'Faltan '+money(Math.max(0,meta-FM.ing))+' · se necesitan '+money(Math.max(0,meta-FM.ing)/Math.max(1,dim-dd+1))+' diarios.'):'Define una meta para ver el avance.'}</div></div>
+  </div>
   <div class="grid kpis">
     ${kpi({l:'Ingresos',v:F.ing,p:P.ing,i:'cash',c:'#40d4e6',sp:sI,idx:0})}
     ${kpi({l:'Gastos',v:F.gas,p:P.gas,i:'receipt',c:'#fb7185',sp:sG,inv:true,idx:1})}
@@ -606,7 +716,9 @@ function vResumen(){const d=D();const r=range(S.period),pr=prevRange(S.period),c
   <div class="grid g-2" style="margin-top:18px">
     <div class="glass card rv" style="--i:11">${cardH('Gastos por categoría','',`<a class="btn sm ghost" href="#gastos">Ver</a>`)}${barsList(cats)}</div>
     <div class="glass card rv" style="--i:12">${cardH('Pacientes nuevos por origen',intf(nuevos.length)+' en el periodo')}${barsList(ori,intf)}</div>
-  </div>`}
+  </div>
+  <div class="glass card rv" style="--i:13;margin-top:18px">${cardH('Equipo médico','Ingresos generados en el periodo',`<a class="btn sm ghost" href="#equipo">Ver equipo</a>`)}
+    <div class="rank">${rk.map(x=>`<div class="r">${mono(x.m)}<div class="grow"><b>${esc(x.m.nombre)}${x.m.destacado?' <span class="gold">★</span>':''}</b><small>${esc(x.m.especialidad)} · ${x.citas} citas</small><div class="track" style="height:6px;border-radius:6px;background:rgba(255,255,255,.06);margin-top:6px;overflow:hidden"><div class="bar-fill" style="width:${(x.ing/rkMax*100).toFixed(1)}%;--c:${x.m.color}"></div></div></div><b class="num">${money(x.ing)}</b></div>`).join('')||'<div class="empty">Agrega a tu equipo médico en la sección Equipo médico.</div>'}</div></div>`}
 
 function vWhatsapp(){const d=D();const r=range(S.period),pr=prevRange(S.period),cr=capR(r);const bk=buckets(cr);
   const wa=d.whatsapp.filter(x=>inR(x.fecha,r)),wp=d.whatsapp.filter(x=>inR(x.fecha,pr));
@@ -757,15 +869,61 @@ function vUtilidades(){const d=D();const r=range(S.period),pr=prevRange(S.period
     ${[...months].reverse().map(m=>{const paid=S.cfg.pagados?.[m.key];const cur=m.key===TODAY.slice(0,7);return `<tr><td style="text-transform:capitalize;white-space:nowrap"><b>${m.label}</b>${cur?' <span class="tag">en curso</span>':''}</td><td class="n">${money(m.ing)}</td><td class="n">${money(m.gas)}</td><td class="n" style="color:${m.ut<0?'var(--bad)':'inherit'}"><b>${money(m.ut)}</b></td><td class="n muted">${m.ing?pct(m.ut/m.ing,0):'—'}</td><td class="n">${money(m.socio)}</td><td class="n">${money(m.yo)}</td>
     <td>${m.ing||m.gas?`<button class="pill paid" style="--c:${paid?'#34d399':'#fbbf24'}" data-act="paid" data-k="${m.key}" title="Cambiar estado">${paid?'Pagado':'Pendiente'}</button>`:'<span class="muted">—</span>'}</td></tr>`}).join('')}</tbody></table></div></div>`}
 
+function clockText(){const n=new Date();const t=n.toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'});return DOWL[n.getDay()][0].toUpperCase()+DOWL[n.getDay()].slice(1)+' '+n.getDate()+' de '+MESL[n.getMonth()]+' · '+t}
+function vEquipo(){const d=D();const r=range(S.period),pr=prevRange(S.period),cr=capR(r);const bk=buckets(cr);
+  const ms=medStats(r),mp=medStats(pr);const tot=Math.max(1,sum(Object.values(ms),'ing'));
+  const meds=[...d.medicos].sort((a,b)=>(b.destacado?1:0)-(a.destacado?1:0)||(ms[b.id]?.ing||0)-(ms[a.id]?.ing||0));
+  const svcOf=id=>d.servicios.filter(s=>s.medicoId===id);
+  const feat=meds.find(m=>m.destacado);const rest=meds.filter(m=>m!==feat);
+  const sinMed=d.servicios.filter(s=>!s.medicoId);
+  const spk=id=>bk.map(b=>sum(d.ventas.filter(v=>v.fecha>=b.a&&v.fecha<=b.b&&medOfSvc(v.servicioId)===id),'monto'));
+  const st=id=>ms[id]||{citas:0,aten:0,noas:0,pac:new Set(),ing:0,n:0};
+  const asis=x=>(x.aten+x.noas)?pct(x.aten/(x.aten+x.noas),0):'—';
+  const card=(m,i)=>{const x=st(m.id);return `<div class="glass card lift rv" style="--i:${i+2}">
+    <div class="doc-h">${mono(m)}<div style="flex:1;min-width:0"><h3>${esc(m.nombre)}</h3><small>${esc(m.especialidad)}</small></div><div style="display:flex;flex-direction:column;gap:2px"><button class="btn icon ghost" data-act="edit-med" data-id="${m.id}" aria-label="Editar">${ic('edit')}</button><button class="btn icon ghost danger" data-act="del" data-col="medicos" data-id="${m.id}" aria-label="Eliminar">${ic('trash')}</button></div></div>
+    <div class="muted" style="font-size:12.5px;margin-top:12px;display:flex;gap:6px">${ic('clock','style="width:14px;height:14px;flex:none;margin-top:3px"')}<span>${esc(m.horario||'Sin horario')}</span></div>
+    <div class="chips">${svcOf(m.id).map(s=>`<span class="tag">${esc(s.nombre)}</span>`).join('')||'<span class="tag">Sin servicios asignados</span>'}</div>
+    <div class="doc-stats"><div><small>Citas</small><b>${x.citas}</b></div><div><small>Asistencia</small><b>${asis(x)}</b></div><div><small>Ingresos</small><b>${money(x.ing)}</b></div></div>
+    <div class="track" style="height:6px;border-radius:6px;background:rgba(255,255,255,.06);margin-top:12px;overflow:hidden" title="Participación en ingresos"><div class="bar-fill" style="width:${(x.ing/tot*100).toFixed(1)}%;--c:${m.color||'#40d4e6'}"></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px"><small class="muted">${pct(x.ing/tot,0)} de los ingresos del equipo</small><button class="btn sm" data-act="cita-med" data-id="${m.id}">${ic('cal')}Agendar</button></div></div>`};
+  let html='';
+  if(feat){const x=st(feat.id),xp=mp[feat.id]||{ing:0};html+=`<div class="glass card rv featured" style="--i:0;padding:26px"><div class="hero-doc">
+    <div><div class="eyebrow">${ic('star','style="width:12px;height:12px;vertical-align:-1px"')} Especialista destacado</div>
+      <div class="doc-h" style="margin-top:14px">${mono(feat,'lg')}<div><h3 style="font-size:26px">${esc(feat.nombre)}</h3><small style="font-size:13.5px">${esc(feat.especialidad)}</small></div></div>
+      <p class="muted" style="margin:14px 0 0;max-width:52ch">${esc(feat.notas||'')}</p>
+      <div class="chips">${svcOf(feat.id).map(s=>`<span class="pill" style="--c:#f2c879">${esc(s.nombre)}${+s.precio&&!isEst(s)?' · '+money(s.precio):''}</span>`).join('')}</div>
+      <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap"><button class="btn pri" data-act="cita-med" data-id="${feat.id}">${ic('cal')}Agendar con ${esc((w=>w.length>=4?w[0]+' '+w[w.length-2]:feat.nombre)(feat.nombre.split(' ')))}</button><button class="btn" data-act="edit-med" data-id="${feat.id}">${ic('edit')}Editar</button></div></div>
+    <div><div class="eyebrow" style="color:var(--muted)">Desempeño · ${periodLabel(S.period)}</div><div class="big num" style="font-size:42px;margin-top:6px">${money(x.ing)}</div><div style="display:flex;gap:8px;align-items:center;margin-top:6px">${delta(x.ing,xp.ing)}<span class="vs">vs. periodo anterior</span></div>
+      <div class="doc-stats" style="grid-template-columns:repeat(4,1fr)"><div><small>Citas</small><b>${x.citas}</b></div><div><small>Pacientes</small><b>${x.pac.size}</b></div><div><small>Asistencia</small><b>${asis(x)}</b></div><div><small>Del total</small><b>${pct(x.ing/tot,0)}</b></div></div>
+      <div style="margin-top:14px">${lineChart({labels:bk.map(b=>b.short),full:bk.map(b=>b.label),h:170,series:[{name:'Ingresos',color:'#f2c879',values:spk(feat.id)}]})}</div></div>
+  </div></div>`}
+  html+=`<div class="sec-h"><h2>Especialistas</h2><span>${d.medicos.length} en el equipo</span><button class="btn sm pri" data-act="new-med">${ic('plus')}Agregar especialista</button></div>`;
+  html+=rest.length||!feat?`<div class="doc-grid">${rest.map(card).join('')}</div>`:'';
+  if(!d.medicos.length)html+=`<div class="glass card"><div class="empty"><b>Aún no hay especialistas</b>Agrega a los médicos y terapeutas que atienden en la clínica.</div></div>`;
+  const rows=[...d.medicos].map(m=>({m,x:st(m.id),p:mp[m.id]||{ing:0}})).sort((a,b)=>b.x.ing-a.x.ing);const g=st('');
+  html+=`<div class="sec-h"><h2>Comparativo</h2><span>Quién genera los ingresos de la clínica</span></div>
+  <div class="glass card rv" style="--i:20"><div class="tw"><table class="tbl"><thead><tr><th>#</th><th>Especialista</th><th class="n">Citas</th><th class="n">Pacientes</th><th class="n">Asistencia</th><th class="n">Ingresos</th><th class="n">Participación</th><th class="n">Tendencia</th></tr></thead><tbody>
+  ${rows.map((o,i)=>`<tr><td class="muted">${i+1}</td><td><div class="who">${mono(o.m,'',32)}<div style="min-width:0"><b>${esc(o.m.nombre)}</b><small>${esc(o.m.especialidad)}</small></div></div></td><td class="n">${o.x.citas}</td><td class="n">${o.x.pac.size}</td><td class="n">${asis(o.x)}</td><td class="n"><b>${money(o.x.ing)}</b></td><td class="n">${pct(o.x.ing/tot,0)}</td><td class="n">${delta(o.x.ing,o.p.ing)}</td></tr>`).join('')}
+  <tr><td></td><td><div class="who"><div class="mono" style="width:32px;height:32px;font-size:13px;--c:#64748b">+</div><div><b>Servicios de la clínica</b><small>Consulta general, laboratorio, farmacia, dental</small></div></div></td><td class="n">${g.citas}</td><td class="n">${g.pac.size}</td><td class="n">${asis(g)}</td><td class="n"><b>${money(g.ing)}</b></td><td class="n">${pct(g.ing/tot,0)}</td><td class="n"></td></tr></tbody></table></div></div>`;
+  if(sinMed.length)html+=`<div class="sec-h"><h2>Por asignar</h2><span>Servicios sin especialista con nombre</span></div><div class="glass card rv" style="--i:21"><div class="chips" style="margin-top:0">${sinMed.map(s=>`<button class="tag" style="cursor:pointer;border:0" data-act="edit-svc" data-id="${s.id}">${esc(s.nombre)}${s.porConfirmar?' · por confirmar':''}</button>`).join('')}</div><p class="muted" style="margin:12px 0 0;font-size:12.5px">Pendiente: nombre del médico general, del internista y del odontólogo; confirmar cardiología y traumatología.</p></div>`;
+  return html}
+const isEst=s=>{if(S.mode!=='demo')return false;const r=REAL_SVCS.find(x=>x.id===s.id);return !!r&&!+r.precio};
 function vServicios(){const d=D();const r=range(S.period);const F=fin(r);
   const st={};F.v.forEach(v=>{const s=st[v.servicioId]=st[v.servicioId]||{n:0,t:0};s.n++;s.t+=+v.monto||0});
-  const list=[...d.servicios].sort((a,b)=>(st[b.id]?.t||0)-(st[a.id]?.t||0));
-  return `<div class="card-h" style="margin-bottom:18px"><span class="hint">${list.length} servicios · desempeño de ${periodLabel(S.period)}</span><span class="sp"></span><button class="btn sm pri" data-act="new-svc">${ic('plus')}Nuevo servicio</button></div>
-  ${list.length?`<div class="svc-grid">${list.map((s,i)=>{const c=SVC_C[s.categoria]||'#94a3b8';const x=st[s.id]||{n:0,t:0};return `<div class="glass card lift svc rv" style="--i:${i};--c:${c}">
-    <div style="display:flex;align-items:flex-start;gap:10px"><div class="ic">${ic(s.categoria==='Estudios'?'pie':s.categoria==='Procedimiento'?'heart':'steth')}</div><span class="sp" style="flex:1"></span><button class="btn icon ghost" data-act="edit-svc" data-id="${s.id}" aria-label="Editar">${ic('edit')}</button><button class="btn icon ghost danger" data-act="del" data-col="servicios" data-id="${s.id}" aria-label="Eliminar">${ic('trash')}</button></div>
-    <h3 style="font-size:16px">${esc(s.nombre)}</h3><div class="meta"><span class="pill" style="--c:${c}">${esc(s.categoria)}</span><span class="tag">${ic('clock','style="width:12px;height:12px;vertical-align:-2px"')} ${s.duracion||30} min</span></div>
-    <div class="price num">${+s.precio?money(s.precio):'<span style="font-size:15px;color:var(--warn)">Precio por definir</span>'}</div>${s.horario?`<div class="muted" style="font-size:12.5px;margin-top:6px;display:flex;gap:6px">${ic('clock','style="width:14px;height:14px;flex:none;margin-top:3px"')}<span>${esc(s.horario)}</span></div>`:''}
-    <div class="stats" style="margin-top:14px"><div><small>Vendidos</small><b class="num">${intf(x.n)}</b></div><div><small>Ingresos</small><b class="num">${money(x.t)}</b></div></div></div>`}).join('')}</div>`
+  const promos=d.servicios.filter(s=>s.promo);
+  const cats=[...new Set([...CAT_S,...d.servicios.map(s=>s.categoria)])].filter(c=>d.servicios.some(s=>s.categoria===c));
+  const sinPrecio=d.servicios.filter(s=>(!+s.precio||isEst(s))&&!s.porConfirmar).length;
+  const card=(s,i)=>{const c=SVC_C[s.categoria]||'#94a3b8';const x=st[s.id]||{n:0,t:0};const m=mObj(s.medicoId);return `<div class="glass card lift svc rv" style="--i:${i};--c:${c}">
+    <div style="display:flex;align-items:flex-start;gap:10px"><div class="ic">${ic(s.categoria==='Imagen'||s.categoria==='Laboratorio'?'pie':s.categoria==='Rehabilitación'||s.categoria==='Salud mental'?'heart':s.categoria==='Paquete'?'star':'steth')}</div><span class="sp" style="flex:1"></span>${s.porConfirmar?'<span class="conf">Por confirmar</span>':''}<button class="btn icon ghost" data-act="edit-svc" data-id="${s.id}" aria-label="Editar">${ic('edit')}</button><button class="btn icon ghost danger" data-act="del" data-col="servicios" data-id="${s.id}" aria-label="Eliminar">${ic('trash')}</button></div>
+    <h3 style="font-size:16px">${esc(s.nombre)}</h3><div class="meta"><span class="pill" style="--c:${c}">${esc(s.categoria)}</span><span class="tag">${s.duracion||30} min</span></div>
+    ${m?`<div style="display:flex;align-items:center;gap:8px;margin:-4px 0 12px">${mono(m,'',26)}<small style="font-weight:600">${esc(m.nombre)}</small></div>`:''}
+    <div class="price num">${+s.precio?money(s.precio)+(isEst(s)?' <span class="tag" style="font-size:11px;vertical-align:middle;font-family:var(--font-body)">estimado</span>':''):'<span style="font-size:15px;color:var(--warn)">Precio por definir</span>'}</div>${s.horario?`<div class="muted" style="font-size:12.5px;margin-top:6px;display:flex;gap:6px">${ic('clock','style="width:14px;height:14px;flex:none;margin-top:3px"')}<span>${esc(s.horario)}</span></div>`:''}
+    ${s.descripcion?`<p class="muted" style="font-size:12.5px;margin:8px 0 0">${esc(s.descripcion)}</p>`:''}
+    <div class="stats" style="margin-top:14px"><div><small>Vendidos</small><b class="num">${intf(x.n)}</b></div><div><small>Ingresos</small><b class="num">${money(x.t)}</b></div></div></div>`};
+  let i=0;
+  return `<div class="card-h" style="margin-bottom:6px"><span class="hint">${d.servicios.length} servicios · ${sinPrecio} sin precio definido · desempeño de ${periodLabel(S.period)}</span><span class="sp"></span><button class="btn sm pri" data-act="new-svc">${ic('plus')}Nuevo servicio</button></div>
+  ${promos.length?`<div class="sec-h"><h2>Promociones vigentes</h2><span>Lo que se anuncia hoy</span></div><div class="promo-row">${promos.map(p=>{const m=mObj(p.medicoId);return `<div class="glass card lift promo rv" style="--i:${i++}"><div class="eyebrow">${ic('star','style="width:12px;height:12px;vertical-align:-1px"')} ${esc(p.categoria)}</div><h3 style="font-size:17px;margin-top:8px">${esc(p.nombre)}</h3><div class="pp num">${+p.precio&&!isEst(p)?money(p.precio):'Pregúntanos'}</div><p class="muted" style="font-size:12.5px;margin:8px 0 0">${esc(p.descripcion||'')}</p>${m?`<small style="display:block;margin-top:10px;color:#f6dfae">${esc(m.nombre)}</small>`:''}</div>`}).join('')}</div>`:''}
+  ${cats.length?cats.map(c=>`<div class="sec-h"><h2>${esc(c)}</h2><span>${d.servicios.filter(s=>s.categoria===c).length}</span></div><div class="svc-grid">${d.servicios.filter(s=>s.categoria===c).sort((a,b)=>(st[b.id]?.t||0)-(st[a.id]?.t||0)).map(s=>card(s,i++)).join('')}</div>`).join('')
   :`<div class="glass card"><div class="empty"><b>Tu catálogo está vacío</b>Agrega consultas, estudios y procedimientos con su precio.</div></div>`}`}
 
 function vAjustes(){const c=S.cfg;const p=Math.round(pct1()*100);
@@ -776,6 +934,10 @@ function vAjustes(){const c=S.cfg;const p=Math.round(pct1()*100);
       <label class="fld span2"><span>Dirección</span><input id="c_dir" value="${esc(c.direccion||'')}"></label>
       <label class="fld"><span>WhatsApp</span><input id="c_wa" value="${esc(c.whatsapp||'')}"></label>
       <label class="fld"><span>Teléfono</span><input id="c_tel" value="${esc(c.telefono||'')}"></label>
+      <label class="fld span2"><span>Lema</span><input id="c_lema" value="${esc(c.lema||'')}"></label>
+      <label class="fld"><span>Correo</span><input id="c_mail" type="email" value="${esc(c.correo||'')}"></label>
+      <label class="fld"><span>Sitio web</span><input id="c_web" value="${esc(c.web||'')}"></label>
+      <label class="fld"><span>Meta de ingresos mensual</span><input id="c_meta" type="number" min="0" step="1000" value="${esc(c.metaMensual||0)}"></label>
       <label class="fld"><span>Instagram</span><input id="c_ig" value="${esc(c.instagram||'')}"></label>
       <label class="fld"><span>Fecha de apertura</span><input id="c_ap" type="date" value="${esc(c.apertura||'')}"></label>
       <label class="fld"><span>Nombre del socio</span><input id="c_socio" value="${esc(c.socioNombre)}"></label>
@@ -793,7 +955,7 @@ function vAjustes(){const c=S.cfg;const p=Math.round(pct1()*100);
       <div style="display:flex;gap:10px;flex-wrap:wrap">${S.mode==='demo'?`<button class="btn pri" data-act="golive">Empezar con mis datos</button>`:`<button class="btn" data-act="godemo">Ver datos de ejemplo</button>`}<button class="btn" data-act="copyjson">${ic('copy')}Copiar respaldo (JSON)</button>${isLocal()?`<button class="btn" data-act="importjson">${ic('upload')}Importar respaldo</button>`:''}</div></div>
   </div></div>`}
 
-const RENDER={resumen:vResumen,whatsapp:vWhatsapp,agenda:vAgenda,pacientes:vPacientes,ventas:vVentas,gastos:vGastos,utilidades:vUtilidades,servicios:vServicios,ajustes:vAjustes};
+const RENDER={equipo:vEquipo,resumen:vResumen,whatsapp:vWhatsapp,agenda:vAgenda,pacientes:vPacientes,ventas:vVentas,gastos:vGastos,utilidades:vUtilidades,servicios:vServicios,ajustes:vAjustes};
 
 /* ================= Render ================= */
 function renderSide(){const d=D();const t=today();const a=new Date(t.getFullYear(),t.getMonth(),1),b=new Date(t.getFullYear(),t.getMonth()+1,0);const F=fin({a,b});const sp=split(F.ut);const p=pct1();
@@ -802,7 +964,7 @@ function renderSide(){const d=D();const t=today();const a=new Date(t.getFullYear
   $('#side').innerHTML=`<div class="brand"><div class="logo"><img src="${S.cfg.logo||LOGO_DEFAULT}" alt="Logo de ${esc(S.cfg.clinica)}"></div><div><b>${esc(S.cfg.clinica)}</b><small>Chapa de Mota</small></div></div>
   <nav class="nav"><div class="lbl">General</div>${item('resumen','Resumen')}${item('whatsapp','WhatsApp',waHoy?`<span class="badge">${waHoy.conversaciones}</span>`:'')}${item('agenda','Agenda',citasHoy?`<span class="badge" style="background:rgba(56,189,248,.15);color:#7dd3fc">${citasHoy} hoy</span>`:'')}${item('pacientes','Pacientes')}
   <div class="lbl">Finanzas</div>${item('ventas','Ventas')}${item('gastos','Gastos')}${item('utilidades','Utilidades')}
-  <div class="lbl">Clínica</div>${item('servicios','Servicios')}${item('ajustes','Ajustes')}</nav>
+  <div class="lbl">Clínica</div>${item('equipo','Equipo médico')}${item('servicios','Servicios')}${item('ajustes','Ajustes')}</nav>
   <div class="split-mini"><div class="t">Reparto · ${MESL[t.getMonth()]}</div><div class="bar"><div style="width:${p*100}%;background:#40d4e6"></div><div style="flex:1;background:#f2c879"></div></div>
   <div class="row"><span>${esc(S.cfg.socioNombre)} ${Math.round(p*100)}%</span><b class="num">${money(sp.socio)}</b></div><div class="row"><span>${esc(S.cfg.miNombre)} ${Math.round((1-p)*100)}%</span><b class="num">${money(sp.yo)}</b></div></div>`}
 function renderTop(){const v=VIEWS[S.view];const showP=!['agenda','ajustes'].includes(S.view);
@@ -827,7 +989,7 @@ function countUp(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)ret
   const step=now=>{const k=Math.min(1,(now-t0)/1000);const e=1-Math.pow(1-k,3);const v=target*e;el.textContent=txt.replace(m[0],dec>0?v.toLocaleString('es-MX',{minimumFractionDigits:dec,maximumFractionDigits:dec}):Math.round(v).toLocaleString('es-MX'));if(k<1)requestAnimationFrame(step);else el.textContent=txt};requestAnimationFrame(step)})}
 function bindView(){const q=$('#q');if(q)q.oninput=()=>{S.q=q.value;S.limit=40;scheduleRender()};const fo=$('#forigen');if(fo)fo.onchange=()=>{S.origen=fo.value;render()};
   const f=$('#cfgform');if(f){const r=$('#c_pct');r.oninput=()=>{$('#pctv').textContent=r.value+'% / '+(100-r.value)+'%'};
-    f.onsubmit=e=>{e.preventDefault();saveCfg({direccion:$('#c_dir').value.trim(),whatsapp:$('#c_wa').value.trim(),telefono:$('#c_tel').value.trim(),instagram:$('#c_ig').value.trim(),apertura:$('#c_ap').value,clinica:$('#c_clinica').value.trim()||DEFAULT_CFG.clinica,socioNombre:$('#c_socio').value.trim()||'Socio',miNombre:$('#c_mi').value.trim()||'Yo',socioPct:+r.value,moneda:$('#c_mon').value})}}
+    f.onsubmit=e=>{e.preventDefault();saveCfg({lema:$('#c_lema').value.trim(),correo:$('#c_mail').value.trim(),web:$('#c_web').value.trim(),metaMensual:+$('#c_meta').value||0,direccion:$('#c_dir').value.trim(),whatsapp:$('#c_wa').value.trim(),telefono:$('#c_tel').value.trim(),instagram:$('#c_ig').value.trim(),apertura:$('#c_ap').value,clinica:$('#c_clinica').value.trim()||DEFAULT_CFG.clinica,socioNombre:$('#c_socio').value.trim()||'Socio',miNombre:$('#c_mi').value.trim()||'Yo',socioPct:+r.value,moneda:$('#c_mon').value})}}
   const lf=$('#logof');if(lf)lf.onchange=()=>{const file=lf.files[0];if(!file)return;const rd=new FileReader();rd.onload=()=>{const img=new Image();img.onload=()=>{const s=Math.min(1,256/Math.max(img.width,img.height));const cv=document.createElement('canvas');cv.width=Math.round(img.width*s);cv.height=Math.round(img.height*s);cv.getContext('2d').drawImage(img,0,0,cv.width,cv.height);saveCfg({logo:cv.toDataURL('image/png')})};img.onerror=()=>toast('No se pudo leer la imagen. Prueba con PNG o JPG.',true);img.src=rd.result};rd.readAsDataURL(file)}}
 
 /* ================= Persistencia ================= */
@@ -846,12 +1008,22 @@ async function remove(col,id){const arr=D()[col];const i=arr.findIndex(x=>x.id==
 async function saveCfg(patch){S.cfg={...S.cfg,...patch};render();if(db){try{await db.doc(P('config')+'/general').set({...S.cfg});toast('Ajustes guardados')}catch(e){dbErr(e)}}else if(isLocal()){if(persistLocal())toast('Ajustes guardados')}else toast('Ajustes aplicados (sin guardar)')}
 function dbErr(e){const c=e&&e.code;if(c==='invalid_argument'){S.canWrite=false;toast('No tienes permiso para guardar cambios en esta plataforma.',true)}else if(c==='quota_exceeded')toast('Se alcanzó el límite de almacenamiento. Elimina registros antiguos.',true);else toast('No se pudo guardar. Revisa tu conexión e inténtalo de nuevo.',true)}
 
+let migrating=false;
+async function ensureCatalog(){if(S.mode!=='live'||S.cfg.catalogo2||migrating)return;migrating=true;
+  const svcs=REAL_SVCS.map(s=>{const ex=LIVE.servicios.find(x=>x.id===s.id);return {...s,precio:ex&&+ex.precio?+ex.precio:s.precio}});
+  const meds=REAL_MEDS.filter(m=>!LIVE.medicos.some(x=>x.id===m.id));
+  const cfgPatch={catalogo2:true};if(!S.cfg.lema)cfgPatch.lema=DEFAULT_CFG.lema;if(!S.cfg.correo)cfgPatch.correo=DEFAULT_CFG.correo;if(!S.cfg.web)cfgPatch.web=DEFAULT_CFG.web;if(!S.cfg.metaMensual)cfgPatch.metaMensual=DEFAULT_CFG.metaMensual;
+  if(!S.cfg.telefono||S.cfg.telefono.replace(/\s/g,'')==='5889931761')cfgPatch.telefono=DEFAULT_CFG.telefono;if(!S.cfg.direccion||/Vicente Guerrero/.test(S.cfg.direccion))cfgPatch.direccion=DEFAULT_CFG.direccion;
+  if(isLocal()){svcs.forEach(s=>{const i=LIVE.servicios.findIndex(x=>x.id===s.id);if(i>=0)LIVE.servicios[i]=s;else LIVE.servicios.push(s)});LIVE.medicos.push(...meds.map(m=>({...m})));S.cfg={...S.cfg,...cfgPatch};persistLocal();migrating=false;scheduleRender();return}
+  if(!db){migrating=false;return}
+  try{for(const s of svcs){const{id,...b}=s;await db.collection(P('servicios')).doc(id).set(b)}for(const m of meds){const{id,...b}=m;await db.collection(P('medicos')).doc(id).set(b)}
+    S.cfg={...S.cfg,...cfgPatch};await db.doc(P('config')+'/general').set({...S.cfg})}catch(e){}migrating=false}
 async function initDb(){let d=null;try{d=await window.claude?.use?.('db')}catch(e){}
   if(!d){let ok=true;try{localStorage.setItem(LKEY+'-t','1');localStorage.removeItem(LKEY+'-t')}catch(e){ok=false}
-    if(!ok){S.dbState='none';render();return}S.dbState='local';loadLocal();if((OPS.some(c=>LIVE[c].length)||S.cfg.iniciado)&&!S.pickedDemo)S.mode='live';render();return}db=d;S.db=d;
+    if(!ok){S.dbState='none';render();return}S.dbState='local';loadLocal();if((OPS.some(c=>LIVE[c].length)||S.cfg.iniciado)&&!S.pickedDemo)S.mode='live';render();ensureCatalog();return}db=d;S.db=d;
   const pending=new Set([...COLS,'config']);let timer=setTimeout(()=>{if(pending.size){S.dbState='slow';render()}},10000);
   const done=(k,fromCache)=>{if(!fromCache)pending.delete(k);if(!pending.size&&S.dbState!=='ready'){clearTimeout(timer);S.dbState='ready';
-    const has=OPS.some(c=>LIVE[c].length)||S.cfg.iniciado;if(has&&!S.pickedDemo)S.mode='live'}scheduleRender()};
+    const has=OPS.some(c=>LIVE[c].length)||S.cfg.iniciado;if(has&&!S.pickedDemo){S.mode='live';ensureCatalog()}}scheduleRender()};
   COLS.forEach(col=>{db.collection(P(col)).onSnapshot(snap=>{LIVE[col]=snap.docs.map(x=>({...x.data(),id:x.id}));done(col,snap.metadata.fromCache)},err=>{pending.delete(col);if(err.code!=='revoked'){S.dbState=pending.size?S.dbState:'ready'}scheduleRender()})});
   db.doc(P('config')+'/general').onSnapshot(snap=>{if(snap.exists)S.cfg={...DEFAULT_CFG,...snap.data()};done('config',snap.metadata.fromCache)},()=>{pending.delete('config');scheduleRender()})}
 
@@ -867,7 +1039,7 @@ function form({title,sub,fields,ok='Guardar',onSubmit,onOpen,extra=''}){
   <form class="form" id="mform">${fields.map(fld).join('')}${extra}<div class="form-f"><button type="button" class="btn ghost" data-act="mclose">Cancelar</button><button class="btn pri" type="submit">${ic('check')}${ok}</button></div></form>`);
   $('#mform').onsubmit=async e=>{e.preventDefault();const v={};fields.forEach(f=>v[f.id]=$('#f_'+f.id).value);const r=await onSubmit(v);if(r!==false)closeModal()};onOpen&&onOpen()}
 const pacList=()=>`<datalist id="dl-pac">${D().pacientes.map(p=>`<option value="${esc(p.nombre)}">`).join('')}</datalist>`;
-const svcOpts=()=>D().servicios.map(s=>({v:s.id,t:`${s.nombre}${+s.precio?' · '+money(s.precio):''}`}));
+const svcOpts=()=>D().servicios.map(s=>{const m=mObj(s.medicoId);return {v:s.id,t:`${s.nombre}${m?' · '+m.nombre:''}${+s.precio?' · '+money(s.precio):''}`}});
 async function ensurePac(nombre,extra={}){nombre=nombre.trim();if(!nombre)return null;const ex=D().pacientes.find(p=>p.nombre.toLowerCase()===nombre.toLowerCase());if(ex)return ex.id;
   const p=await save('pacientes',{nombre,telefono:extra.telefono||'',email:'',origen:extra.origen||'WhatsApp',nacimiento:'',notas:'',creado:TODAY});return p.id}
 
@@ -899,10 +1071,17 @@ function fWa(w={}){form({title:w.id?'Editar registro':'WhatsApp del día',sub:'C
   {id:'fecha',label:'Fecha',type:'date',value:w.fecha||TODAY,req:1,span:1},{id:'conversaciones',label:'Conversaciones nuevas',type:'number',min:0,value:w.conversaciones??'',req:1},{id:'agendaron',label:'Agendaron cita',type:'number',min:0,value:w.agendaron??'',req:1},{id:'notas',label:'Notas',value:w.notas||'',ph:'Ej. arrancó campaña de ultrasonido',span:1}],
   onSubmit:async x=>{if(+x.agendaron>+x.conversaciones){toast('“Agendaron” no puede ser mayor que las conversaciones.',true);return false}
     if(w.id&&w.id!==x.fecha)await remove('whatsapp',w.id);await save('whatsapp',{id:x.fecha,fecha:x.fecha,conversaciones:+x.conversaciones||0,agendaron:+x.agendaron||0,notas:x.notas})}})}
+function fMed(m={}){form({title:m.id?'Editar especialista':'Agregar especialista',sub:'Aparece en Equipo médico y en el comparativo de ingresos',fields:[
+  {id:'nombre',label:'Nombre completo',value:m.nombre||'',ph:'Ej. Dra. Ana López',req:1,span:1},{id:'especialidad',label:'Especialidad',value:m.especialidad||'',req:1},
+  {id:'destacado',label:'Destacado',type:'select',options:[{v:'',t:'No'},{v:'1',t:'Sí, especialista destacado'}],value:m.destacado?'1':''},
+  {id:'horario',label:'Horario',value:m.horario||'',span:1},{id:'color',label:'Color',type:'select',options:[{v:'#f2c879',t:'Oro'},{v:'#40d4e6',t:'Aqua'},{v:'#38bdf8',t:'Azul'},{v:'#a78bfa',t:'Violeta'},{v:'#34d399',t:'Verde'},{v:'#fb923c',t:'Naranja'},{v:'#f472b6',t:'Rosa'}],value:m.color||'#40d4e6'},
+  {id:'notas',label:'Notas',type:'textarea',value:m.notas||'',span:1}],
+  onSubmit:async x=>{const obj={...m,nombre:x.nombre.trim(),especialidad:x.especialidad.trim(),horario:x.horario,color:x.color,destacado:!!x.destacado,notas:x.notas};
+    if(obj.destacado){for(const o of D().medicos.filter(o=>o.destacado&&o.id!==m.id))await save('medicos',{...o,destacado:false})}await save('medicos',obj)}})}
 function fSvc(s={}){form({title:s.id?'Editar servicio':'Nuevo servicio',fields:[
   {id:'nombre',label:'Nombre',value:s.nombre||'',req:1,span:1},{id:'categoria',label:'Categoría',type:'select',options:CAT_S,value:s.categoria||'Consulta'},
-  {id:'precio',label:'Precio (deja 0 si aún no se define)',type:'number',step:'0.01',min:0,value:s.precio??''},{id:'duracion',label:'Duración (min)',type:'number',min:5,value:s.duracion??30},{id:'horario',label:'Horario',value:s.horario||'',ph:'Ej. Martes y jueves · 8:00 am a 12:00 pm',span:1},{id:'descripcion',label:'Descripción',value:s.descripcion||'',span:1}],
-  onSubmit:x=>save('servicios',{...s,nombre:x.nombre.trim(),categoria:x.categoria,precio:+x.precio||0,duracion:+x.duracion||30,horario:x.horario,descripcion:x.descripcion})})}
+  {id:'precio',label:'Precio (deja 0 si aún no se define)',type:'number',step:'0.01',min:0,value:s.precio??''},{id:'duracion',label:'Duración (min)',type:'number',min:5,value:s.duracion??30},{id:'horario',label:'Horario',value:s.horario||'',ph:'Ej. Martes y jueves · 8:00 am a 12:00 pm',span:1},{id:'medicoId',label:'Especialista',type:'select',options:[{v:'',t:'Sin asignar'},...D().medicos.map(m=>({v:m.id,t:m.nombre}))],value:s.medicoId||''},{id:'promo',label:'¿Es promoción?',type:'select',options:[{v:'',t:'No'},{v:'1',t:'Sí, mostrar en promociones'}],value:s.promo?'1':''},{id:'descripcion',label:'Descripción',value:s.descripcion||'',span:1}],
+  onSubmit:x=>save('servicios',{...s,nombre:x.nombre.trim(),categoria:x.categoria,precio:+x.precio||0,duracion:+x.duracion||30,horario:x.horario,medicoId:x.medicoId,promo:!!x.promo,descripcion:x.descripcion})})}
 function verPac(id){const d=D();const p=byId('pacientes',id);if(!p)return;const cs=d.citas.filter(c=>c.pacienteId===id).sort((a,b)=>b.fecha.localeCompare(a.fecha));const vs=d.ventas.filter(v=>v.pacienteId===id);
   modal(`<div class="modal-h"><div class="who">${avatar(p.nombre)}<div><h2>${esc(p.nombre)}</h2><p>${esc(p.telefono||'Sin teléfono')}${p.email?' · '+esc(p.email):''}</p></div></div><span class="sp"></span><button class="btn icon ghost" data-act="mclose" aria-label="Cerrar">${ic('x')}</button></div>
   <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px">
@@ -911,7 +1090,7 @@ function verPac(id){const d=D();const p=byId('pacientes',id);if(!p)return;const 
   <h3 style="font-size:14px;margin:6px 0 8px">Historial de citas</h3>
   ${cs.length?`<div class="list">${cs.slice(0,12).map(c=>`<div class="li"><div class="time"><small>${MES[parse(c.fecha).getMonth()]} ${parse(c.fecha).getFullYear()%100}</small><b>${parse(c.fecha).getDate()}</b></div><div class="grow"><b>${esc(sName(c.servicioId))}</b><small>${esc(c.hora)}</small></div>${pill(c.estado)}</div>`).join('')}</div>`:'<div class="empty">Sin citas registradas</div>'}
   <div class="form-f" style="margin-top:16px"><button class="btn" data-act="edit-pac" data-id="${p.id}">${ic('edit')}Editar</button><button class="btn pri" data-act="new-cita-p" data-id="${p.id}">${ic('cal')}Agendar cita</button></div>`,true)}
-function confirmDel(col,id){const names={ventas:'esta venta',gastos:'este gasto',citas:'esta cita',pacientes:'este paciente',servicios:'este servicio',whatsapp:'este registro'};
+function confirmDel(col,id){const names={ventas:'esta venta',gastos:'este gasto',citas:'esta cita',pacientes:'este paciente',servicios:'este servicio',medicos:'este especialista',whatsapp:'este registro'};
   modal(`<div class="modal-h"><div><h2>¿Eliminar ${names[col]}?</h2><p>Esta acción no se puede deshacer.</p></div></div><div class="form-f"><button class="btn ghost" data-act="mclose">Cancelar</button><button class="btn pri" style="background:linear-gradient(135deg,#fb7185,#f43f5e);color:#fff" data-act="delok" data-col="${col}" data-id="${id}">${ic('trash')}Eliminar</button></div>`)}
 function toast(msg,err){const t=document.createElement('div');t.className='toast'+(err?' err':'');t.innerHTML=`<i></i>${esc(msg)}`;$('#toasts').appendChild(t);setTimeout(()=>{t.style.transition='opacity .4s';t.style.opacity=0;setTimeout(()=>t.remove(),400)},2800)}
 
@@ -934,6 +1113,9 @@ document.addEventListener('click',async e=>{const pb=e.target.closest('[data-per
     case 'cobrar':fVenta({},byId('citas',id));break;
     case 'new-pac':fPac();break;case 'edit-pac':closeModal();fPac(byId('pacientes',id));break;case 'ver-pac':verPac(id);break;
     case 'new-wa':fWa();break;case 'edit-wa':fWa(byId('whatsapp',id));break;
+    case 'new-med':fMed();break;case 'edit-med':fMed(mObj(id));break;
+    case 'cita-med':{const sv=d.servicios.find(s=>s.medicoId===id&&!s.promo)||d.servicios.find(s=>s.medicoId===id);fCita({servicioId:sv?.id},S.selDay);break}
+    case 'edit-meta':{form({title:'Meta de ingresos mensual',sub:'Se usa en el Resumen para medir el avance y la proyección del mes',fields:[{id:'meta',label:'Meta',type:'number',min:0,step:'1000',value:S.cfg.metaMensual||0,req:1,span:1}],onSubmit:x=>saveCfg({metaMensual:+x.meta||0})});break}
     case 'new-svc':fSvc();break;case 'edit-svc':fSvc(byId('servicios',id));break;
     case 'del':confirmDel(el.dataset.col,id);break;
     case 'delok':closeModal();remove(el.dataset.col,id);break;
@@ -954,18 +1136,20 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card');if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
 function goLive(){if(!db&&!isLocal()){toast('No hay conexión con el almacenamiento.',true);return}
   modal(`<div class="modal-h"><div><h2>Empezar con tus datos</h2><p>Los datos de ejemplo desaparecen y la plataforma queda lista para registrar la operación real de la clínica.</p></div><span class="sp"></span><button class="btn icon ghost" data-act="mclose" aria-label="Cerrar">${ic('x')}</button></div>
-  <label style="display:flex;gap:10px;align-items:flex-start;padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer"><input type="checkbox" id="keepsvc" checked style="margin-top:3px"><span><b>Usar el catálogo de servicios de la clínica</b><br><span class="muted">Los 8 servicios reales publicados en Instagram, con sus horarios. Solo falta ponerles precio.</span></span></label>
+  <label style="display:flex;gap:10px;align-items:flex-start;padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer"><input type="checkbox" id="keepsvc" checked style="margin-top:3px"><span><b>Usar el catálogo de servicios de la clínica</b><br><span class="muted">Los 18 servicios y los 7 especialistas de la clínica, con horarios y los precios ya publicados.</span></span></label>
   <div class="form-f" style="margin-top:18px"><button class="btn ghost" data-act="mclose">Cancelar</button><button class="btn pri" id="golive-ok">${ic('check')}Empezar</button></div>`);
   $('#golive-ok').onclick=async()=>{const keep=$('#keepsvc').checked;closeModal();S.mode='live';S.pickedDemo=false;lastView=null;render();
-    if(isLocal()){if(keep&&!LIVE.servicios.length)LIVE.servicios=REAL_SVCS.map(x=>({...x}));S.cfg.iniciado=true;if(persistLocal())toast('Listo. Empieza registrando tu primera cita o venta.');render();return}
-    try{if(keep&&!LIVE.servicios.length){for(const s of REAL_SVCS){const{id,...b}=s;await db.collection(P('servicios')).doc(id).set(b)}}
-      S.cfg.iniciado=true;await db.doc(P('config')+'/general').set({...S.cfg});toast('Listo. Empieza registrando tu primera cita o venta.')}catch(e){dbErr(e)}}}
+    if(isLocal()){S.cfg.iniciado=true;S.cfg.catalogo2=!keep;if(keep){await ensureCatalog()}if(persistLocal())toast('Listo. Empieza registrando tu primera cita o venta.');render();return}
+    try{S.cfg.iniciado=true;S.cfg.catalogo2=!keep;if(keep)await ensureCatalog();await db.doc(P('config')+'/general').set({...S.cfg});toast('Listo. Empieza registrando tu primera cita o venta.')}catch(e){dbErr(e)}}}
 
 /* ================= Arranque ================= */
 function route(){const h=location.hash.slice(1);S.view=RENDER[h]?h:'resumen';S.limit=40;S.q='';render()}
 window.addEventListener('hashchange',route);
+try{$('#splash-img').src=LOGO_DEFAULT}catch(e){}
 route();
 initDb();
+(function(){const sp=$('#splash');if(!sp)return;const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;setTimeout(()=>{sp.classList.add('out');setTimeout(()=>sp.remove(),700)},rm?0:1300)})();
+setInterval(()=>{const c=$('#clock');if(c)c.textContent=clockText()},20000);
 </script>
 </body>
 </html>
