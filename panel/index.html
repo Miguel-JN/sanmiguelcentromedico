@@ -107,7 +107,7 @@ a{color:var(--accent)}
 .vs{color:var(--faint);font-size:11.5px}
 
 /* Botones y controles */
-.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-2);background:rgba(255,255,255,.06);padding:9px 14px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:background .2s,transform .15s,border-color .2s,box-shadow .2s;white-space:nowrap}
+.btn{text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-2);background:rgba(255,255,255,.06);padding:9px 14px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:background .2s,transform .15s,border-color .2s,box-shadow .2s;white-space:nowrap}
 .btn:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.28)}
 .btn:active{transform:scale(.97)}
 .btn svg{width:16px;height:16px}
@@ -313,6 +313,42 @@ table.tbl{width:100%;border-collapse:collapse;min-width:640px}
 @keyframes shine{from{background-position:200% 0}to{background-position:-200% 0}}
 @media (max-width:960px){.hero-row,.hero-doc{grid-template-columns:minmax(0,1fr)}.today{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
+/* Bienvenida */
+.welcome{position:relative;display:flex;flex-direction:column;gap:18px;max-width:1100px}
+.w-hero{position:relative;overflow:hidden;padding:34px 34px 30px;border-radius:28px;border:1px solid rgba(242,200,121,.35);background:
+  radial-gradient(600px 300px at 85% 0%,rgba(242,200,121,.18),transparent 60%),
+  radial-gradient(500px 300px at 0% 100%,rgba(64,212,230,.14),transparent 60%),
+  linear-gradient(150deg,rgba(255,255,255,.07),rgba(255,255,255,.015));backdrop-filter:blur(20px);box-shadow:0 40px 90px -40px rgba(242,200,121,.35),inset 0 1px 0 rgba(255,255,255,.08)}
+.w-hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,240,210,.09) 50%,transparent 65%);background-size:250% 100%;animation:sheen 6s ease-in-out infinite}
+@keyframes sheen{0%,60%{background-position:150% 0}100%{background-position:-100% 0}}
+.w-top{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.w-crest{position:relative;width:96px;height:96px;flex:none;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#fff6e3,#e9c98d 45%,#a77a35);box-shadow:0 0 0 4px rgba(4,18,26,.85),0 0 0 5px rgba(242,200,121,.7),0 18px 50px -12px rgba(242,200,121,.7)}
+.w-crest b{font-family:var(--font-serif);font-size:38px;font-weight:500;color:#3a2a10}
+.w-crest img{position:absolute;right:-8px;bottom:-6px;width:42px;height:42px;border-radius:50%;background:#04121a;padding:5px;border:1px solid rgba(242,200,121,.6)}
+.w-greet{font-family:var(--font-serif);font-style:italic;font-size:22px;color:#f3e6c8}
+.w-name{font-family:var(--font-serif);font-weight:500;font-size:clamp(40px,7vw,68px);line-height:1;letter-spacing:-.01em;background:linear-gradient(100deg,#fff4dc 0%,#f2c879 35%,#fff4dc 55%,#c99a4a 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:goldflow 8s ease-in-out infinite;margin:4px 0 6px}
+@keyframes goldflow{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+.w-role{display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:13px}
+.w-line{height:1px;margin:24px 0 20px;background:linear-gradient(90deg,rgba(242,200,121,.6),rgba(242,200,121,.05))}
+.w-brief{font-size:15px;line-height:1.6;color:#d9e7e8;max-width:62ch}
+.w-brief b{color:#fff}
+.w-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+.w-tile{padding:16px;border-radius:18px;background:rgba(4,18,26,.45);border:1px solid var(--line)}
+.w-tile small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.w-tile b{display:block;font-family:var(--font-serif);font-weight:500;font-size:30px;margin-top:4px;font-variant-numeric:tabular-nums}
+.w-tile em{font-style:normal;font-size:12px;color:var(--muted)}
+.w-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn.gold{background:linear-gradient(135deg,#fff1cf,#f2c879 45%,#c99a4a);color:#2b1d07;border-color:transparent;box-shadow:0 12px 30px -10px rgba(242,200,121,.7)}
+.btn.gold:hover{filter:brightness(1.06)}
+.alerts{display:flex;flex-direction:column;gap:10px}
+.alert{display:flex;align-items:center;gap:14px;padding:13px 14px;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid var(--line);text-decoration:none;color:inherit;transition:background .2s,transform .2s}
+.alert:hover{background:rgba(255,255,255,.07);transform:translateX(3px)}
+.alert .ai{width:36px;height:36px;border-radius:12px;flex:none;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c);border:1px solid color-mix(in srgb,var(--c) 30%,transparent)}
+.alert .ai svg{width:17px;height:17px}
+.alert .grow{flex:1;min-width:0}.alert .grow b{display:block;font-size:13.5px}.alert .grow small{color:var(--muted);font-size:12px}
+.alert>svg{width:16px;height:16px;color:var(--faint)}
+@media (max-width:700px){.banner{flex-wrap:wrap;font-size:12.5px;padding:10px 12px;gap:8px}.w-tiles .w-tile:nth-child(3){grid-column:1/-1}.w-hero{padding:24px 20px 22px;border-radius:24px}.w-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.w-crest{width:76px;height:76px}.w-crest b{font-size:30px}.w-greet{font-size:19px}}
+
 /* Modal */
 .mback{position:fixed;inset:0;z-index:50;background:rgba(2,10,14,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:16px;animation:fade .2s ease}
 .modal{width:min(620px,100%);max-height:calc(100% - 20px);overflow-y:auto;padding:24px;background:linear-gradient(150deg,rgba(14,48,58,.94),rgba(6,26,33,.96));animation:rise .3s cubic-bezier(.2,.8,.2,1)}
@@ -475,45 +511,47 @@ const SVC_C={'Paquete':'#f2c879','Imagen':'#c084fc','Salud mental':'#f472b6','De
 const COLS=['servicios','medicos','pacientes','citas','ventas','gastos','whatsapp'];
 const OPS=['pacientes','citas','ventas','gastos','whatsapp'];
 const APERTURA='2026-03-02';
-/* Catálogo real (Instagram, Facebook y anuncios de WhatsApp de la clínica, nov 2026) */
+/* Catálogo real: horarios y precios enviados por la clínica por WhatsApp el 13 nov 2026 */
+const CATV=7;
 const REAL_MEDS=[
- {id:'m-perez',nombre:'Dr. Jesús Orlando Pérez García',especialidad:'Ginecología y Obstetricia',horario:'Martes y jueves · 8:00 am a 12:00 pm',destacado:true,color:'#f2c879',notas:'Ultrasonido estructural y obstétrico 2D, 3D y 4D. Paquete ginecológico.'},
- {id:'m-mendez',nombre:'Dr. Héctor Méndez Blas',especialidad:'Radiología e Imagen',horario:'Previa cita',destacado:false,color:'#a78bfa',notas:'Ultrasonidos de abdomen, renales, pélvicos, Doppler y obstétricos.'},
- {id:'m-alaniz',nombre:'Dra. Adriana Alaniz',especialidad:'Pediatría',horario:'Domingos 11:00 am a 5:00 pm · Lunes 8:00 am a 12:00 pm',destacado:false,color:'#38bdf8',notas:'Cuidando la salud de tus peques.'},
- {id:'m-lorenzo',nombre:'Lic. Karina Lorenzo Narváez',especialidad:'Nutrición',horario:'Lunes 3:00 a 6:00 pm · Sábados 9:00 am a 3:00 pm',destacado:false,color:'#34d399',notas:''},
- {id:'m-casimiro',nombre:'Lic. Dianei Citlalli Casimiro Santillán',especialidad:'Terapia física',horario:'Lunes a jueves · 10:00 am a 7:00 pm',destacado:false,color:'#fb923c',notas:'Esguinces, lesiones musculares y deportivas, masaje descontracturante, parálisis facial.'},
- {id:'m-martinez',nombre:'Luis Freddy Martínez Ángeles',especialidad:'Quirofísico',horario:'Previa cita',destacado:false,color:'#f472b6',notas:'Esguinces, lesiones musculares, masajes, parálisis facial.'},
- {id:'m-mondragon',nombre:'Griselda Mondragón González',especialidad:'Psicoterapia y Tanatología',horario:'Previa cita',destacado:false,color:'#40d4e6',notas:'También auriculoterapia.'},
+ {id:'m-reina',nombre:'Dra. Gabriela Reyna Narváez',especialidad:'Odontología',horario:'Lunes a sábado · 9:00 am a 2:00 pm y 4:00 a 7:00 pm',destacado:false,directora:true,color:'#e8b4a0',notas:'Directora de San Miguel Centro Médico. Da la consulta dental.'},
+ {id:'m-perez',nombre:'Dr. Jesús Orlando Pérez García',especialidad:'Ginecología y Obstetricia',horario:'Lunes, miércoles y viernes · 9:00 am a 2:00 pm, con previa cita. A veces abre un día extra de 9:00 am a 5:00 pm (él avisa).',destacado:true,color:'#f2c879',notas:'Ultrasonido estructural y obstétrico 2D, 3D y 4D. Paquete ginecológico.'},
+ {id:'m-mendez',nombre:'Dr. Héctor Méndez Blas',especialidad:'Radiología e Imagen',horario:'Miércoles y sábados · con previa cita',destacado:false,color:'#a78bfa',notas:'Ultrasonidos de abdomen, renales, pélvicos, Doppler y obstétricos.'},
+ {id:'m-alaniz',nombre:'Dra. Adriana Alaniz',especialidad:'Pediatría',horario:'Un domingo cada 20 días a un mes',destacado:false,color:'#38bdf8',notas:'Próxima visita: domingo 15 de noviembre (agenda llena).'},
+ {id:'m-lorenzo',nombre:'Lic. Karina Lorenzo Narváez',especialidad:'Nutrición',horario:'Ella define días y horarios',destacado:false,color:'#34d399',notas:''},
+ {id:'m-casimiro',nombre:'Lic. Dianei Citlalli Casimiro Santillán',especialidad:'Fisioterapia',horario:'Por las tardes · ella define los horarios',destacado:false,color:'#fb923c',notas:'Esguinces, lesiones musculares y deportivas, masaje descontracturante, parálisis facial.'},
+ {id:'m-martinez',nombre:'Luis Freddy Martínez Ángeles',especialidad:'Quiropráctico',horario:'Martes cada 15 días',destacado:false,color:'#f472b6',notas:'Esguinces, lesiones musculares, masajes, parálisis facial.'},
+ {id:'m-mondragon',nombre:'Griselda Mondragón González',especialidad:'Psicología y Tanatología',horario:'Miércoles después de las 3:00 pm',destacado:false,color:'#40d4e6',notas:'También auriculoterapia.'},
 ];
 const REAL_SVCS=[
- {id:'medicina-general',nombre:'Consulta médica general',categoria:'Consulta',precio:0,duracion:30,horario:'9:00 am a 3:00 pm y desde las 5:00 pm',medicoId:'',descripcion:'Con previa cita.'},
- {id:'medicina-interna',nombre:'Consulta de medicina interna',categoria:'Especialidad',precio:0,duracion:40,horario:'Previa cita',medicoId:'',descripcion:'Médico internista.'},
- {id:'ginecologia',nombre:'Consulta de ginecología y obstetricia',categoria:'Especialidad',precio:0,duracion:40,horario:'Martes y jueves · 8:00 am a 12:00 pm',medicoId:'m-perez',descripcion:'Especialidad prioritaria de la clínica.'},
- {id:'paquete-gineco',nombre:'Paquete ginecológico',categoria:'Paquete',precio:1400,duracion:60,horario:'Martes y jueves · 8:00 am a 12:00 pm',medicoId:'m-perez',promo:true,descripcion:'Papanicolaou + colposcopía + consulta.'},
- {id:'us-obstetrico',nombre:'Ultrasonido obstétrico y estructural 2D · 3D · 4D',categoria:'Imagen',precio:0,duracion:40,horario:'Previa cita',medicoId:'m-mendez',promo:true,descripcion:'Desarrollo del bebé en detalle, detección temprana de anomalías. Estructural de 18 a 24 semanas. Porque cada imagen importa.'},
- {id:'ultrasonidos',nombre:'Ultrasonido general y Doppler',categoria:'Imagen',precio:0,duracion:30,horario:'Previa cita',medicoId:'m-mendez',descripcion:'Abdomen, renal y pélvico, tiroides, mama, testicular, endovaginal, tejidos blandos, Doppler carotídeo y de miembro pélvico.'},
- {id:'pediatria',nombre:'Consulta pediátrica',categoria:'Especialidad',precio:0,duracion:30,horario:'Domingos 11:00 am a 5:00 pm · Lunes 8:00 am a 12:00 pm',medicoId:'m-alaniz',descripcion:'Pediatría y neonatología.'},
- {id:'nutricion',nombre:'Consulta de nutrición',categoria:'Especialidad',precio:0,duracion:45,horario:'Lunes 3:00 a 6:00 pm · Sábados 9:00 am a 3:00 pm',medicoId:'m-lorenzo',descripcion:''},
- {id:'terapia-fisica',nombre:'Terapia física',categoria:'Rehabilitación',precio:0,duracion:50,horario:'Lunes a jueves · 10:00 am a 7:00 pm',medicoId:'m-casimiro',descripcion:'Esguinces, lesiones musculares y deportivas, masaje descontracturante, parálisis facial.'},
- {id:'quirofisico',nombre:'Quirofísico',categoria:'Rehabilitación',precio:0,duracion:45,horario:'Previa cita',medicoId:'m-martinez',descripcion:'Esguinces, lesiones musculares, masajes, parálisis facial.'},
- {id:'psicoterapia',nombre:'Psicoterapia y tanatología',categoria:'Salud mental',precio:0,duracion:50,horario:'Previa cita',medicoId:'m-mondragon',descripcion:''},
- {id:'auriculoterapia',nombre:'Auriculoterapia',categoria:'Salud mental',precio:0,duracion:30,horario:'Previa cita',medicoId:'m-mondragon',descripcion:''},
- {id:'dental',nombre:'Consulta dental',categoria:'Dental',precio:0,duracion:45,horario:'L a V 10:00 am a 1:30 pm y 4:00 a 6:30 pm · Sáb 8:00 am a 2:00 pm',medicoId:'',descripcion:'Horario por confirmar.'},
- {id:'laboratorio',nombre:'Análisis clínicos',categoria:'Laboratorio',precio:0,duracion:15,horario:'Lunes a sábado · 7:00 am a 2:00 pm',medicoId:'',descripcion:'Biometría hemática, química sanguínea, estudios ginecológicos, hormonales y EGO.'},
- {id:'grupo-sanguineo',nombre:'Grupo sanguíneo y factor Rh',categoria:'Laboratorio',precio:100,duracion:10,horario:'Lunes a sábado · 7:00 am a 2:00 pm',medicoId:'',promo:true,descripcion:'Precio especial. No requiere ayuno.'},
- {id:'farmacia',nombre:'Farmacia',categoria:'Farmacia',precio:0,duracion:5,horario:'Todos los días · 7:00 am a 9:00 pm',medicoId:'',descripcion:'Genérico, patente, material de curación y cuidado personal.'},
- {id:'cardiologia',nombre:'Cardiología',categoria:'Especialidad',precio:0,duracion:40,horario:'Por confirmar',medicoId:'',porConfirmar:true,descripcion:'Aparece en anuncios; falta confirmar si sigue.'},
- {id:'traumatologia',nombre:'Traumatología',categoria:'Especialidad',precio:0,duracion:40,horario:'Por confirmar',medicoId:'',porConfirmar:true,descripcion:'Aparece en anuncios; falta confirmar si sigue.'},
+ {id:'medicina-general',nombre:'Consulta médica general',categoria:'Consulta',precio:300,duracion:30,horario:'9:00 am a 2:00 pm y 5:00 a 9:00 pm',medicoId:'',descripcion:''},
+ {id:'cardiologia',nombre:'Consulta de cardiología',categoria:'Especialidad',precio:1200,duracion:40,horario:'Una vez al mes',frecuencia:'Mensual',proximaVisita:'2026-12-05',medicoId:'',descripcion:'Viene junto con medicina interna.'},
+ {id:'medicina-interna',nombre:'Consulta de medicina interna',categoria:'Especialidad',precio:0,duracion:40,horario:'Una vez al mes',frecuencia:'Mensual',proximaVisita:'2026-12-05',medicoId:'',descripcion:'Viene junto con cardiología.'},
+ {id:'ginecologia',nombre:'Consulta de ginecología',categoria:'Especialidad',precio:700,duracion:40,horario:'Lunes, miércoles y viernes · 9:00 am a 2:00 pm, con previa cita',medicoId:'m-perez',descripcion:'A veces el doctor abre un día extra de 9:00 am a 5:00 pm.'},
+ {id:'paquete-gineco',nombre:'Paquete ginecológico',categoria:'Paquete',precio:1400,duracion:60,horario:'Lunes, miércoles y viernes · 9:00 am a 2:00 pm',medicoId:'m-perez',promo:true,descripcion:'Papanicolaou + colposcopía + consulta.'},
+ {id:'us-obstetrico',nombre:'Ultrasonido obstétrico y estructural 2D · 3D · 4D',categoria:'Imagen',precio:0,duracion:40,horario:'Miércoles y sábados · con previa cita',medicoId:'m-mendez',promo:true,descripcion:'Desarrollo del bebé en detalle, detección temprana de anomalías. Estructural de 18 a 24 semanas. Porque cada imagen importa.'},
+ {id:'ultrasonidos',nombre:'Ultrasonido general y Doppler',categoria:'Imagen',precio:0,duracion:30,horario:'Miércoles y sábados · con previa cita',medicoId:'m-mendez',descripcion:'Abdomen, renal y pélvico, tiroides, mama, testicular, endovaginal, tejidos blandos, Doppler carotídeo y de miembro pélvico.'},
+ {id:'pediatria',nombre:'Consulta de pediatría',categoria:'Especialidad',precio:600,duracion:30,horario:'Un domingo cada 20 días a un mes',frecuencia:'Cada 20 a 30 días',proximaVisita:'2026-11-15',lleno:true,medicoId:'m-alaniz',descripcion:'La visita del 15 de noviembre ya está llena.'},
+ {id:'traumatologia',nombre:'Consulta de traumatología',categoria:'Especialidad',precio:850,duracion:40,horario:'Cada 15 días · por lo regular miércoles o viernes',frecuencia:'Quincenal',medicoId:'',descripcion:''},
+ {id:'nutricion',nombre:'Consulta de nutrición',categoria:'Especialidad',precio:350,duracion:45,horario:'La nutrióloga define días y horarios',medicoId:'m-lorenzo',descripcion:''},
+ {id:'terapia-fisica',nombre:'Consulta de fisioterapia',categoria:'Rehabilitación',precio:450,duracion:50,horario:'Por las tardes · la fisioterapeuta da los horarios',medicoId:'m-casimiro',descripcion:'Esguinces, lesiones musculares y deportivas, masaje descontracturante, parálisis facial.'},
+ {id:'quirofisico',nombre:'Consulta de quiropráctico',categoria:'Rehabilitación',precio:600,duracion:45,horario:'Martes cada 15 días',frecuencia:'Quincenal',medicoId:'m-martinez',descripcion:'Esguinces, lesiones musculares, masajes, parálisis facial.'},
+ {id:'psicoterapia',nombre:'Consulta de psicología',categoria:'Salud mental',precio:350,duracion:50,horario:'Miércoles después de las 3:00 pm',medicoId:'m-mondragon',descripcion:'Psicoterapia y tanatología.'},
+ {id:'auriculoterapia',nombre:'Auriculoterapia',categoria:'Salud mental',precio:0,duracion:30,horario:'Miércoles después de las 3:00 pm',medicoId:'m-mondragon',descripcion:''},
+ {id:'dental',nombre:'Consulta dental',categoria:'Dental',precio:300,duracion:45,horario:'Lunes a sábado · 9:00 am a 2:00 pm y 4:00 a 7:00 pm',medicoId:'m-reina',descripcion:'Con la Dra. Gabriela Reyna Narváez, directora de la clínica.'},
+ {id:'laboratorio',nombre:'Análisis clínicos',categoria:'Laboratorio',precio:0,duracion:15,horario:'Lunes a sábado · 7:00 am a 12:00 pm',medicoId:'',descripcion:'Biometría hemática, química sanguínea, estudios ginecológicos, hormonales y EGO.'},
+ {id:'grupo-sanguineo',nombre:'Grupo sanguíneo y factor Rh',categoria:'Laboratorio',precio:100,duracion:10,horario:'Lunes a sábado · 7:00 am a 12:00 pm',medicoId:'',promo:true,descripcion:'Precio especial. No requiere ayuno.'},
+ {id:'farmacia',nombre:'Farmacia',categoria:'Farmacia',precio:0,duracion:5,horario:'Lunes a domingo · 7:00 am a 9:00 pm',medicoId:'',descripcion:'Genérico, patente, material de curación y cuidado personal.'},
 ];
-const DEMO_PRECIOS={'medicina-general':300,'medicina-interna':500,'ginecologia':600,'paquete-gineco':1400,'us-obstetrico':950,'ultrasonidos':750,'pediatria':500,'nutricion':450,'terapia-fisica':400,'quirofisico':400,'psicoterapia':500,'auriculoterapia':300,'dental':550,'laboratorio':380,'grupo-sanguineo':100,'farmacia':260,'cardiologia':700,'traumatologia':650};
+const DEMO_PRECIOS={'medicina-interna':900,'us-obstetrico':950,'ultrasonidos':750,'auriculoterapia':300,'laboratorio':380,'farmacia':260};
 
 /* ================= Datos de ejemplo ================= */
 function genDemo(){
   let seed=20261111;const R=()=>(seed=(seed*16807)%2147483647)/2147483647;
   const pick=a=>a[Math.floor(R()*a.length)];
   const wpick=(items,w)=>{let t=R()*w.reduce((a,b)=>a+b,0);for(let i=0;i<items.length;i++){t-=w[i];if(t<=0)return items[i]}return items[0]};
-  const servicios=REAL_SVCS.map(x=>({...x,precio:DEMO_PRECIOS[x.id]||300}));
-  const sw=[26,3,9,4,5,5,9,5,7,4,3,2,9,14,4,10,0,0];const medicos=REAL_MEDS.map(x=>({...x}));
+  const servicios=REAL_SVCS.map(x=>({...x,precio:+x.precio||DEMO_PRECIOS[x.id]||300}));
+  const sw=[26,2,1,10,4,5,5,6,3,5,7,4,3,2,9,14,4,10];const medicos=REAL_MEDS.map(x=>({...x}));
   const N1=['María','José','Guadalupe','Juan','Ana','Luis','Fernanda','Carlos','Sofía','Miguel','Valeria','Jorge','Daniela','Alejandro','Camila','Ricardo','Paola','Eduardo','Andrea','Fernando','Lucía','Roberto','Gabriela','Héctor','Mariana','Diego','Ximena','Arturo','Regina','Óscar','Patricia','Raúl','Verónica','Sergio','Claudia','Iván','Natalia','Emilio','Rosa','Javier'];
   const N2=['Hernández','García','Martínez','López','González','Pérez','Rodríguez','Sánchez','Ramírez','Cruz','Flores','Gómez','Morales','Vázquez','Reyes','Jiménez','Torres','Díaz','Gutiérrez','Ruiz','Mendoza','Aguilar','Ortiz','Castillo','Romero','Álvarez','Chávez','Rivera','Juárez','Ramos'];
   const pacientes=[];const used=new Set();
@@ -548,7 +586,7 @@ function genDemo(){
 }
 
 /* ================= Estado ================= */
-const DEFAULT_CFG={direccion:'Atrás de la iglesia, a un lado del Centro de Salud. Chapa de Mota, Estado de México, C.P. 54350',telefono:'712 434 2542',lema:'Todo lo que tu salud necesita, en un mismo lugar',frase:'Tu salud, nuestra prioridad',correo:'hola@centromedicosm.com.mx',web:'sanmiguelcentromedico.vercel.app',metaMensual:110000,catalogo2:false,whatsapp:'712 434 2542',instagram:'@sanmiguel_cm',apertura:APERTURA,clinica:'San Miguel Centro Médico',socioNombre:'Socio',miNombre:'Yo',socioPct:70,moneda:'MXN',logo:'',iniciado:false,pagados:{}};
+const DEFAULT_CFG={directora:'Dra. Gabriela Reyna Narváez',saludo:'Gaby Reyna',direccion:'Atrás de la iglesia, a un lado del Centro de Salud. Chapa de Mota, Estado de México, C.P. 54350',telefono:'712 434 2542',lema:'Todo lo que tu salud necesita, en un mismo lugar',frase:'Tu salud, nuestra prioridad',correo:'hola@centromedicosm.com.mx',web:'sanmiguelcentromedico.vercel.app',metaMensual:110000,catalogo2:false,whatsapp:'712 434 2542',instagram:'@sanmiguel_cm',apertura:APERTURA,clinica:'San Miguel Centro Médico',socioNombre:'Socio',miNombre:'Yo',socioPct:70,moneda:'MXN',logo:'',iniciado:false,pagados:{}};
 const S={mode:'demo',view:'resumen',period:'mes',cfg:{...DEFAULT_CFG},agenda:null,selDay:TODAY,q:'',origen:'Todos',limit:40,db:null,dbState:'connecting',ready:{},pickedDemo:false,canWrite:true};
 let DEMO=genDemo();
 const LIVE={medicos:[],servicios:[],pacientes:[],citas:[],ventas:[],gastos:[],whatsapp:[]};
@@ -644,6 +682,7 @@ function split(ut){const p=pct1();const base=Math.max(0,ut);return{socio:base*p,
 
 /* ================= Vistas ================= */
 const VIEWS={
+bienvenida:{t:'Bienvenida',s:()=>'',ic:'star'},
 resumen:{t:'Resumen',s:()=>'Tablero de dirección · '+periodLabel(S.period),ic:'home'},
 whatsapp:{t:'WhatsApp',s:()=>'Conversaciones que llegan y cuántas se convierten en cita',ic:'wa'},
 agenda:{t:'Agenda',s:()=>'Calendario de citas y días con más demanda',ic:'cal'},
@@ -772,6 +811,7 @@ function vAgenda(){const d=D();const m=S.agenda;const y=m.getFullYear(),mo=m.get
       <div class="cal">${['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'].map(x=>`<div class="dow">${x}</div>`).join('')}
       ${vis.map(dd=>{const k=ymd(dd);const cs=(byDay[k]||[]).sort((a,b)=>a.hora.localeCompare(b.hora));const act=cs.filter(c=>c.estado!=='Cancelada');
         return `<button class="day ${dd.getMonth()!==mo?'out':''} ${k===TODAY?'today':''} ${k===S.selDay?'sel':''}" data-act="selday" data-day="${k}"><div class="dn"><span>${dd.getDate()}</span>${act.length?`<em>${act.length} cita${act.length>1?'s':''}</em>`:''}</div>
+        ${d.servicios.filter(s=>s.proximaVisita===k).map(s=>`<div class="ev" style="--c:#f2c879;font-weight:700">★ ${esc(s.nombre.replace(/^Consulta de /,''))}</div>`).join('')}
         ${cs.slice(0,3).map(c=>`<div class="ev" style="--c:${ESTADOS[c.estado]}">${esc(c.hora)} ${esc(pName(c.pacienteId).split(' ')[0])}</div>`).join('')}
         ${act.length?`<div class="heat" style="width:${(act.length/maxDay*100).toFixed(0)}%"></div>`:''}</button>`}).join('')}</div></div>
     <div class="glass card rv" style="--i:5">${cardH(`${DOWL[sd.getDay()][0].toUpperCase()+DOWL[sd.getDay()].slice(1)} ${sd.getDate()} de ${MESL[sd.getMonth()]}`,sel.length+' citas',`<button class="btn icon" data-act="new-cita" data-day="${S.selDay}" aria-label="Agregar cita">${ic('plus')}</button>`)}
@@ -870,23 +910,67 @@ function vUtilidades(){const d=D();const r=range(S.period),pr=prevRange(S.period
     <td>${m.ing||m.gas?`<button class="pill paid" style="--c:${paid?'#34d399':'#fbbf24'}" data-act="paid" data-k="${m.key}" title="Cambiar estado">${paid?'Pagado':'Pendiente'}</button>`:'<span class="muted">—</span>'}</td></tr>`}).join('')}</tbody></table></div></div>`}
 
 function clockText(){const n=new Date();const t=n.toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'});return DOWL[n.getDay()][0].toUpperCase()+DOWL[n.getDay()].slice(1)+' '+n.getDate()+' de '+MESL[n.getMonth()]+' · '+t}
+function vBienvenida(){const d=D();const t0=today();const h=new Date().getHours();
+  const saludo=h<12?'Buenos días':h<19?'Buenas tardes':'Buenas noches';const name=S.cfg.saludo||'Doctora';
+  const dir=d.medicos.find(m=>m.directora);const ini=initials((S.cfg.directora||name).replace(/^(Dra?\.|Lic\.)\s*/,''));
+  const mA=new Date(t0.getFullYear(),t0.getMonth(),1),mB=new Date(t0.getFullYear(),t0.getMonth()+1,0);const FM=fin({a:mA,b:mB});
+  const meta=+S.cfg.metaMensual||0;const av=meta?FM.ing/meta:0;const proy=FM.ing/t0.getDate()*mB.getDate();
+  const hoyC=d.citas.filter(c=>c.fecha===TODAY&&c.estado!=='Cancelada');const hoyIng=sum(d.ventas.filter(v=>v.fecha===TODAY),'monto');
+  const ayer=ymd(addDays(t0,-1));const ayerIng=sum(d.ventas.filter(v=>v.fecha===ayer),'monto');const hoyWa=d.whatsapp.find(x=>x.fecha===TODAY);
+  const misC=dir?d.citas.filter(c=>c.fecha>=TODAY&&medOfSvc(c.servicioId)===dir.id&&(c.estado==='Agendada'||c.estado==='Confirmada')).sort((a,b)=>(a.fecha+a.hora).localeCompare(b.fecha+b.hora)):[];
+  const misHoy=misC.filter(c=>c.fecha===TODAY);
+  const porConf=d.citas.filter(c=>c.fecha>=TODAY&&c.estado==='Agendada').length;
+  const visitas=d.servicios.filter(s=>s.proximaVisita&&s.proximaVisita>=TODAY).sort((a,b)=>a.proximaVisita.localeCompare(b.proximaVisita));
+  const sinPrecio=d.servicios.filter(s=>!+s.precio).length;
+  const pend=[];for(let i=1;i<=3;i++){const a=new Date(t0.getFullYear(),t0.getMonth()-i,1),b=new Date(t0.getFullYear(),t0.getMonth()-i+1,0);const f=fin({a,b});const k=`${a.getFullYear()}-${pad(a.getMonth()+1)}`;if(f.ut>0&&!S.cfg.pagados?.[k])pend.push(MESL[a.getMonth()])}
+  const al=[];
+  if(misHoy.length)al.push({c:'#e8b4a0',i:'cal',t:`Tiene ${misHoy.length} paciente${misHoy.length>1?'s':''} de consulta dental hoy`,s:`La primera a las ${misHoy[0].hora} · ${pName(misHoy[0].pacienteId)}`,h:'#agenda'});
+  visitas.slice(0,2).forEach(v=>{const fd=parse(v.proximaVisita);const dd=dayDiff(t0,fd);al.push({c:'#f2c879',i:'star',t:`${v.nombre.replace(/^Consulta de /,'').replace(/^./,x=>x.toUpperCase())}: ${DOWL[fd.getDay()]} ${fd.getDate()} de ${MESL[fd.getMonth()]}`,s:(v.lleno?'Agenda llena · ':'')+(dd===0?'Es hoy':dd===1?'Es mañana':'Faltan '+dd+' días'),h:'#equipo'})});
+  if(porConf)al.push({c:'#fbbf24',i:'phone',t:`${porConf} cita${porConf>1?'s':''} por confirmar`,s:'Conviene confirmarlas por WhatsApp un día antes',h:'#agenda'});
+  if(meta)al.push({c:proy>=meta?'#34d399':'#fb7185',i:'target',t:proy>=meta?'El mes va por encima de la meta':'El mes va por debajo de la meta',s:`Cierre proyectado ${money(proy)} · meta ${money(meta)}`,h:'#resumen'});
+  if(pend.length)al.push({c:'#40d4e6',i:'pie',t:`Reparto pendiente de ${pend.join(', ')}`,s:'Márquelo como pagado en Utilidades cuando se liquide',h:'#utilidades'});
+  if(sinPrecio)al.push({c:'#94a3b8',i:'receipt',t:`${sinPrecio} servicio${sinPrecio>1?'s':''} sin precio definido`,s:'Ultrasonidos, laboratorio y otros',h:'#servicios'});
+  const RC=2*Math.PI*30;
+  return `<div class="welcome">
+  <section class="w-hero rv" style="--i:0">
+    <div class="w-top"><div class="w-crest"><b>${esc(ini)}</b><img src="${S.cfg.logo||LOGO_DEFAULT}" alt=""></div>
+      <div style="flex:1;min-width:220px"><div class="w-greet">${saludo},</div><h1 class="w-name">${esc(name)}</h1>
+      <div class="w-role"><span class="pill" style="--c:#f2c879">Dueña y Directora General</span><span>${esc(S.cfg.clinica)}</span></div></div></div>
+    <div class="w-line"></div>
+    <p class="w-brief">Hoy hay <b>${hoyC.length} citas</b> en la clínica${misHoy.length?`, <b>${misHoy.length} de ellas con usted</b>`:''}. En lo que va de ${MESL[t0.getMonth()]} se han cobrado <b>${money(FM.ing)}</b>${meta?`, el <b>${Math.round(av*100)}%</b> de la meta del mes`:''}, y la utilidad neta suma <b>${money(FM.ut)}</b>.</p>
+    <div class="w-tiles">
+      <div class="w-tile"><small>Citas hoy</small><b class="num">${hoyC.length}</b><em>${hoyC.filter(c=>c.estado==='Atendida').length} atendidas</em></div>
+      <div class="w-tile"><small>Cobrado hoy</small><b class="num">${money(hoyIng)}</b><em>Ayer ${money(ayerIng)}</em></div>
+      <div class="w-tile" style="display:flex;align-items:center;gap:12px"><svg viewBox="0 0 70 70" width="62" height="62" style="transform:rotate(-90deg);flex:none"><circle cx="35" cy="35" r="30" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="7"/><circle class="arc" style="--c:${RC}" cx="35" cy="35" r="30" fill="none" stroke="#f2c879" stroke-width="7" stroke-linecap="round" stroke-dasharray="${(Math.min(1,av)*RC).toFixed(1)} ${RC}"/></svg><div><small>Meta del mes</small><b class="num" style="font-size:26px">${Math.round(av*100)}%</b></div></div>
+      <div class="w-tile"><small>WhatsApp hoy</small><b class="num">${hoyWa?intf(hoyWa.conversaciones):'—'}</b><em>${hoyWa?intf(hoyWa.agendaron)+' agendaron':'Sin registro aún'}</em></div>
+    </div>
+    <div class="w-cta"><a class="btn gold" href="#resumen">${ic('home')}Ver el tablero completo</a><a class="btn" href="#agenda">${ic('cal')}Agenda de hoy</a><a class="btn" href="#utilidades">${ic('pie')}Utilidades</a></div>
+  </section>
+  <div class="grid g-2" style="align-items:start">
+    <div class="glass card rv" style="--i:1">${cardH('Lo que requiere su atención',al.length?al.length+' puntos':'')}
+      ${al.length?`<div class="alerts">${al.map(a=>`<a class="alert" href="${a.h}" style="--c:${a.c}"><div class="ai">${ic(a.i)}</div><div class="grow"><b>${esc(a.t)}</b><small>${esc(a.s)}</small></div>${ic('right')}</a>`).join('')}</div>`:'<div class="empty"><b>Todo en orden</b>No hay pendientes por ahora.</div>'}</div>
+    <div class="glass card rv" style="--i:2;border-color:rgba(232,180,160,.35)">${cardH('Su consulta dental',misC.length?misC.length+' próximas citas':'',dir?`<button class="btn sm" data-act="cita-med" data-id="${dir.id}">${ic('plus')}Agendar</button>`:'')}
+      ${misC.length?`<div class="list">${misC.slice(0,5).map(c=>{const dd=parse(c.fecha);return `<div class="li"><div class="time" style="background:rgba(232,180,160,.1);border-color:rgba(232,180,160,.3)"><small>${c.fecha===TODAY?'Hoy':DOW[dd.getDay()]+' '+dd.getDate()}</small><b>${esc(c.hora)}</b></div><div class="grow"><b>${esc(pName(c.pacienteId))}</b><small>${esc(sName(c.servicioId))}</small></div>${pill(c.estado)}</div>`}).join('')}</div>`:`<div class="empty"><b>Sin citas dentales próximas</b>Las citas de odontología aparecerán aquí.</div>`}
+      <p class="lema" style="font-size:17px;margin-top:16px;color:#e9dcc0">“${esc(S.cfg.lema||'')}”</p></div>
+  </div></div>`}
 function vEquipo(){const d=D();const r=range(S.period),pr=prevRange(S.period),cr=capR(r);const bk=buckets(cr);
   const ms=medStats(r),mp=medStats(pr);const tot=Math.max(1,sum(Object.values(ms),'ing'));
   const meds=[...d.medicos].sort((a,b)=>(b.destacado?1:0)-(a.destacado?1:0)||(ms[b.id]?.ing||0)-(ms[a.id]?.ing||0));
   const svcOf=id=>d.servicios.filter(s=>s.medicoId===id);
-  const feat=meds.find(m=>m.destacado);const rest=meds.filter(m=>m!==feat);
+  const feat=meds.find(m=>m.destacado);const dir=meds.find(m=>m.directora);const rest=meds.filter(m=>m!==feat);
   const sinMed=d.servicios.filter(s=>!s.medicoId);
   const spk=id=>bk.map(b=>sum(d.ventas.filter(v=>v.fecha>=b.a&&v.fecha<=b.b&&medOfSvc(v.servicioId)===id),'monto'));
   const st=id=>ms[id]||{citas:0,aten:0,noas:0,pac:new Set(),ing:0,n:0};
   const asis=x=>(x.aten+x.noas)?pct(x.aten/(x.aten+x.noas),0):'—';
   const card=(m,i)=>{const x=st(m.id);return `<div class="glass card lift rv" style="--i:${i+2}">
-    <div class="doc-h">${mono(m)}<div style="flex:1;min-width:0"><h3>${esc(m.nombre)}</h3><small>${esc(m.especialidad)}</small></div><div style="display:flex;flex-direction:column;gap:2px"><button class="btn icon ghost" data-act="edit-med" data-id="${m.id}" aria-label="Editar">${ic('edit')}</button><button class="btn icon ghost danger" data-act="del" data-col="medicos" data-id="${m.id}" aria-label="Eliminar">${ic('trash')}</button></div></div>
+    <div class="doc-h">${mono(m)}<div style="flex:1;min-width:0"><h3>${esc(m.nombre)}</h3><small>${esc(m.especialidad)}</small>${m.directora?'<div style="margin-top:6px"><span class="pill" style="--c:#e8b4a0">Directora</span></div>':''}</div><div style="display:flex;flex-direction:column;gap:2px"><button class="btn icon ghost" data-act="edit-med" data-id="${m.id}" aria-label="Editar">${ic('edit')}</button><button class="btn icon ghost danger" data-act="del" data-col="medicos" data-id="${m.id}" aria-label="Eliminar">${ic('trash')}</button></div></div>
     <div class="muted" style="font-size:12.5px;margin-top:12px;display:flex;gap:6px">${ic('clock','style="width:14px;height:14px;flex:none;margin-top:3px"')}<span>${esc(m.horario||'Sin horario')}</span></div>
     <div class="chips">${svcOf(m.id).map(s=>`<span class="tag">${esc(s.nombre)}</span>`).join('')||'<span class="tag">Sin servicios asignados</span>'}</div>
     <div class="doc-stats"><div><small>Citas</small><b>${x.citas}</b></div><div><small>Asistencia</small><b>${asis(x)}</b></div><div><small>Ingresos</small><b>${money(x.ing)}</b></div></div>
     <div class="track" style="height:6px;border-radius:6px;background:rgba(255,255,255,.06);margin-top:12px;overflow:hidden" title="Participación en ingresos"><div class="bar-fill" style="width:${(x.ing/tot*100).toFixed(1)}%;--c:${m.color||'#40d4e6'}"></div></div>
     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px"><small class="muted">${pct(x.ing/tot,0)} de los ingresos del equipo</small><button class="btn sm" data-act="cita-med" data-id="${m.id}">${ic('cal')}Agendar</button></div></div>`};
   let html='';
+  if(dir){const x=st(dir.id);html+=`<div class="glass card rv" style="--i:0;margin-bottom:18px;border-color:rgba(232,180,160,.4);background:linear-gradient(120deg,rgba(232,180,160,.12),rgba(255,255,255,.02) 60%)"><div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">${mono(dir)}<div style="flex:1;min-width:200px"><div class="eyebrow" style="color:#e8b4a0">Dirección</div><h3 class="serif" style="font-size:22px;margin-top:2px">${esc(dir.nombre)}</h3><small class="muted">Directora de la clínica · ${esc(dir.especialidad)}</small></div><div class="doc-stats" style="border:0;margin:0;padding:0;grid-template-columns:repeat(3,auto);gap:22px"><div><small>Citas dentales</small><b>${x.citas}</b></div><div><small>Pacientes</small><b>${x.pac.size}</b></div><div><small>Ingresos</small><b>${money(x.ing)}</b></div></div><button class="btn sm" data-act="cita-med" data-id="${dir.id}">${ic('cal')}Agendar</button></div></div>`}
   if(feat){const x=st(feat.id),xp=mp[feat.id]||{ing:0};html+=`<div class="glass card rv featured" style="--i:0;padding:26px"><div class="hero-doc">
     <div><div class="eyebrow">${ic('star','style="width:12px;height:12px;vertical-align:-1px"')} Especialista destacado</div>
       <div class="doc-h" style="margin-top:14px">${mono(feat,'lg')}<div><h3 style="font-size:26px">${esc(feat.nombre)}</h3><small style="font-size:13.5px">${esc(feat.especialidad)}</small></div></div>
@@ -897,6 +981,14 @@ function vEquipo(){const d=D();const r=range(S.period),pr=prevRange(S.period),cr
       <div class="doc-stats" style="grid-template-columns:repeat(4,1fr)"><div><small>Citas</small><b>${x.citas}</b></div><div><small>Pacientes</small><b>${x.pac.size}</b></div><div><small>Asistencia</small><b>${asis(x)}</b></div><div><small>Del total</small><b>${pct(x.ing/tot,0)}</b></div></div>
       <div style="margin-top:14px">${lineChart({labels:bk.map(b=>b.short),full:bk.map(b=>b.label),h:170,series:[{name:'Ingresos',color:'#f2c879',values:spk(feat.id)}]})}</div></div>
   </div></div>`}
+  const vis=d.servicios.filter(s=>s.proximaVisita&&s.proximaVisita>=TODAY).sort((a,b)=>a.proximaVisita.localeCompare(b.proximaVisita));
+  const visit=d.servicios.filter(s=>s.frecuencia);
+  if(vis.length||visit.length)html+=`<div class="sec-h"><h2>Especialistas visitantes</h2><span>Vienen por fechas: conviene llenar su agenda con anticipación</span></div>
+  <div class="promo-row">${visit.map((s,i)=>{const fd=s.proximaVisita&&parse(s.proximaVisita);const dias=fd?dayDiff(today(),fd):null;const nCit=fd?d.citas.filter(c=>c.fecha===s.proximaVisita&&c.servicioId===s.id&&c.estado!=='Cancelada').length:0;
+    return `<div class="glass card lift rv ${s.lleno?'featured':''}" style="--i:${i+1}"><div class="eyebrow">${esc(s.frecuencia)}</div><h3 style="font-size:17px;margin-top:8px">${esc(s.nombre)}</h3>
+    ${fd?`<div class="pp serif" style="font-size:30px;color:#f6dfae;margin-top:6px">${DOWL[fd.getDay()][0].toUpperCase()+DOWL[fd.getDay()].slice(1)} ${fd.getDate()} ${MES[fd.getMonth()]}</div><small class="muted">${dias===0?'Hoy':dias===1?'Mañana':'En '+dias+' días'} · ${nCit} citas registradas</small>`:`<div class="muted" style="margin-top:8px;font-size:13px">${esc(s.horario)}</div><small class="muted">Fecha de la próxima visita por definir</small>`}
+    ${s.lleno?'<div style="margin-top:10px"><span class="pill" style="--c:#fb7185">Agenda llena</span></div>':''}
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px"><b class="num">${+s.precio?money(s.precio)+(isEst(s)?' <span class="tag" style="font-size:11px">estimado</span>':''):''}</b><button class="btn sm" data-act="new-cita-s" data-id="${s.id}" data-day="${s.proximaVisita||''}">${ic('cal')}Agendar</button></div></div>`}).join('')}</div>`;
   html+=`<div class="sec-h"><h2>Especialistas</h2><span>${d.medicos.length} en el equipo</span><button class="btn sm pri" data-act="new-med">${ic('plus')}Agregar especialista</button></div>`;
   html+=rest.length||!feat?`<div class="doc-grid">${rest.map(card).join('')}</div>`:'';
   if(!d.medicos.length)html+=`<div class="glass card"><div class="empty"><b>Aún no hay especialistas</b>Agrega a los médicos y terapeutas que atienden en la clínica.</div></div>`;
@@ -904,8 +996,8 @@ function vEquipo(){const d=D();const r=range(S.period),pr=prevRange(S.period),cr
   html+=`<div class="sec-h"><h2>Comparativo</h2><span>Quién genera los ingresos de la clínica</span></div>
   <div class="glass card rv" style="--i:20"><div class="tw"><table class="tbl"><thead><tr><th>#</th><th>Especialista</th><th class="n">Citas</th><th class="n">Pacientes</th><th class="n">Asistencia</th><th class="n">Ingresos</th><th class="n">Participación</th><th class="n">Tendencia</th></tr></thead><tbody>
   ${rows.map((o,i)=>`<tr><td class="muted">${i+1}</td><td><div class="who">${mono(o.m,'',32)}<div style="min-width:0"><b>${esc(o.m.nombre)}</b><small>${esc(o.m.especialidad)}</small></div></div></td><td class="n">${o.x.citas}</td><td class="n">${o.x.pac.size}</td><td class="n">${asis(o.x)}</td><td class="n"><b>${money(o.x.ing)}</b></td><td class="n">${pct(o.x.ing/tot,0)}</td><td class="n">${delta(o.x.ing,o.p.ing)}</td></tr>`).join('')}
-  <tr><td></td><td><div class="who"><div class="mono" style="width:32px;height:32px;font-size:13px;--c:#64748b">+</div><div><b>Servicios de la clínica</b><small>Consulta general, laboratorio, farmacia, dental</small></div></div></td><td class="n">${g.citas}</td><td class="n">${g.pac.size}</td><td class="n">${asis(g)}</td><td class="n"><b>${money(g.ing)}</b></td><td class="n">${pct(g.ing/tot,0)}</td><td class="n"></td></tr></tbody></table></div></div>`;
-  if(sinMed.length)html+=`<div class="sec-h"><h2>Por asignar</h2><span>Servicios sin especialista con nombre</span></div><div class="glass card rv" style="--i:21"><div class="chips" style="margin-top:0">${sinMed.map(s=>`<button class="tag" style="cursor:pointer;border:0" data-act="edit-svc" data-id="${s.id}">${esc(s.nombre)}${s.porConfirmar?' · por confirmar':''}</button>`).join('')}</div><p class="muted" style="margin:12px 0 0;font-size:12.5px">Pendiente: nombre del médico general, del internista y del odontólogo; confirmar cardiología y traumatología.</p></div>`;
+  <tr><td></td><td><div class="who"><div class="mono" style="width:32px;height:32px;font-size:13px;--c:#64748b">+</div><div><b>Servicios de la clínica</b><small>Consulta general, laboratorio y farmacia</small></div></div></td><td class="n">${g.citas}</td><td class="n">${g.pac.size}</td><td class="n">${asis(g)}</td><td class="n"><b>${money(g.ing)}</b></td><td class="n">${pct(g.ing/tot,0)}</td><td class="n"></td></tr></tbody></table></div></div>`;
+  if(sinMed.length)html+=`<div class="sec-h"><h2>Por asignar</h2><span>Servicios sin especialista con nombre</span></div><div class="glass card rv" style="--i:21"><div class="chips" style="margin-top:0">${sinMed.map(s=>`<button class="tag" style="cursor:pointer;border:0" data-act="edit-svc" data-id="${s.id}">${esc(s.nombre)}${s.porConfirmar?' · por confirmar':''}</button>`).join('')}</div><p class="muted" style="margin:12px 0 0;font-size:12.5px">Pendiente: nombre del médico general, del internista y cardiólogo, y del traumatólogo; precio de ultrasonidos, laboratorio y auriculoterapia.</p></div>`;
   return html}
 const isEst=s=>{if(S.mode!=='demo')return false;const r=REAL_SVCS.find(x=>x.id===s.id);return !!r&&!+r.precio};
 function vServicios(){const d=D();const r=range(S.period);const F=fin(r);
@@ -940,6 +1032,8 @@ function vAjustes(){const c=S.cfg;const p=Math.round(pct1()*100);
       <label class="fld"><span>Meta de ingresos mensual</span><input id="c_meta" type="number" min="0" step="1000" value="${esc(c.metaMensual||0)}"></label>
       <label class="fld"><span>Instagram</span><input id="c_ig" value="${esc(c.instagram||'')}"></label>
       <label class="fld"><span>Fecha de apertura</span><input id="c_ap" type="date" value="${esc(c.apertura||'')}"></label>
+      <label class="fld"><span>Directora</span><input id="c_dir2" value="${esc(c.directora||'')}"></label>
+      <label class="fld"><span>Saludo de bienvenida</span><input id="c_sal" value="${esc(c.saludo||'')}" placeholder="Gaby Reyna"></label>
       <label class="fld"><span>Nombre del socio</span><input id="c_socio" value="${esc(c.socioNombre)}"></label>
       <label class="fld"><span>Tu nombre</span><input id="c_mi" value="${esc(c.miNombre)}"></label>
       <label class="fld"><span>Porcentaje del socio: <b id="pctv">${p}% / ${100-p}%</b></span><input id="c_pct" type="range" min="0" max="100" step="1" value="${p}"></label>
@@ -955,20 +1049,20 @@ function vAjustes(){const c=S.cfg;const p=Math.round(pct1()*100);
       <div style="display:flex;gap:10px;flex-wrap:wrap">${S.mode==='demo'?`<button class="btn pri" data-act="golive">Empezar con mis datos</button>`:`<button class="btn" data-act="godemo">Ver datos de ejemplo</button>`}<button class="btn" data-act="copyjson">${ic('copy')}Copiar respaldo (JSON)</button>${isLocal()?`<button class="btn" data-act="importjson">${ic('upload')}Importar respaldo</button>`:''}</div></div>
   </div></div>`}
 
-const RENDER={equipo:vEquipo,resumen:vResumen,whatsapp:vWhatsapp,agenda:vAgenda,pacientes:vPacientes,ventas:vVentas,gastos:vGastos,utilidades:vUtilidades,servicios:vServicios,ajustes:vAjustes};
+const RENDER={bienvenida:vBienvenida,equipo:vEquipo,resumen:vResumen,whatsapp:vWhatsapp,agenda:vAgenda,pacientes:vPacientes,ventas:vVentas,gastos:vGastos,utilidades:vUtilidades,servicios:vServicios,ajustes:vAjustes};
 
 /* ================= Render ================= */
 function renderSide(){const d=D();const t=today();const a=new Date(t.getFullYear(),t.getMonth(),1),b=new Date(t.getFullYear(),t.getMonth()+1,0);const F=fin({a,b});const sp=split(F.ut);const p=pct1();
   const waHoy=d.whatsapp.find(x=>x.fecha===TODAY);const citasHoy=d.citas.filter(c=>c.fecha===TODAY&&c.estado!=='Cancelada').length;
   const item=(k,lbl,extra='')=>`<a href="#${k}" class="${S.view===k?'on':''}">${ic(VIEWS[k].ic)}<span>${lbl}</span>${extra}</a>`;
   $('#side').innerHTML=`<div class="brand"><div class="logo"><img src="${S.cfg.logo||LOGO_DEFAULT}" alt="Logo de ${esc(S.cfg.clinica)}"></div><div><b>${esc(S.cfg.clinica)}</b><small>Chapa de Mota</small></div></div>
-  <nav class="nav"><div class="lbl">General</div>${item('resumen','Resumen')}${item('whatsapp','WhatsApp',waHoy?`<span class="badge">${waHoy.conversaciones}</span>`:'')}${item('agenda','Agenda',citasHoy?`<span class="badge" style="background:rgba(56,189,248,.15);color:#7dd3fc">${citasHoy} hoy</span>`:'')}${item('pacientes','Pacientes')}
+  <nav class="nav"><div class="lbl">General</div>${item('bienvenida','Inicio')}${item('resumen','Resumen')}${item('whatsapp','WhatsApp',waHoy?`<span class="badge">${waHoy.conversaciones}</span>`:'')}${item('agenda','Agenda',citasHoy?`<span class="badge" style="background:rgba(56,189,248,.15);color:#7dd3fc">${citasHoy} hoy</span>`:'')}${item('pacientes','Pacientes')}
   <div class="lbl">Finanzas</div>${item('ventas','Ventas')}${item('gastos','Gastos')}${item('utilidades','Utilidades')}
   <div class="lbl">Clínica</div>${item('equipo','Equipo médico')}${item('servicios','Servicios')}${item('ajustes','Ajustes')}</nav>
   <div class="split-mini"><div class="t">Reparto · ${MESL[t.getMonth()]}</div><div class="bar"><div style="width:${p*100}%;background:#40d4e6"></div><div style="flex:1;background:#f2c879"></div></div>
   <div class="row"><span>${esc(S.cfg.socioNombre)} ${Math.round(p*100)}%</span><b class="num">${money(sp.socio)}</b></div><div class="row"><span>${esc(S.cfg.miNombre)} ${Math.round((1-p)*100)}%</span><b class="num">${money(sp.yo)}</b></div></div>`}
-function renderTop(){const v=VIEWS[S.view];const showP=!['agenda','ajustes'].includes(S.view);
-  $('#top').innerHTML=`<div><h1>${v.t}</h1><div class="sub">${esc(v.s())}</div></div><span class="sp"></span>${showP?periodSeg():''}
+function renderTop(){const v=VIEWS[S.view];const showP=!['agenda','ajustes','bienvenida'].includes(S.view);
+  $('#top').innerHTML=`${S.view==='bienvenida'?`<div><div class="eyebrow">${esc(S.cfg.clinica)}</div><div class="clock" id="clock2">${esc(clockText())}</div></div>`:`<div><h1>${v.t}</h1><div class="sub">${esc(v.s())}</div></div>`}<span class="sp"></span>${showP?periodSeg():''}
   <div class="dd" id="dd"><button class="btn pri" data-act="dd" aria-haspopup="true">${ic('plus')}Registrar</button><div class="dd-menu glass">
   <button data-act="new-venta">${ic('cash')}Venta</button><button data-act="new-gasto">${ic('receipt')}Gasto</button><button data-act="new-cita">${ic('cal')}Cita</button><button data-act="new-pac">${ic('users')}Paciente</button><button data-act="new-wa">${ic('wa')}WhatsApp del día</button><button data-act="new-svc">${ic('steth')}Servicio</button></div></div>`}
 function banner(){if(S.dbState==='none')return `<div class="banner err"><span class="dot"></span><span>No hay conexión con el almacenamiento en esta vista. Puedes explorar con datos de ejemplo, pero los cambios no se guardarán.</span></div>`;
@@ -989,7 +1083,7 @@ function countUp(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)ret
   const step=now=>{const k=Math.min(1,(now-t0)/1000);const e=1-Math.pow(1-k,3);const v=target*e;el.textContent=txt.replace(m[0],dec>0?v.toLocaleString('es-MX',{minimumFractionDigits:dec,maximumFractionDigits:dec}):Math.round(v).toLocaleString('es-MX'));if(k<1)requestAnimationFrame(step);else el.textContent=txt};requestAnimationFrame(step)})}
 function bindView(){const q=$('#q');if(q)q.oninput=()=>{S.q=q.value;S.limit=40;scheduleRender()};const fo=$('#forigen');if(fo)fo.onchange=()=>{S.origen=fo.value;render()};
   const f=$('#cfgform');if(f){const r=$('#c_pct');r.oninput=()=>{$('#pctv').textContent=r.value+'% / '+(100-r.value)+'%'};
-    f.onsubmit=e=>{e.preventDefault();saveCfg({lema:$('#c_lema').value.trim(),correo:$('#c_mail').value.trim(),web:$('#c_web').value.trim(),metaMensual:+$('#c_meta').value||0,direccion:$('#c_dir').value.trim(),whatsapp:$('#c_wa').value.trim(),telefono:$('#c_tel').value.trim(),instagram:$('#c_ig').value.trim(),apertura:$('#c_ap').value,clinica:$('#c_clinica').value.trim()||DEFAULT_CFG.clinica,socioNombre:$('#c_socio').value.trim()||'Socio',miNombre:$('#c_mi').value.trim()||'Yo',socioPct:+r.value,moneda:$('#c_mon').value})}}
+    f.onsubmit=e=>{e.preventDefault();saveCfg({directora:$('#c_dir2').value.trim(),saludo:$('#c_sal').value.trim(),lema:$('#c_lema').value.trim(),correo:$('#c_mail').value.trim(),web:$('#c_web').value.trim(),metaMensual:+$('#c_meta').value||0,direccion:$('#c_dir').value.trim(),whatsapp:$('#c_wa').value.trim(),telefono:$('#c_tel').value.trim(),instagram:$('#c_ig').value.trim(),apertura:$('#c_ap').value,clinica:$('#c_clinica').value.trim()||DEFAULT_CFG.clinica,socioNombre:$('#c_socio').value.trim()||'Socio',miNombre:$('#c_mi').value.trim()||'Yo',socioPct:+r.value,moneda:$('#c_mon').value})}}
   const lf=$('#logof');if(lf)lf.onchange=()=>{const file=lf.files[0];if(!file)return;const rd=new FileReader();rd.onload=()=>{const img=new Image();img.onload=()=>{const s=Math.min(1,256/Math.max(img.width,img.height));const cv=document.createElement('canvas');cv.width=Math.round(img.width*s);cv.height=Math.round(img.height*s);cv.getContext('2d').drawImage(img,0,0,cv.width,cv.height);saveCfg({logo:cv.toDataURL('image/png')})};img.onerror=()=>toast('No se pudo leer la imagen. Prueba con PNG o JPG.',true);img.src=rd.result};rd.readAsDataURL(file)}}
 
 /* ================= Persistencia ================= */
@@ -1009,12 +1103,13 @@ async function saveCfg(patch){S.cfg={...S.cfg,...patch};render();if(db){try{awai
 function dbErr(e){const c=e&&e.code;if(c==='invalid_argument'){S.canWrite=false;toast('No tienes permiso para guardar cambios en esta plataforma.',true)}else if(c==='quota_exceeded')toast('Se alcanzó el límite de almacenamiento. Elimina registros antiguos.',true);else toast('No se pudo guardar. Revisa tu conexión e inténtalo de nuevo.',true)}
 
 let migrating=false;
-async function ensureCatalog(){if(S.mode!=='live'||S.cfg.catalogo2||migrating)return;migrating=true;
-  const svcs=REAL_SVCS.map(s=>{const ex=LIVE.servicios.find(x=>x.id===s.id);return {...s,precio:ex&&+ex.precio?+ex.precio:s.precio}});
-  const meds=REAL_MEDS.filter(m=>!LIVE.medicos.some(x=>x.id===m.id));
-  const cfgPatch={catalogo2:true};if(!S.cfg.lema)cfgPatch.lema=DEFAULT_CFG.lema;if(!S.cfg.correo)cfgPatch.correo=DEFAULT_CFG.correo;if(!S.cfg.web)cfgPatch.web=DEFAULT_CFG.web;if(!S.cfg.metaMensual)cfgPatch.metaMensual=DEFAULT_CFG.metaMensual;
+const catV=()=>+S.cfg.catalogoV||(S.cfg.catalogo2?2:0);
+async function ensureCatalog(){if(S.mode!=='live'||catV()>=CATV||migrating)return;migrating=true;
+  const svcs=REAL_SVCS.map(s=>{const ex=LIVE.servicios.find(x=>x.id===s.id);return {...(ex||{}),...s,precio:+s.precio?+s.precio:(ex&&+ex.precio?+ex.precio:0)}});
+  const meds=REAL_MEDS.map(m=>{const ex=LIVE.medicos.find(x=>x.id===m.id);return ex?{...ex,nombre:m.id==='m-reina'?m.nombre:ex.nombre,horario:m.horario,especialidad:m.especialidad,notas:m.notas,directora:!!m.directora}:{...m}});
+  const cfgPatch={catalogo2:true,catalogoV:CATV};if(!S.cfg.directora||/Re(i|yi)na /.test(S.cfg.directora))cfgPatch.directora=DEFAULT_CFG.directora;if(!S.cfg.saludo||S.cfg.saludo==='Dra. Gabriela')cfgPatch.saludo=DEFAULT_CFG.saludo;if(!S.cfg.lema)cfgPatch.lema=DEFAULT_CFG.lema;if(!S.cfg.correo)cfgPatch.correo=DEFAULT_CFG.correo;if(!S.cfg.web)cfgPatch.web=DEFAULT_CFG.web;if(!S.cfg.metaMensual)cfgPatch.metaMensual=DEFAULT_CFG.metaMensual;
   if(!S.cfg.telefono||S.cfg.telefono.replace(/\s/g,'')==='5889931761')cfgPatch.telefono=DEFAULT_CFG.telefono;if(!S.cfg.direccion||/Vicente Guerrero/.test(S.cfg.direccion))cfgPatch.direccion=DEFAULT_CFG.direccion;
-  if(isLocal()){svcs.forEach(s=>{const i=LIVE.servicios.findIndex(x=>x.id===s.id);if(i>=0)LIVE.servicios[i]=s;else LIVE.servicios.push(s)});LIVE.medicos.push(...meds.map(m=>({...m})));S.cfg={...S.cfg,...cfgPatch};persistLocal();migrating=false;scheduleRender();return}
+  if(isLocal()){svcs.forEach(s=>{const i=LIVE.servicios.findIndex(x=>x.id===s.id);if(i>=0)LIVE.servicios[i]=s;else LIVE.servicios.push(s)});meds.forEach(m=>{const i=LIVE.medicos.findIndex(x=>x.id===m.id);if(i>=0)LIVE.medicos[i]=m;else LIVE.medicos.push(m)});S.cfg={...S.cfg,...cfgPatch};persistLocal();migrating=false;scheduleRender();return}
   if(!db){migrating=false;return}
   try{for(const s of svcs){const{id,...b}=s;await db.collection(P('servicios')).doc(id).set(b)}for(const m of meds){const{id,...b}=m;await db.collection(P('medicos')).doc(id).set(b)}
     S.cfg={...S.cfg,...cfgPatch};await db.doc(P('config')+'/general').set({...S.cfg})}catch(e){}migrating=false}
@@ -1073,15 +1168,15 @@ function fWa(w={}){form({title:w.id?'Editar registro':'WhatsApp del día',sub:'C
     if(w.id&&w.id!==x.fecha)await remove('whatsapp',w.id);await save('whatsapp',{id:x.fecha,fecha:x.fecha,conversaciones:+x.conversaciones||0,agendaron:+x.agendaron||0,notas:x.notas})}})}
 function fMed(m={}){form({title:m.id?'Editar especialista':'Agregar especialista',sub:'Aparece en Equipo médico y en el comparativo de ingresos',fields:[
   {id:'nombre',label:'Nombre completo',value:m.nombre||'',ph:'Ej. Dra. Ana López',req:1,span:1},{id:'especialidad',label:'Especialidad',value:m.especialidad||'',req:1},
-  {id:'destacado',label:'Destacado',type:'select',options:[{v:'',t:'No'},{v:'1',t:'Sí, especialista destacado'}],value:m.destacado?'1':''},
+  {id:'destacado',label:'Destacado',type:'select',options:[{v:'',t:'No'},{v:'1',t:'Sí, especialista destacado'}],value:m.destacado?'1':''},{id:'directora',label:'Dirige la clínica',type:'select',options:[{v:'',t:'No'},{v:'1',t:'Sí'}],value:m.directora?'1':''},
   {id:'horario',label:'Horario',value:m.horario||'',span:1},{id:'color',label:'Color',type:'select',options:[{v:'#f2c879',t:'Oro'},{v:'#40d4e6',t:'Aqua'},{v:'#38bdf8',t:'Azul'},{v:'#a78bfa',t:'Violeta'},{v:'#34d399',t:'Verde'},{v:'#fb923c',t:'Naranja'},{v:'#f472b6',t:'Rosa'}],value:m.color||'#40d4e6'},
   {id:'notas',label:'Notas',type:'textarea',value:m.notas||'',span:1}],
-  onSubmit:async x=>{const obj={...m,nombre:x.nombre.trim(),especialidad:x.especialidad.trim(),horario:x.horario,color:x.color,destacado:!!x.destacado,notas:x.notas};
+  onSubmit:async x=>{const obj={...m,nombre:x.nombre.trim(),especialidad:x.especialidad.trim(),horario:x.horario,color:x.color,destacado:!!x.destacado,directora:!!x.directora,notas:x.notas};
     if(obj.destacado){for(const o of D().medicos.filter(o=>o.destacado&&o.id!==m.id))await save('medicos',{...o,destacado:false})}await save('medicos',obj)}})}
 function fSvc(s={}){form({title:s.id?'Editar servicio':'Nuevo servicio',fields:[
   {id:'nombre',label:'Nombre',value:s.nombre||'',req:1,span:1},{id:'categoria',label:'Categoría',type:'select',options:CAT_S,value:s.categoria||'Consulta'},
-  {id:'precio',label:'Precio (deja 0 si aún no se define)',type:'number',step:'0.01',min:0,value:s.precio??''},{id:'duracion',label:'Duración (min)',type:'number',min:5,value:s.duracion??30},{id:'horario',label:'Horario',value:s.horario||'',ph:'Ej. Martes y jueves · 8:00 am a 12:00 pm',span:1},{id:'medicoId',label:'Especialista',type:'select',options:[{v:'',t:'Sin asignar'},...D().medicos.map(m=>({v:m.id,t:m.nombre}))],value:s.medicoId||''},{id:'promo',label:'¿Es promoción?',type:'select',options:[{v:'',t:'No'},{v:'1',t:'Sí, mostrar en promociones'}],value:s.promo?'1':''},{id:'descripcion',label:'Descripción',value:s.descripcion||'',span:1}],
-  onSubmit:x=>save('servicios',{...s,nombre:x.nombre.trim(),categoria:x.categoria,precio:+x.precio||0,duracion:+x.duracion||30,horario:x.horario,medicoId:x.medicoId,promo:!!x.promo,descripcion:x.descripcion})})}
+  {id:'precio',label:'Precio (deja 0 si aún no se define)',type:'number',step:'0.01',min:0,value:s.precio??''},{id:'duracion',label:'Duración (min)',type:'number',min:5,value:s.duracion??30},{id:'horario',label:'Horario',value:s.horario||'',ph:'Ej. Martes y jueves · 8:00 am a 12:00 pm',span:1},{id:'medicoId',label:'Especialista',type:'select',options:[{v:'',t:'Sin asignar'},...D().medicos.map(m=>({v:m.id,t:m.nombre}))],value:s.medicoId||''},{id:'frecuencia',label:'Frecuencia (si viene por fechas)',value:s.frecuencia||'',ph:'Ej. Mensual, Quincenal'},{id:'proximaVisita',label:'Próxima visita',type:'date',value:s.proximaVisita||''},{id:'promo',label:'¿Es promoción?',type:'select',options:[{v:'',t:'No'},{v:'1',t:'Sí, mostrar en promociones'}],value:s.promo?'1':''},{id:'descripcion',label:'Descripción',value:s.descripcion||'',span:1}],
+  onSubmit:x=>save('servicios',{...s,nombre:x.nombre.trim(),categoria:x.categoria,precio:+x.precio||0,duracion:+x.duracion||30,horario:x.horario,medicoId:x.medicoId,frecuencia:x.frecuencia.trim(),proximaVisita:x.proximaVisita,promo:!!x.promo,descripcion:x.descripcion})})}
 function verPac(id){const d=D();const p=byId('pacientes',id);if(!p)return;const cs=d.citas.filter(c=>c.pacienteId===id).sort((a,b)=>b.fecha.localeCompare(a.fecha));const vs=d.ventas.filter(v=>v.pacienteId===id);
   modal(`<div class="modal-h"><div class="who">${avatar(p.nombre)}<div><h2>${esc(p.nombre)}</h2><p>${esc(p.telefono||'Sin teléfono')}${p.email?' · '+esc(p.email):''}</p></div></div><span class="sp"></span><button class="btn icon ghost" data-act="mclose" aria-label="Cerrar">${ic('x')}</button></div>
   <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px">
@@ -1113,6 +1208,7 @@ document.addEventListener('click',async e=>{const pb=e.target.closest('[data-per
     case 'cobrar':fVenta({},byId('citas',id));break;
     case 'new-pac':fPac();break;case 'edit-pac':closeModal();fPac(byId('pacientes',id));break;case 'ver-pac':verPac(id);break;
     case 'new-wa':fWa();break;case 'edit-wa':fWa(byId('whatsapp',id));break;
+    case 'new-cita-s':fCita({servicioId:id},el.dataset.day||S.selDay);break;
     case 'new-med':fMed();break;case 'edit-med':fMed(mObj(id));break;
     case 'cita-med':{const sv=d.servicios.find(s=>s.medicoId===id&&!s.promo)||d.servicios.find(s=>s.medicoId===id);fCita({servicioId:sv?.id},S.selDay);break}
     case 'edit-meta':{form({title:'Meta de ingresos mensual',sub:'Se usa en el Resumen para medir el avance y la proyección del mes',fields:[{id:'meta',label:'Meta',type:'number',min:0,step:'1000',value:S.cfg.metaMensual||0,req:1,span:1}],onSubmit:x=>saveCfg({metaMensual:+x.meta||0})});break}
@@ -1136,20 +1232,20 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card');if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
 function goLive(){if(!db&&!isLocal()){toast('No hay conexión con el almacenamiento.',true);return}
   modal(`<div class="modal-h"><div><h2>Empezar con tus datos</h2><p>Los datos de ejemplo desaparecen y la plataforma queda lista para registrar la operación real de la clínica.</p></div><span class="sp"></span><button class="btn icon ghost" data-act="mclose" aria-label="Cerrar">${ic('x')}</button></div>
-  <label style="display:flex;gap:10px;align-items:flex-start;padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer"><input type="checkbox" id="keepsvc" checked style="margin-top:3px"><span><b>Usar el catálogo de servicios de la clínica</b><br><span class="muted">Los 18 servicios y los 7 especialistas de la clínica, con horarios y los precios ya publicados.</span></span></label>
+  <label style="display:flex;gap:10px;align-items:flex-start;padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer"><input type="checkbox" id="keepsvc" checked style="margin-top:3px"><span><b>Usar el catálogo de servicios de la clínica</b><br><span class="muted">Los 18 servicios y los 7 especialistas, con los horarios y precios que envió la clínica el 13 de noviembre.</span></span></label>
   <div class="form-f" style="margin-top:18px"><button class="btn ghost" data-act="mclose">Cancelar</button><button class="btn pri" id="golive-ok">${ic('check')}Empezar</button></div>`);
   $('#golive-ok').onclick=async()=>{const keep=$('#keepsvc').checked;closeModal();S.mode='live';S.pickedDemo=false;lastView=null;render();
-    if(isLocal()){S.cfg.iniciado=true;S.cfg.catalogo2=!keep;if(keep){await ensureCatalog()}if(persistLocal())toast('Listo. Empieza registrando tu primera cita o venta.');render();return}
-    try{S.cfg.iniciado=true;S.cfg.catalogo2=!keep;if(keep)await ensureCatalog();await db.doc(P('config')+'/general').set({...S.cfg});toast('Listo. Empieza registrando tu primera cita o venta.')}catch(e){dbErr(e)}}}
+    if(isLocal()){S.cfg.iniciado=true;S.cfg.catalogo2=!keep;S.cfg.catalogoV=keep?0:CATV;if(keep){await ensureCatalog()}if(persistLocal())toast('Listo. Empieza registrando tu primera cita o venta.');render();return}
+    try{S.cfg.iniciado=true;S.cfg.catalogo2=!keep;S.cfg.catalogoV=keep?0:CATV;if(keep)await ensureCatalog();await db.doc(P('config')+'/general').set({...S.cfg});toast('Listo. Empieza registrando tu primera cita o venta.')}catch(e){dbErr(e)}}}
 
 /* ================= Arranque ================= */
-function route(){const h=location.hash.slice(1);S.view=RENDER[h]?h:'resumen';S.limit=40;S.q='';render()}
+function route(){const h=location.hash.slice(1);S.view=RENDER[h]?h:'bienvenida';S.limit=40;S.q='';render()}
 window.addEventListener('hashchange',route);
-try{$('#splash-img').src=LOGO_DEFAULT}catch(e){}
+try{$('#splash-img').src=LOGO_DEFAULT;if(S.cfg.saludo)$('#splash span').textContent='Bienvenida, '+S.cfg.saludo}catch(e){}
 route();
 initDb();
 (function(){const sp=$('#splash');if(!sp)return;const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;setTimeout(()=>{sp.classList.add('out');setTimeout(()=>sp.remove(),700)},rm?0:1300)})();
-setInterval(()=>{const c=$('#clock');if(c)c.textContent=clockText()},20000);
+setInterval(()=>{['#clock','#clock2'].forEach(q=>{const c=$(q);if(c)c.textContent=clockText()})},20000);
 </script>
 </body>
 </html>
