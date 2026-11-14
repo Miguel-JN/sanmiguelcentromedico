@@ -133,6 +133,71 @@ h1 span{font-style:italic;font-weight:500}
 .zoom{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
 .zoomwrap:hover .zoom{transform:scale(1.07)}
 .gold-num{color:var(--gold2) !important}
+/* anuncio superior */
+.announce{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px 20px;background:linear-gradient(90deg,#C9A45C,#E3C98F,#C9A45C);background-size:200% 100%;animation:shimmer 8s linear infinite;color:#0B2A3C;text-decoration:none;font-size:14px;text-align:center}
+.announce b{font-weight:700}
+.announce .dot{width:8px;height:8px;border-radius:50%;background:#0B2A3C;box-shadow:0 0 0 0 rgba(11,42,60,.5);animation:ping 1.8s infinite}
+.announce-cta{font-weight:700;border-bottom:1px solid rgba(11,42,60,.5)}
+@keyframes shimmer{to{background-position:200% 0}}
+@media (max-width:700px){.announce{font-size:12.5px;gap:6px 10px;padding:8px 14px;line-height:1.4}.announce .dot{display:none}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(11,42,60,.45)}80%,100%{box-shadow:0 0 0 10px rgba(11,42,60,0)}}
+/* precio en tarjeta de médico */
+.dr-price{font:600 18px "Bodoni Moda",serif;color:#0B2A3C;margin-top:6px}
+.dr-featured .dr-price{color:#9A7A35}
+/* agenda semanal */
+.wk-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(201,164,92,.35);border-radius:26px;padding:28px}
+.wk-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.wk-head h3{font:600 26px "Bodoni Moda",serif;color:#fff;margin:0}
+.wk-head>span{font-size:13px;color:#B9D3DB;display:flex;align-items:center;gap:6px}
+.wk-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.wk{width:100%;min-width:640px;border-collapse:separate;border-spacing:0}
+.wk th,.wk td{padding:14px 8px;text-align:center;border-bottom:1px solid rgba(207,227,234,.10)}
+.wk thead th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#E3C98F;font-weight:700}
+.wk tbody th{text-align:left;padding-left:4px;min-width:200px}
+.wk tbody tr{transition:background-color .3s ease}
+.wk tbody tr:hover{background:rgba(41,188,208,.06)}
+.wk-name{display:block;font-weight:700;color:#fff;font-size:15px}
+.wk-sub{display:block;font-size:12px;color:#9FC3CE;margin-top:2px}
+.wk-dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:#29BCD0;box-shadow:0 0 0 4px rgba(41,188,208,.15)}
+.wk-dot.alt{background:transparent;border:2px solid #29BCD0;box-shadow:none}
+.wk-dot.gold{background:#C9A45C;box-shadow:0 0 0 4px rgba(201,164,92,.22)}
+.wk-no{color:rgba(207,227,234,.25)}
+.wk-star th .wk-name{color:#E3C98F}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wk-hint{display:none;font-size:12px;color:#9FC3CE;margin:-6px 0 10px}
+@media (max-width:760px){
+  .wk-wrap{padding:20px 16px}
+  .wk{min-width:560px}
+  .wk tbody th,.wk thead th:first-child{position:sticky;left:0;z-index:1;background:#13344A;min-width:132px;box-shadow:6px 0 10px -6px rgba(0,0,0,.4)}
+  .wk-name{font-size:14px}
+  .wk-hint{display:block}
+}
+.visits{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.visit{background:rgba(255,255,255,.05);border:1px solid rgba(207,227,234,.16);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:4px}
+.visit-k{font-weight:700;color:#fff}
+.visit-v{font:600 20px "Bodoni Moda",serif;color:#29BCD0}
+.visit-n{font-size:13px;color:#B9D3DB}
+/* precios */
+.prices{padding:110px 0;background:linear-gradient(180deg,#FBF8F1 0%,#FFFFFF 100%)}
+.prices-in{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:56px;align-items:start}
+.prices-head{display:flex;flex-direction:column;gap:18px;position:sticky;top:120px}
+.prices-head h2{font-size:48px;line-height:1.08;color:#0B2A3C;margin:0}
+.prices-head h2 em{color:#0E7A8A;font-weight:500}
+.prices-head p{font-size:18px;line-height:1.7;color:#4A6170;margin:0}
+.prices-card{background:#FFFFFF;border:1px solid rgba(201,164,92,.45);border-radius:28px;padding:14px 30px 24px;box-shadow:0 30px 70px rgba(11,42,60,.08)}
+.prices-card ul{list-style:none;margin:0;padding:0}
+.pr{display:flex;align-items:flex-end;gap:12px;padding:18px 0;border-bottom:1px solid #EEF3F4;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.pr:hover{transform:translateX(6px)}
+.pr:last-child{border-bottom:none}
+.pr-l{display:flex;flex-direction:column;gap:3px}
+.pr-n{font-weight:700;font-size:17px;color:#0B2A3C}
+.pr-n em{font-style:normal;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9A7A35;background:rgba(201,164,92,.14);border:1px solid rgba(201,164,92,.45);padding:3px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.pr-s{font-size:13px;color:#4A6170}
+.pr-dots{flex:1;border-bottom:1px dotted #C9D7DB;margin-bottom:7px;min-width:20px}
+.pr-p{font:600 26px "Bodoni Moda",serif;color:#0B2A3C;white-space:nowrap}
+.pr-star .pr-p{color:#9A7A35}
+.prices-note{font-size:13px;color:#4A6170;margin:14px 0 0}
+@media (max-width:760px){.prices-head{position:static}.prices-head h2{font-size:36px}.prices-card{padding:8px 18px 18px}.pr-p{font-size:22px}}
 /* franja cinematográfica Tú y tu bebé */
 .cine{position:relative;min-height:720px;display:flex;align-items:center;overflow:hidden;background:#071E2C;color:#fff}
 .cine-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 50%;transform:scale(1.12)}
@@ -194,11 +259,12 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
 <div id="preloader" aria-hidden="true"><div class="pl-in"><img src="img/logo-m-blanco.png" alt=""><span class="pl-line"></span></div></div>
 <div style="font-family: Inter, sans-serif; color: #0B2A3C; width: 100%; overflow-x: hidden;">
 
+<a class="announce" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20apartar%20lugar%20para%20Medicina%20Interna%20y%20Cardiolog%C3%ADa%20el%205%20de%20diciembre"><span class="dot" aria-hidden="true"></span><span><b>Medicina interna y cardiología</b> · Próxima visita: <b>5 de diciembre</b> · Cupo limitado</span><span class="announce-cta">Aparta tu lugar →</span></a>
 <!-- BARRA SUPERIOR -->
 <div style="background: #0B2A3C; color: #CFE9EE; font-size: 13px;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
     <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
-      <span class="topbar-hide" style="display: flex; gap: 8px; align-items: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Consulta general: 9:00 am a 3:00 pm y desde las 5:00 pm</span>
+      <span class="topbar-hide" style="display: flex; gap: 8px; align-items: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Consulta general: 9:00 am – 2:00 pm y 5:00 – 9:00 pm</span>
       <a class="addr-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=19.814194,-99.5250771&amp;travelmode=driving" target="_blank" rel="noopener" style="display: flex; gap: 8px; align-items: center; color: #CFE9EE; text-decoration: none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Atrás de la iglesia, a un lado del Centro de Salud, Chapa de Mota · Cómo llegar</a>
     </div>
     <div style="display: flex; gap: 18px; align-items: center;">
@@ -218,7 +284,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
       <a class="navlink" href="#servicios">Servicios</a>
       <a class="navlink" href="#medicos">Especialistas</a>
       <a class="navlink" href="#horarios">Horarios</a>
-      <a class="navlink" href="#paquetes">Promociones</a>
+      <a class="navlink" href="#precios">Precios</a>
       <a class="navlink" href="#ubicacion">Ubicación</a>
     </nav>
     <a class="btn" href="https://wa.me/527124342542" style="background: #0B2A3C; color: #FFFFFF; text-decoration: none; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; display: flex; gap: 10px; align-items: center; min-height: 48px;">
@@ -290,7 +356,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
           <div style="max-width: 660px; display: flex; flex-direction: column; gap: 24px;">
             <span class="t1" style="display: inline-flex; align-self: flex-start; gap: 8px; align-items: center; background: rgba(41,188,208,.16); color: #7FDDEA; border: 1px solid rgba(41,188,208,.4); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;">Laboratorio y farmacia</span>
             <h1 class="t2" style="color: #FFFFFF; font-size: 60px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em;">Análisis clínicos desde <span style="color: #29BCD0;">las 7:00 am.</span></h1>
-            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Laboratorio de lunes a sábado de 7:00 am a 2:00 pm y farmacia todos los días de 7:00 am a 9:00 pm.</p>
+            <p class="t3" style="color: #D6EAF0; font-size: 19px; line-height: 1.6; max-width: 560px;">Laboratorio de lunes a sábado de 7:00 am a 12:00 pm y farmacia todos los días de 7:00 am a 9:00 pm.</p>
             <div class="t3" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
               <a class="btn" href="https://wa.me/527124342542" style="background: #29BCD0; color: #0B2A3C; text-decoration: none; padding: 16px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; display: flex; gap: 10px; align-items: center; min-height: 52px;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
@@ -363,7 +429,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7 15h10"></path></svg>
         </span>
         <span style="font: 700 18px Manrope, sans-serif; color: #0B2A3C;">Laboratorio clínico</span>
-        <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Lunes a sábado de 7:00 am a 2:00 pm.</span>
+        <span style="font-size: 14px; color: #4A6170; line-height: 1.5;">Lunes a sábado de 7:00 am a 12:00 pm.</span>
         <span style="display: flex; gap: 6px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">Ver horarios <span class="arrow">→</span></span>
       </a>
     
@@ -526,7 +592,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             </div>
             <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Dr. Jesús Orlando Pérez García. Control de embarazo, Papanicolaou, colposcopía y ultrasonido 2D, 3D y 4D.</p>
             <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Con previa cita
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Lun, mié y vie · 9:00 am a 2:00 pm
             </span>
           </div>
         </article>
@@ -545,9 +611,9 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
               </span>
               <h3 style="font-size: 20px; font-weight: 700;">Atención médica general</h3>
             </div>
-            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Consulta para toda la familia: diagnóstico, tratamiento y seguimiento. También médico internista.</p>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Consulta para toda la familia: diagnóstico, tratamiento y seguimiento.</p>
             <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>9:00 am a 3:00 pm y desde las 5:00 pm
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>9:00 am a 2:00 pm y 5:00 a 9:00 pm
             </span>
           </div>
         </article>
@@ -571,7 +637,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             </div>
             <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Dr. Héctor Méndez Blas, Radiología e Imagen: abdomen, renal, pélvico, Doppler, obstétrico y más.</p>
             <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Con previa cita
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Miércoles y sábado · con previa cita
             </span>
           </div>
         </article>
@@ -595,7 +661,31 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             </div>
             <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Dra. Adriana Alaniz. Cuidando la salud de tus peques, desde recién nacidos.</p>
             <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Con previa cita
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Cada 20 días aprox. · pregunta la fecha
+            </span>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 190px;">
+            
+            
+              <div class="zoom" style="height: 190px; background: #0F3347; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 34px solid rgba(41,188,208,.10); right: -70px; top: -90px;" aria-hidden="true"></div>
+                <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: floaty 4s ease-in-out infinite;"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a5 5 0 0 0 10 0v-2M21 12a2 2 0 1 0 0-.01"></path></svg>
+              </div>
+            
+          </div>
+          <div style="padding: 26px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a5 5 0 0 0 10 0v-2M21 12a2 2 0 1 0 0-.01"></path></svg>
+              </span>
+              <h3 style="font-size: 20px; font-weight: 700;">Medicina interna y cardiología</h3>
+            </div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Valoración integral y chequeo de tu corazón. Visita mensual con cupo limitado.</p>
+            <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Próxima visita: 5 de diciembre
             </span>
           </div>
         </article>
@@ -619,7 +709,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             </div>
             <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Biometría hemática, química sanguínea, estudios ginecológicos, hormonales y examen general de orina.</p>
             <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Lunes a sábado, 7:00 am a 2:00 pm
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Lunes a sábado · 7:00 am a 12:00 pm
             </span>
           </div>
         </article>
@@ -643,7 +733,31 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             </div>
             <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Medicamento genérico y de patente, material de curación y artículos de cuidado personal.</p>
             <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Todos los días, 7:00 am a 9:00 pm
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Lunes a domingo · 7:00 am a 9:00 pm
+            </span>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 190px;">
+            
+            
+              <div class="zoom" style="height: 190px; background: #0F3347; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 34px solid rgba(41,188,208,.10); right: -70px; top: -90px;" aria-hidden="true"></div>
+                <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: floaty 4s ease-in-out infinite;"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"></path></svg>
+              </div>
+            
+          </div>
+          <div style="padding: 26px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"></path></svg>
+              </span>
+              <h3 style="font-size: 20px; font-weight: 700;">Consulta dental</h3>
+            </div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Revisión, limpieza y tratamientos para cuidar tu sonrisa.</p>
+            <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Lunes a sábado · 9:00 am a 2:00 pm y 4:00 a 7:00 pm
             </span>
           </div>
         </article>
@@ -663,11 +777,35 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
               <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0 .01M7 21l3-6 3 2v4M10 15l1-5 4 2 3 1M8 10l3-2"></path></svg>
               </span>
-              <h3 style="font-size: 20px; font-weight: 700;">Terapia física y quirofísico</h3>
+              <h3 style="font-size: 20px; font-weight: 700;">Traumatología</h3>
+            </div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Lesiones de huesos, articulaciones, músculos y tendones.</p>
+            <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Cada 15 días · miércoles o viernes
+            </span>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap" style="background: #FFFFFF; border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 190px;">
+            
+            
+              <div class="zoom" style="height: 190px; background: #0F3347; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 34px solid rgba(41,188,208,.10); right: -70px; top: -90px;" aria-hidden="true"></div>
+                <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="animation: floaty 4s ease-in-out infinite;"><path d="M13 4a2 2 0 1 0 0 .01M7 21l3-6 3 2v4M10 15l1-5 4 2 3 1M8 10l3-2"></path></svg>
+              </div>
+            
+          </div>
+          <div style="padding: 26px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0 .01M7 21l3-6 3 2v4M10 15l1-5 4 2 3 1M8 10l3-2"></path></svg>
+              </span>
+              <h3 style="font-size: 20px; font-weight: 700;">Terapia física y quiropráctico</h3>
             </div>
             <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Esguinces, lesiones musculares y deportivas, masaje descontracturante y parálisis facial.</p>
             <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Lunes a jueves, 10:00 am a 7:00 pm
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Fisioterapia por las tardes · Quiropráctico martes, cada 15 días
             </span>
           </div>
         </article>
@@ -691,7 +829,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             </div>
             <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Griselda Mondragón González. Acompañamiento emocional y en procesos de duelo y pérdida.</p>
             <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Con previa cita
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Miércoles · desde las 3:00 pm
             </span>
           </div>
         </article>
@@ -715,7 +853,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             </div>
             <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Lic. Karina Lorenzo Narváez. Planes de alimentación personalizados.</p>
             <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Lunes 3:00 a 6:00 pm · Sábado 9:00 am a 3:00 pm
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Horario con previa cita
             </span>
           </div>
         </article>
@@ -725,17 +863,13 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
       <span style="font-weight: 700; font-size: 17px;">También contamos con</span>
       <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
         
-          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Cardiología</span>
-        
-          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Traumatología</span>
-        
-          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Medicina interna</span>
-        
-          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Consulta dental</span>
-        
           <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Auriculoterapia</span>
         
-          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Vasectomía</span>
+          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Toma de muestra</span>
+        
+          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Grupo sanguíneo y Rh</span>
+        
+          <span class="lift" style="background: #FFFFFF; border: 1px solid #CDE6EB; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0B2A3C;">Ultrasonido 3D y 4D</span>
         
       </div>
     </div>
@@ -806,7 +940,8 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             <span class="gold-tag">Especialista destacado</span>
             <span style="font: 700 18px Manrope, sans-serif;">Dr. Jesús Orlando Pérez García</span>
             <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Ginecología y Obstetricia</span>
-            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Control de embarazo y ultrasonido estructural y obstétrico en 2D, 3D y 4D.</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Lunes, miércoles y viernes de 9:00 am a 2:00 pm. Ultrasonido 2D, 3D y 4D.</span>
+            <span class="dr-price">Consulta $700</span>
             <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20una%20cita%20con%20el%20Dr.%20Jes%C3%BAs%20Orlando%20P%C3%A9rez" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
           </div>
         </article>
@@ -824,7 +959,8 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             
             <span style="font: 700 18px Manrope, sans-serif;">Dr. Héctor Méndez Blas</span>
             <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Radiología e Imagen</span>
-            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Ultrasonidos de abdomen, renales, pélvicos, Doppler y obstétricos.</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Ultrasonidos miércoles y sábado, con previa cita.</span>
+            <span class="dr-price">Precio según estudio</span>
             <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20informes%20de%20un%20ultrasonido" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
           </div>
         </article>
@@ -842,7 +978,8 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             
             <span style="font: 700 18px Manrope, sans-serif;">Dra. Adriana Alaniz</span>
             <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Pediatría</span>
-            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Cuidando la salud de tus peques.</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Visita cada 20 días aprox. Pregunta la próxima fecha.</span>
+            <span class="dr-price">Consulta $600</span>
             <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20una%20cita%20de%20Pediatr%C3%ADa" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
           </div>
         </article>
@@ -860,7 +997,8 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             
             <span style="font: 700 18px Manrope, sans-serif;">Lic. Karina Lorenzo Narváez</span>
             <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Nutrición</span>
-            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Lunes de 3:00 a 6:00 pm y sábados de 9:00 am a 3:00 pm.</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Días y horarios con previa cita.</span>
+            <span class="dr-price">Consulta $350</span>
             <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20una%20cita%20de%20Nutrici%C3%B3n" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
           </div>
         </article>
@@ -878,7 +1016,8 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             
             <span style="font: 700 18px Manrope, sans-serif;">Lic. Dianei Citlalli Casimiro Santillán</span>
             <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Terapia física</span>
-            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Lunes a jueves de 10:00 am a 7:00 pm.</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Por las tardes, con previa cita.</span>
+            <span class="dr-price">Consulta $450</span>
             <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20una%20cita%20de%20Terapia%20f%C3%ADsica" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
           </div>
         </article>
@@ -895,8 +1034,9 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
           <div style="padding: 22px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1;">
             
             <span style="font: 700 18px Manrope, sans-serif;">Luis Freddy Martínez Ángeles</span>
-            <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Quirofísico</span>
-            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Esguinces, lesiones musculares, masajes y parálisis facial.</span>
+            <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Quiropráctico</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Martes, cada 15 días.</span>
+            <span class="dr-price">Consulta $600</span>
             <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20una%20cita%20de%20Quirof%C3%ADsico" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
           </div>
         </article>
@@ -914,7 +1054,8 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             
             <span style="font: 700 18px Manrope, sans-serif;">Griselda Mondragón González</span>
             <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Psicoterapia y Tanatología</span>
-            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Duelo, pérdidas y acompañamiento emocional. También auriculoterapia.</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Miércoles desde las 3:00 pm. También auriculoterapia.</span>
+            <span class="dr-price">Consulta $350</span>
             <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20una%20cita%20de%20Psicoterapia" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
           </div>
         </article>
@@ -935,8 +1076,8 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 44px;">
     <div class="rv" style="display: flex; flex-direction: column; gap: 14px; max-width: 700px;">
       <span class="eyebrow" style="color: #29BCD0; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Horarios de atención</span>
-      <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em; color: #FFFFFF;">Farmacia y laboratorio desde las 7:00 am.</h2>
-      <p style="font-size: 18px; line-height: 1.7; color: #CFE3EA;">Nuestras consultas son con previa cita. Escríbenos por WhatsApp y te damos el horario más cercano.</p>
+      <h2 style="font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em; color: #FFFFFF;">Tu especialista, cada semana.</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: #CFE3EA;">Las consultas de especialidad son con previa cita. Escríbenos por WhatsApp y te apartamos tu lugar.</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
       
@@ -947,8 +1088,8 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             </span>
             <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Consulta general</span>
           </div>
-          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">9:00 am a 3:00 pm
-y desde las 5:00 pm</span>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Mañana y tarde
+9:00 am a 2:00 pm · 5:00 a 9:00 pm</span>
         </div>
       
         <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
@@ -958,19 +1099,8 @@ y desde las 5:00 pm</span>
             </span>
             <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Ginecología</span>
           </div>
-          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Dr. Jesús Orlando Pérez García
-Con previa cita</span>
-        </div>
-      
-        <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; gap: 12px; align-items: center;">
-            <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 20.5a5 5 0 0 1-7-7l6-6a5 5 0 0 1 7 7zM8.5 8.5l7 7"></path></svg>
-            </span>
-            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Farmacia</span>
-          </div>
-          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Todos los días
-7:00 am a 9:00 pm</span>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lunes, miércoles y viernes
+9:00 am a 2:00 pm · con previa cita</span>
         </div>
       
         <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
@@ -981,29 +1111,18 @@ Con previa cita</span>
             <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Laboratorio clínico</span>
           </div>
           <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lunes a sábado
-7:00 am a 2:00 pm</span>
+7:00 am a 12:00 pm</span>
         </div>
       
         <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
           <div style="display: flex; gap: 12px; align-items: center;">
             <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0 .01M7 21l3-6 3 2v4M10 15l1-5 4 2 3 1M8 10l3-2"></path></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 20.5a5 5 0 0 1-7-7l6-6a5 5 0 0 1 7 7zM8.5 8.5l7 7"></path></svg>
             </span>
-            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Terapia física</span>
+            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Farmacia</span>
           </div>
-          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lunes a jueves
-10:00 am a 7:00 pm</span>
-        </div>
-      
-        <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; gap: 12px; align-items: center;">
-            <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7c-1-2-4-2.5-6-1-2.5 2-2 6.5 0 10 1.3 2.3 3 4 4.5 4 1 0 1-.5 1.5-.5s.5.5 1.5.5c1.5 0 3.2-1.7 4.5-4 2-3.5 2.5-8 0-10-2-1.5-5-1-6 1zM12 7c0-2 1-3.5 3-4"></path></svg>
-            </span>
-            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Nutrición</span>
-          </div>
-          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lunes: 3:00 a 6:00 pm
-Sábado: 9:00 am a 3:00 pm</span>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lunes a domingo
+7:00 am a 9:00 pm</span>
         </div>
       
         <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
@@ -1011,10 +1130,10 @@ Sábado: 9:00 am a 3:00 pm</span>
             <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"></path></svg>
             </span>
-            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Atención dental</span>
+            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Consulta dental</span>
           </div>
-          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lun a vie: 10:00 am a 1:30 pm y 4:00 a 6:30 pm
-Sábado: 8:00 am a 2:00 pm</span>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lunes a sábado
+9:00 am a 2:00 pm · 4:00 a 7:00 pm</span>
         </div>
       
         <div class="lift rv" style="background: rgba(255,255,255,.05); border: 1px solid rgba(207,227,234,.18); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px;">
@@ -1022,13 +1141,19 @@ Sábado: 8:00 am a 2:00 pm</span>
             <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l2-6 4 12 3-9 2 3h4"></path></svg>
             </span>
-            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Ultrasonidos y especialidades</span>
+            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Ultrasonidos</span>
           </div>
-          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Con previa cita
-Pregunta por el día de consulta</span>
+          <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Miércoles y sábado
+Con previa cita</span>
         </div>
       
     </div>
+  <div class="rv wk-wrap">
+      <div class="wk-head"><h3>Agenda semanal de especialidades</h3><span><span class="wk-dot"></span> Todas las semanas &nbsp; <span class="wk-dot alt"></span> Cada 15 días</span></div>
+      <p class="wk-hint">Desliza para ver todos los días →</p><div class="wk-scroll"><table class="wk"><thead><tr><th scope="col"><span class="sr">Servicio</span></th><th scope="col">Lun</th><th scope="col">Mar</th><th scope="col">Mié</th><th scope="col">Jue</th><th scope="col">Vie</th><th scope="col">Sáb</th><th scope="col">Dom</th></tr></thead><tbody><tr class="wk-star"><th scope="row"><span class="wk-name">Ginecología</span><span class="wk-sub">Dr. Pérez García · 9 am – 2 pm</span></th><td><span class="wk-dot gold" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot gold" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot gold" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Ultrasonidos</span><span class="wk-sub">Con previa cita</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Psicología</span><span class="wk-sub">Desde las 3 pm</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Traumatología</span><span class="wk-sub">Cada 15 días</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot alt" aria-label="Algunas semanas"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot alt" aria-label="Algunas semanas"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Quiropráctico</span><span class="wk-sub">Cada 15 días</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot alt" aria-label="Algunas semanas"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Laboratorio</span><span class="wk-sub">7 am – 12 pm</span></th><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Consulta dental</span><span class="wk-sub">9 am – 2 pm · 4 – 7 pm</span></th><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Farmacia</span><span class="wk-sub">7 am – 9 pm</span></th><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td></tr></tbody></table></div>
+    </div>
+    <div class="rv visits"><div class="visit lift"><span class="visit-k">Medicina interna y cardiología</span><span class="visit-v">Una vez al mes</span><span class="visit-n">Próxima: 5 de diciembre</span></div><div class="visit lift"><span class="visit-k">Pediatría</span><span class="visit-v">Cada 20 días aprox.</span><span class="visit-n">Pregunta la próxima fecha</span></div><div class="visit lift"><span class="visit-k">Terapia física</span><span class="visit-v">Por las tardes</span><span class="visit-n">Horario con la fisioterapeuta</span></div><div class="visit lift"><span class="visit-k">Nutrición</span><span class="visit-v">Con previa cita</span><span class="visit-n">Días y horarios con la licenciada</span></div></div>
+
   </div>
   <div style="margin-top: 56px; overflow: hidden; width: 100%; border-top: 1px solid rgba(207,227,234,.14); border-bottom: 1px solid rgba(207,227,234,.14); padding: 22px 0;">
     <div class="track" style="display: flex; gap: 48px; width: max-content; align-items: center;">
@@ -1049,7 +1174,9 @@ Pregunta por el día de consulta</span>
       
         <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Psicología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
-        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Terapia física <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Fisioterapia <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Quiropráctico <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
         <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Laboratorio <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
@@ -1073,7 +1200,9 @@ Pregunta por el día de consulta</span>
       
         <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Psicología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
-        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Terapia física <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Fisioterapia <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Quiropráctico <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
         <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Laboratorio <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
@@ -1082,6 +1211,19 @@ Pregunta por el día de consulta</span>
         <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Consulta dental <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
     </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios" class="prices">
+  <div class="prices-in">
+    <div class="rv prices-head">
+      <span class="eyebrow" style="color: #9A7A35; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Precios de consulta</span>
+      <h2>Precios claros, <em>sin sorpresas.</em></h2>
+      <p>Sabes cuánto vas a pagar antes de venir. Los estudios, ultrasonidos y análisis de laboratorio se cotizan aparte.</p>
+      <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20agendar%20una%20consulta" style="align-self:flex-start;background:#0B2A3C;color:#FFFFFF;text-decoration:none;padding:16px 26px;border-radius:999px;font-weight:600;min-height:52px;display:flex;align-items:center;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>Agendar por WhatsApp</a>
+    </div>
+    <div class="rv prices-card"><ul><li class="pr pr-star"><div class="pr-l"><span class="pr-n">Ginecología <em>Destacado</em></span><span class="pr-s">Dr. Jesús Orlando Pérez García</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$700</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Consulta general</span><span class="pr-s">Medicina general</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$300</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Pediatría</span><span class="pr-s">Dra. Adriana Alaniz</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$600</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Cardiología</span><span class="pr-s">Visita mensual</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$1,200</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Traumatología</span><span class="pr-s">Cada 15 días</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$850</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Fisioterapia</span><span class="pr-s">Lic. Dianei C. Casimiro Santillán</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$450</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Quiropráctico</span><span class="pr-s">Luis Freddy Martínez Ángeles</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$600</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Nutrición</span><span class="pr-s">Lic. Karina Lorenzo Narváez</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$350</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Psicología</span><span class="pr-s">Griselda Mondragón González</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$350</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Consulta dental</span><span class="pr-s">Lunes a sábado</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$300</span></li></ul><p class="prices-note">Precios en pesos mexicanos por consulta.</p></div>
   </div>
 </section>
 
@@ -1288,9 +1430,9 @@ Llámanos o escríbenos por WhatsApp</span>
             </span>
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <span style="font-weight: 700; font-size: 16px;">Horarios</span>
-              <span style="font-size: 15px; color: #4A6170; line-height: 1.5; white-space: pre-line;">Consulta general: 9:00 am a 3:00 pm y desde las 5:00 pm
-Laboratorio: lunes a sábado, 7:00 am a 2:00 pm
-Farmacia: 7:00 am a 9:00 pm</span>
+              <span style="font-size: 15px; color: #4A6170; line-height: 1.5; white-space: pre-line;">Consulta general: 9:00 am a 2:00 pm y 5:00 a 9:00 pm
+Laboratorio: lunes a sábado, 7:00 am a 12:00 pm
+Farmacia: lunes a domingo, 7:00 am a 9:00 pm</span>
             </div>
           </div>
         
@@ -1332,47 +1474,59 @@ Farmacia: 7:00 am a 9:00 pm</span>
             </span>
           </button>
           
-            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Sí, nuestras consultas son con previa cita. Escríbenos por WhatsApp al 712 434 2542 o llámanos a ese mismo número y te damos el horario más cercano.</p>
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Las consultas de especialidad son con previa cita. Escríbenos por WhatsApp al 712 434 2542 y te apartamos tu lugar.</p>
           
         </div>
       
         <div class="rv faq" data-faq="1" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
           <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
-            ¿Quién atiende Ginecología?
+            ¿Cuánto cuesta una consulta?
             <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             </span>
           </button>
           
-            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">El Dr. Jesús Orlando Pérez García, ginecólogo y obstetra. Atiende control de embarazo, revisión ginecológica, Papanicolaou, colposcopía y ultrasonido estructural y obstétrico.</p>
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Consulta general $300, dental $300, nutrición $350, psicología $350, fisioterapia $450, pediatría $600, quiropráctico $600, ginecología $700, traumatología $850 y cardiología $1,200. Los estudios y ultrasonidos se cotizan aparte.</p>
           
         </div>
       
         <div class="rv faq" data-faq="2" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
           <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
-            ¿Hacen ultrasonido 3D y 4D?
+            ¿Qué días atiende Ginecología?
             <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             </span>
           </button>
           
-            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Sí. El ultrasonido estructural y obstétrico se realiza con imágenes de alta resolución en 2D, 3D y 4D. Además, el Dr. Héctor Méndez Blas, radiólogo, realiza ultrasonidos de abdomen, renales, pélvicos, Doppler y más.</p>
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">El Dr. Jesús Orlando Pérez García atiende lunes, miércoles y viernes de 9:00 am a 2:00 pm, con previa cita. Algunas semanas abre un día con horario extendido hasta las 5:00 pm; pregúntanos por WhatsApp.</p>
           
         </div>
       
         <div class="rv faq" data-faq="3" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
           <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
-            ¿Qué especialidades tienen?
+            ¿Qué días hay ultrasonidos?
             <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             </span>
           </button>
           
-            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Ginecología y obstetricia, pediatría, medicina interna, cardiología, traumatología, nutrición, psicoterapia y tanatología, terapia física, quirofísico, consulta dental y ultrasonidos, además de consulta de medicina general.</p>
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Miércoles y sábado, con previa cita. El ultrasonido estructural y obstétrico se realiza en 2D, 3D y 4D.</p>
           
         </div>
       
         <div class="rv faq" data-faq="4" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
+          <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
+            ¿Cada cuándo vienen los especialistas?
+            <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </span>
+          </button>
+          
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Medicina interna y cardiología una vez al mes (próxima visita: 5 de diciembre), pediatría cada 20 días aprox., traumatología cada 15 días (miércoles o viernes), quiropráctico cada 15 días (martes) y psicología los miércoles desde las 3:00 pm.</p>
+          
+        </div>
+      
+        <div class="rv faq" data-faq="5" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
           <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
             ¿En qué horario funciona el laboratorio?
             <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
@@ -1380,11 +1534,11 @@ Farmacia: 7:00 am a 9:00 pm</span>
             </span>
           </button>
           
-            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">De lunes a sábado de 7:00 am a 2:00 pm. La prueba de grupo sanguíneo y factor Rh cuesta $100 y no requiere ayuno.</p>
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">De lunes a sábado de 7:00 am a 12:00 pm. La prueba de grupo sanguíneo y factor Rh cuesta $100 y no requiere ayuno.</p>
           
         </div>
       
-        <div class="rv faq" data-faq="5" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
+        <div class="rv faq" data-faq="6" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
           <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
             ¿Dónde se encuentran?
             <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
@@ -1393,18 +1547,6 @@ Farmacia: 7:00 am a 9:00 pm</span>
           </button>
           
             <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">En Chapa de Mota, Estado de México: atrás de la iglesia, a un lado del Centro de Salud.</p>
-          
-        </div>
-      
-        <div class="rv faq" data-faq="6" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
-          <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
-            ¿Cuánto cuesta una consulta?
-            <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
-            </span>
-          </button>
-          
-            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">El costo depende del servicio o la especialidad. Escríbenos por WhatsApp al 712 434 2542 y te damos el precio exacto y el horario disponible.</p>
           
         </div>
       
