@@ -172,6 +172,41 @@ h1 span{font-style:italic;font-weight:500}
   .wk-name{font-size:14px}
   .wk-hint{display:block}
 }
+.dent{position:relative;overflow:hidden;padding:120px 0;background:linear-gradient(180deg,#FFFFFF 0%,#F6FBFC 100%)}
+.dent-glow{position:absolute;width:760px;height:760px;border-radius:50%;right:-260px;top:-300px;background:radial-gradient(closest-side,rgba(41,188,208,.14),rgba(41,188,208,0));pointer-events:none}
+.dent-in{position:relative;max-width:1200px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:56px}
+.dent-intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:48px;align-items:center}
+.dent-copy{display:flex;flex-direction:column;gap:20px}
+.dent-copy h2{font-size:52px;line-height:1.06;color:#0B2A3C;margin:0}
+.dent-copy h2 em{color:#0E7A8A;font-weight:500}
+.dent-copy p{font-size:18px;line-height:1.7;color:#4A6170;margin:0;max-width:560px}
+.dent-copy strong{color:#0B2A3C}
+.dent-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
+.dent-panel{position:relative;background:#0B2A3C;color:#fff;border-radius:30px;padding:38px 34px;display:flex;flex-direction:column;gap:8px;box-shadow:0 0 0 1px rgba(201,164,92,.55),0 40px 80px rgba(11,42,60,.22);overflow:hidden}
+.dent-panel::after{content:"";position:absolute;inset:12px;border:1px solid rgba(201,164,92,.28);border-radius:22px;pointer-events:none}
+.dent-mono{width:92px;height:92px;border-radius:50%;border:1px solid rgba(201,164,92,.55);display:flex;align-items:center;justify-content:center;margin-bottom:10px;animation:floaty 5s ease-in-out infinite}
+.dent-dr{font:600 30px "Bodoni Moda",serif;line-height:1.15}
+.dent-role{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#E3C98F;font-weight:600}
+.dent-rows{margin-top:18px;display:flex;flex-direction:column}
+.dent-rows div{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:14px 0;border-top:1px solid rgba(207,227,234,.14)}
+.dent-rows span{font-size:14px;color:#B9D3DB}
+.dent-rows b{font-size:16px;text-align:right;font-weight:600}
+.dent-rows div:first-child b{font:600 30px "Bodoni Moda",serif;color:#E3C98F}
+.dent-note{font-size:13px;color:#9FC3CE;margin-top:6px}
+.dent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.dent-card{background:#FFFFFF;border:1px solid #E3EEF1;border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.dent-card::before{content:"";position:absolute;left:26px;right:26px;top:0;height:2px;background:linear-gradient(90deg,#29BCD0,#C9A45C);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.dent-card:hover::before{transform:scaleX(1)}
+.dent-card h3{font-size:19px;font-weight:700;color:#0B2A3C;margin:4px 0 0}
+.dent-card p{font-size:15px;line-height:1.6;color:#4A6170;margin:0}
+.dent-ic{width:54px;height:54px;border-radius:16px;background:#E6F7FA;display:flex;align-items:center;justify-content:center;transition:background-color .4s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.dent-card:hover .dent-ic{background:#FBF3E4;transform:rotate(-6deg) scale(1.06)}
+.dent-more{background:#0B2A3C;border-color:#0B2A3C;text-decoration:none}
+.dent-more h3{color:#fff}.dent-more p{color:#B9D3DB}
+.dent-more .dent-ic{background:rgba(201,164,92,.16)}
+.dent-more-cta{margin-top:auto;font-weight:700;font-size:14px;color:#E3C98F}
+@media (max-width:700px){.dent-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.dent-card{padding:18px 16px;border-radius:20px}.dent-card h3{font-size:15.5px}.dent-card p{font-size:13.5px}.dent-ic{width:44px;height:44px;border-radius:13px}}
+@media (max-width:700px){.dent{padding:90px 0}.dent-copy h2{font-size:36px}.dent-panel{padding:30px 24px}}
 .visits{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .visit{background:rgba(255,255,255,.05);border:1px solid rgba(207,227,234,.16);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:4px}
 .visit-k{font-weight:700;color:#fff}
@@ -281,6 +316,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
     <a href="#inicio" class="brand" aria-label="San Miguel Centro Médico, inicio" style="display: flex; align-items: center; text-decoration: none;"><img src="img/logo-horizontal.png" alt="San Miguel Centro Médico" style="height: 54px; width: auto; display: block;"></a>
     <nav class="navlinks" style="display: flex; gap: 30px; align-items: center;" aria-label="Principal">
       <a class="navlink" href="#ginecologia">Ginecología</a>
+      <a class="navlink" href="#odontologia">Odontología</a>
       <a class="navlink" href="#servicios">Servicios</a>
       <a class="navlink" href="#medicos">Especialistas</a>
       <a class="navlink" href="#horarios">Horarios</a>
@@ -753,9 +789,9 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
               <span style="width: 42px; height: 42px; border-radius: 12px; background: #0B2A3C; display: flex; align-items: center; justify-content: center; flex: none;">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"></path></svg>
               </span>
-              <h3 style="font-size: 20px; font-weight: 700;">Consulta dental</h3>
+              <h3 style="font-size: 20px; font-weight: 700;">Odontología</h3>
             </div>
-            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Revisión, limpieza y tratamientos para cuidar tu sonrisa.</p>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A6170; flex-grow: 1;">Dra. Gabriela Reyna Narváez. Limpiezas, resinas, extracciones, brackets, endodoncia, prótesis y muelas del juicio.</p>
             <span style="display: flex; gap: 8px; align-items: center; color: #0E7A8A; font-weight: 600; font-size: 14px;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Lunes a sábado · 9:00 am a 2:00 pm y 4:00 a 7:00 pm
             </span>
@@ -917,6 +953,62 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
   </div>
 </section>
 
+<!-- ODONTOLOGÍA -->
+<section id="odontologia" class="dent">
+  <div class="dent-glow" aria-hidden="true"></div>
+  <div class="dent-in">
+    <div class="dent-intro">
+      <div class="rv dent-copy">
+        <span class="eyebrow" style="color: #9A7A35; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;">Odontología</span>
+        <h2>Una sonrisa sana, <em>en manos expertas.</em></h2>
+        <p>La <strong>Dra. Gabriela Reyna Narváez</strong> cuida tu salud dental de principio a fin: desde una limpieza hasta brackets, endodoncia o cirugía de muelas del juicio, sin salir de Chapa de Mota.</p>
+        <div class="dent-cta">
+          <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20agendar%20una%20cita%20de%20Odontolog%C3%ADa%20con%20la%20Dra.%20Gabriela%20Reyna%20Narv%C3%A1ez" style="background:#0B2A3C;color:#FFFFFF;text-decoration:none;padding:17px 28px;border-radius:999px;font-weight:700;font-size:16px;min-height:54px;display:flex;align-items:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>Agenda tu valoración</a>
+        </div>
+      </div>
+      <div class="rv dent-panel">
+        <div class="dent-mono" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#E3C98F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"></path></svg></div>
+        <span class="dent-dr">Dra. Gabriela Reyna Narváez</span>
+        <span class="dent-role">Odontología general y especializada</span>
+        <div class="dent-rows">
+          <div><span>Consulta</span><b>$300</b></div>
+          <div><span>Días</span><b>Lunes a sábado</b></div>
+          <div><span>Horario</span><b>9:00 am – 2:00 pm<br>4:00 – 7:00 pm</b></div>
+        </div>
+        <span class="dent-note">Tratamientos con presupuesto personalizado después de tu valoración.</span>
+      </div>
+    </div>
+    <div class="dent-grid">
+        <div class="dent-card lift rv">
+          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"></path></svg></span>
+          <h3>Limpieza dental</h3><p>Elimina sarro y placa para prevenir caries y cuidar tus encías.</p>
+        </div><div class="dent-card lift rv">
+          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3zM10 8h4v3h-4z"></path></svg></span>
+          <h3>Resinas</h3><p>Restauraciones del color de tu diente para reparar caries sin que se note.</p>
+        </div><div class="dent-card lift rv">
+          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9c-2.5 0-4 2-4 4.5 0 2 1 3 1.5 5 .4 1.5 1 2.5 2.5 2.5S8.5 19 9.5 17.5c.6-1 3.4-1 4 0 1 1.5 1 3.5 2.5 3.5s2.1-1 2.5-2.5c.5-2 1.5-3 1.5-5C20 11 18.5 9 16 9c-2 0-3 1-4.5 1S9 9 7 9zM12 2v5M9.5 4.5L12 2l2.5 2.5"></path></svg></span>
+          <h3>Extracciones</h3><p>Retiro seguro y cuidadoso de piezas dañadas.</p>
+        </div><div class="dent-card lift rv">
+          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18v6H3zM7 9v6M12 9v6M17 9v6M3 12h18"></path></svg></span>
+          <h3>Brackets</h3><p>Ortodoncia para alinear tus dientes y mejorar tu mordida.</p>
+        </div><div class="dent-card lift rv">
+          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3zM10 9v7M14 9v7"></path></svg></span>
+          <h3>Endodoncia</h3><p>Tratamiento de conductos para salvar dientes con dolor o infección.</p>
+        </div><div class="dent-card lift rv">
+          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14c0-4 3.5-7 8-7s8 3 8 7M4 14h16M7 14v3M10 14v3M14 14v3M17 14v3"></path></svg></span>
+          <h3>Prótesis dentales</h3><p>Recupera piezas perdidas, la función y la estética de tu sonrisa.</p>
+        </div><div class="dent-card lift rv">
+          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3zM15 3l-3 5 3 2-3 5"></path></svg></span>
+          <h3>Cirugía de muelas del juicio</h3><p>Extracción quirúrgica con valoración previa y cuidado posoperatorio.</p>
+        </div>
+    <a class="dent-card dent-more lift rv" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20informes%20de%20un%20tratamiento%20dental">
+          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E3C98F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg></span>
+          <h3>¿Buscas otro tratamiento?</h3><p>Escríbenos y la doctora te orienta.</p><span class="dent-more-cta">Preguntar por WhatsApp →</span>
+        </a>
+    </div>
+  </div>
+</section>
+
 <!-- ESPECIALISTAS -->
 <section id="medicos" style="padding: 100px 0;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px;">
@@ -943,6 +1035,25 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Lunes, miércoles y viernes de 9:00 am a 2:00 pm. Ultrasonido 2D, 3D y 4D.</span>
             <span class="dr-price">Consulta $700</span>
             <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20una%20cita%20con%20el%20Dr.%20Jes%C3%BAs%20Orlando%20P%C3%A9rez" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
+          </div>
+        </article>
+      
+        <article class="lift rv zoomwrap " style="border: 1px solid #E3EEF1; border-radius: 24px; overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column;">
+          <div style="overflow: hidden; height: 290px;">
+            <div class="zoom" style="height: 290px; background: #E6F7FA; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; border: 40px solid rgba(41,188,208,.14); left: -90px; bottom: -150px;" aria-hidden="true"></div>
+              <span style="width: 120px; height: 120px; border-radius: 50%; background: #0B2A3C; display: flex; align-items: center; justify-content: center; position: relative;">
+                <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"></path></svg>
+              </span>
+            </div>
+          </div>
+          <div style="padding: 22px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1;">
+            
+            <span style="font: 700 18px Manrope, sans-serif;">Dra. Gabriela Reyna Narváez</span>
+            <span style="color: #0E7A8A; font-weight: 600; font-size: 15px;">Odontología</span>
+            <span style="font-size: 13px; color: #4A6170; line-height: 1.5; flex-grow: 1;">Lunes a sábado, 9:00 am a 2:00 pm y 4:00 a 7:00 pm. Brackets, endodoncia y más.</span>
+            <span class="dr-price">Consulta $300</span>
+            <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20una%20cita%20de%20Odontolog%C3%ADa" style="margin-top: 12px; text-align: center; background: #E6F7FA; color: #0B2A3C; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; min-height: 44px;">Agendar cita</a>
           </div>
         </article>
       
@@ -1130,7 +1241,7 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
             <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(41,188,208,.16); display: flex; align-items: center; justify-content: center; flex: none;">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"></path></svg>
             </span>
-            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Consulta dental</span>
+            <span style="font: 700 19px Manrope, sans-serif; color: #FFFFFF;">Odontología</span>
           </div>
           <span style="font-size: 16px; line-height: 1.6; color: #CFE3EA; white-space: pre-line;">Lunes a sábado
 9:00 am a 2:00 pm · 4:00 a 7:00 pm</span>
@@ -1150,7 +1261,7 @@ Con previa cita</span>
     </div>
   <div class="rv wk-wrap">
       <div class="wk-head"><h3>Agenda semanal de especialidades</h3><span><span class="wk-dot"></span> Todas las semanas &nbsp; <span class="wk-dot alt"></span> Cada 15 días</span></div>
-      <p class="wk-hint">Desliza para ver todos los días →</p><div class="wk-scroll"><table class="wk"><thead><tr><th scope="col"><span class="sr">Servicio</span></th><th scope="col">Lun</th><th scope="col">Mar</th><th scope="col">Mié</th><th scope="col">Jue</th><th scope="col">Vie</th><th scope="col">Sáb</th><th scope="col">Dom</th></tr></thead><tbody><tr class="wk-star"><th scope="row"><span class="wk-name">Ginecología</span><span class="wk-sub">Dr. Pérez García · 9 am – 2 pm</span></th><td><span class="wk-dot gold" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot gold" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot gold" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Ultrasonidos</span><span class="wk-sub">Con previa cita</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Psicología</span><span class="wk-sub">Desde las 3 pm</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Traumatología</span><span class="wk-sub">Cada 15 días</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot alt" aria-label="Algunas semanas"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot alt" aria-label="Algunas semanas"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Quiropráctico</span><span class="wk-sub">Cada 15 días</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot alt" aria-label="Algunas semanas"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Laboratorio</span><span class="wk-sub">7 am – 12 pm</span></th><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Consulta dental</span><span class="wk-sub">9 am – 2 pm · 4 – 7 pm</span></th><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Farmacia</span><span class="wk-sub">7 am – 9 pm</span></th><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td></tr></tbody></table></div>
+      <p class="wk-hint">Desliza para ver todos los días →</p><div class="wk-scroll"><table class="wk"><thead><tr><th scope="col"><span class="sr">Servicio</span></th><th scope="col">Lun</th><th scope="col">Mar</th><th scope="col">Mié</th><th scope="col">Jue</th><th scope="col">Vie</th><th scope="col">Sáb</th><th scope="col">Dom</th></tr></thead><tbody><tr class="wk-star"><th scope="row"><span class="wk-name">Ginecología</span><span class="wk-sub">Dr. Pérez García · 9 am – 2 pm</span></th><td><span class="wk-dot gold" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot gold" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot gold" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Ultrasonidos</span><span class="wk-sub">Con previa cita</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Psicología</span><span class="wk-sub">Desde las 3 pm</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Traumatología</span><span class="wk-sub">Cada 15 días</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot alt" aria-label="Algunas semanas"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot alt" aria-label="Algunas semanas"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Quiropráctico</span><span class="wk-sub">Cada 15 días</span></th><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-dot alt" aria-label="Algunas semanas"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Laboratorio</span><span class="wk-sub">7 am – 12 pm</span></th><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Odontología</span><span class="wk-sub">Dra. Reyna Narváez · 9–2 y 4–7</span></th><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-no" aria-hidden="true">·</span></td></tr><tr><th scope="row"><span class="wk-name">Farmacia</span><span class="wk-sub">7 am – 9 pm</span></th><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td><td><span class="wk-dot" aria-label="Sí"></span></td></tr></tbody></table></div>
     </div>
     <div class="rv visits"><div class="visit lift"><span class="visit-k">Medicina interna y cardiología</span><span class="visit-v">Una vez al mes</span><span class="visit-n">Próxima: 5 de diciembre</span></div><div class="visit lift"><span class="visit-k">Pediatría</span><span class="visit-v">Cada 20 días aprox.</span><span class="visit-n">Pregunta la próxima fecha</span></div><div class="visit lift"><span class="visit-k">Terapia física</span><span class="visit-v">Por las tardes</span><span class="visit-n">Horario con la fisioterapeuta</span></div><div class="visit lift"><span class="visit-k">Nutrición</span><span class="visit-v">Con previa cita</span><span class="visit-n">Días y horarios con la licenciada</span></div></div>
 
@@ -1182,7 +1293,11 @@ Con previa cita</span>
       
         <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Farmacia <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
-        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Consulta dental <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Brackets <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Endodoncia <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Limpieza dental <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
         <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Ginecología <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
@@ -1208,7 +1323,11 @@ Con previa cita</span>
       
         <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Farmacia <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
-        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Consulta dental <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Brackets <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Endodoncia <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
+      
+        <span style="display: flex; gap: 48px; align-items: center; font: 700 26px Manrope, sans-serif; color: #FFFFFF; white-space: nowrap;">Limpieza dental <span style="color: #29BCD0; font-size: 20px;" aria-hidden="true">✦</span></span>
       
     </div>
   </div>
@@ -1223,7 +1342,7 @@ Con previa cita</span>
       <p>Sabes cuánto vas a pagar antes de venir. Los estudios, ultrasonidos y análisis de laboratorio se cotizan aparte.</p>
       <a class="btn" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20agendar%20una%20consulta" style="align-self:flex-start;background:#0B2A3C;color:#FFFFFF;text-decoration:none;padding:16px 26px;border-radius:999px;font-weight:600;min-height:52px;display:flex;align-items:center;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#29BCD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>Agendar por WhatsApp</a>
     </div>
-    <div class="rv prices-card"><ul><li class="pr pr-star"><div class="pr-l"><span class="pr-n">Ginecología <em>Destacado</em></span><span class="pr-s">Dr. Jesús Orlando Pérez García</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$700</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Consulta general</span><span class="pr-s">Medicina general</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$300</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Pediatría</span><span class="pr-s">Dra. Adriana Alaniz</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$600</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Cardiología</span><span class="pr-s">Visita mensual</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$1,200</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Traumatología</span><span class="pr-s">Cada 15 días</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$850</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Fisioterapia</span><span class="pr-s">Lic. Dianei C. Casimiro Santillán</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$450</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Quiropráctico</span><span class="pr-s">Luis Freddy Martínez Ángeles</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$600</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Nutrición</span><span class="pr-s">Lic. Karina Lorenzo Narváez</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$350</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Psicología</span><span class="pr-s">Griselda Mondragón González</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$350</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Consulta dental</span><span class="pr-s">Lunes a sábado</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$300</span></li></ul><p class="prices-note">Precios en pesos mexicanos por consulta.</p></div>
+    <div class="rv prices-card"><ul><li class="pr pr-star"><div class="pr-l"><span class="pr-n">Ginecología <em>Destacado</em></span><span class="pr-s">Dr. Jesús Orlando Pérez García</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$700</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Consulta general</span><span class="pr-s">Medicina general</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$300</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Pediatría</span><span class="pr-s">Dra. Adriana Alaniz</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$600</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Cardiología</span><span class="pr-s">Visita mensual</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$1,200</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Traumatología</span><span class="pr-s">Cada 15 días</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$850</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Fisioterapia</span><span class="pr-s">Lic. Dianei C. Casimiro Santillán</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$450</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Quiropráctico</span><span class="pr-s">Luis Freddy Martínez Ángeles</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$600</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Nutrición</span><span class="pr-s">Lic. Karina Lorenzo Narváez</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$350</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Psicología</span><span class="pr-s">Griselda Mondragón González</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$350</span></li><li class="pr"><div class="pr-l"><span class="pr-n">Odontología</span><span class="pr-s">Dra. Gabriela Reyna Narváez</span></div><span class="pr-dots" aria-hidden="true"></span><span class="pr-p">$300</span></li></ul><p class="prices-note">Precios en pesos mexicanos por consulta.</p></div>
   </div>
 </section>
 
@@ -1486,7 +1605,7 @@ Farmacia: lunes a domingo, 7:00 am a 9:00 pm</span>
             </span>
           </button>
           
-            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Consulta general $300, dental $300, nutrición $350, psicología $350, fisioterapia $450, pediatría $600, quiropráctico $600, ginecología $700, traumatología $850 y cardiología $1,200. Los estudios y ultrasonidos se cotizan aparte.</p>
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">Consulta general $300, odontología $300, nutrición $350, psicología $350, fisioterapia $450, pediatría $600, quiropráctico $600, ginecología $700, traumatología $850 y cardiología $1,200. Los estudios y ultrasonidos se cotizan aparte.</p>
           
         </div>
       
@@ -1528,6 +1647,18 @@ Farmacia: lunes a domingo, 7:00 am a 9:00 pm</span>
       
         <div class="rv faq" data-faq="5" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
           <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
+            ¿Qué tratamientos dentales tienen?
+            <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </span>
+          </button>
+          
+            <p class="faq-a" hidden style="padding: 0 24px 22px; font-size: 16px; line-height: 1.65; color: #4A6170;">La Dra. Gabriela Reyna Narváez realiza limpiezas, extracciones, resinas, prótesis, brackets, endodoncia y cirugía de muelas del juicio. La consulta de valoración cuesta $300 y después te damos tu presupuesto.</p>
+          
+        </div>
+      
+        <div class="rv faq" data-faq="6" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
+          <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
             ¿En qué horario funciona el laboratorio?
             <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="faq-sv" stroke="#0E7A8A" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
@@ -1538,7 +1669,7 @@ Farmacia: lunes a domingo, 7:00 am a 9:00 pm</span>
           
         </div>
       
-        <div class="rv faq" data-faq="6" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
+        <div class="rv faq" data-faq="7" style="border: 1px solid #E3EEF1; border-radius: 18px; background: #FFFFFF; transition: border-color .3s ease;">
           <button type="button" class="faq-q" aria-expanded="false" style="width: 100%; background: none; border: none; cursor: pointer; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font: 700 17px Manrope, sans-serif; color: #0B2A3C; min-height: 44px;">
             ¿Dónde se encuentran?
             <span class="faq-ic" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #E6F7FA; display: flex; align-items: center; justify-content: center; transition: transform .3s ease; transform: rotate(0deg);">
@@ -1582,6 +1713,7 @@ Farmacia: lunes a domingo, 7:00 am a 9:00 pm</span>
         <a href="#ginecologia" style="color: #B9D3DB; text-decoration: none;">Ginecología</a>
         <a href="#servicios" style="color: #B9D3DB; text-decoration: none;">Servicios</a>
         <a href="#ultrasonidos" style="color: #B9D3DB; text-decoration: none;">Ultrasonidos</a>
+        <a href="#odontologia" style="color: #B9D3DB; text-decoration: none;">Odontología</a>
         <a href="#medicos" style="color: #B9D3DB; text-decoration: none;">Especialistas</a>
         <a href="#horarios" style="color: #B9D3DB; text-decoration: none;">Horarios</a>
         <a href="#paquetes" style="color: #B9D3DB; text-decoration: none;">Promociones</a>
