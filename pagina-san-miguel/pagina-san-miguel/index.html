@@ -205,6 +205,27 @@ h1 span{font-style:italic;font-weight:500}
 .dent-more h3{color:#fff}.dent-more p{color:#B9D3DB}
 .dent-more .dent-ic{background:rgba(201,164,92,.16)}
 .dent-more-cta{margin-top:auto;font-weight:700;font-size:14px;color:#E3C98F}
+.dcat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}
+.dcat{background:#FFFFFF;border:1px solid #E3EEF1;border-radius:26px;padding:28px 24px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
+.dcat::before{content:"";position:absolute;left:24px;right:24px;top:0;height:2px;background:linear-gradient(90deg,#29BCD0,#C9A45C);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.dcat:hover::before{transform:scaleX(1)}
+.dcat:hover .dent-ic{background:#FBF3E4;transform:rotate(-6deg) scale(1.06)}
+.dcat-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.dcat-num{font:600 34px "Bodoni Moda",serif;color:rgba(201,164,92,.55);line-height:1}
+.dcat h3{font:600 26px "Bodoni Moda",serif;color:#0B2A3C;margin:0}
+.dcat-sub{font-size:14px;line-height:1.45;color:#4A6170;margin:0 0 10px;min-height:42px}
+@media (max-width:640px){.dcat-sub{min-height:0}}
+.dcat ul{list-style:none;margin:0;padding:14px 0 0;border-top:1px solid #EEF3F4;display:flex;flex-direction:column;gap:14px}
+.dcat li{display:flex;gap:10px;align-items:flex-start}
+.dcat li svg{flex:none;margin-top:2px}
+.dcat li b{display:block;font-size:15.5px;color:#0B2A3C;line-height:1.3}
+.dcat li span{display:block;font-size:13.5px;color:#4A6170;line-height:1.5;margin-top:2px}
+.dent-bar{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;background:#0B2A3C;color:#CFE3EA;text-decoration:none;border-radius:22px;padding:22px 28px;box-shadow:0 0 0 1px rgba(201,164,92,.45);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease}
+.dent-bar:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(201,164,92,.8),0 20px 40px rgba(11,42,60,.2)}
+.dent-bar b{color:#fff;margin-right:6px}
+.dent-bar-cta{font-weight:700;color:#E3C98F;white-space:nowrap}
+@media (max-width:1100px){.dcat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.dcat-grid{grid-template-columns:1fr}.dcat{padding:24px 20px}}
 @media (max-width:700px){.dent-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.dent-card{padding:18px 16px;border-radius:20px}.dent-card h3{font-size:15.5px}.dent-card p{font-size:13.5px}.dent-ic{width:44px;height:44px;border-radius:13px}}
 @media (max-width:700px){.dent{padding:90px 0}.dent-copy h2{font-size:36px}.dent-panel{padding:30px 24px}}
 .visits{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
@@ -978,34 +999,29 @@ article[style*="background: #0B2A3C"] span[style*="Más"],article span[style*="l
         <span class="dent-note">Tratamientos con presupuesto personalizado después de tu valoración.</span>
       </div>
     </div>
-    <div class="dent-grid">
-        <div class="dent-card lift rv">
-          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"></path></svg></span>
-          <h3>Limpieza dental</h3><p>Elimina sarro y placa para prevenir caries y cuidar tus encías.</p>
-        </div><div class="dent-card lift rv">
-          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3zM10 8h4v3h-4z"></path></svg></span>
-          <h3>Resinas</h3><p>Restauraciones del color de tu diente para reparar caries sin que se note.</p>
-        </div><div class="dent-card lift rv">
-          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9c-2.5 0-4 2-4 4.5 0 2 1 3 1.5 5 .4 1.5 1 2.5 2.5 2.5S8.5 19 9.5 17.5c.6-1 3.4-1 4 0 1 1.5 1 3.5 2.5 3.5s2.1-1 2.5-2.5c.5-2 1.5-3 1.5-5C20 11 18.5 9 16 9c-2 0-3 1-4.5 1S9 9 7 9zM12 2v5M9.5 4.5L12 2l2.5 2.5"></path></svg></span>
-          <h3>Extracciones</h3><p>Retiro seguro y cuidadoso de piezas dañadas.</p>
-        </div><div class="dent-card lift rv">
-          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18v6H3zM7 9v6M12 9v6M17 9v6M3 12h18"></path></svg></span>
-          <h3>Brackets</h3><p>Ortodoncia para alinear tus dientes y mejorar tu mordida.</p>
-        </div><div class="dent-card lift rv">
-          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3zM10 9v7M14 9v7"></path></svg></span>
-          <h3>Endodoncia</h3><p>Tratamiento de conductos para salvar dientes con dolor o infección.</p>
-        </div><div class="dent-card lift rv">
-          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14c0-4 3.5-7 8-7s8 3 8 7M4 14h16M7 14v3M10 14v3M14 14v3M17 14v3"></path></svg></span>
-          <h3>Prótesis dentales</h3><p>Recupera piezas perdidas, la función y la estética de tu sonrisa.</p>
-        </div><div class="dent-card lift rv">
-          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3zM15 3l-3 5 3 2-3 5"></path></svg></span>
-          <h3>Cirugía de muelas del juicio</h3><p>Extracción quirúrgica con valoración previa y cuidado posoperatorio.</p>
+    <div class="dcat-grid">
+        <article class="dcat lift rv">
+          <div class="dcat-top"><span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"></path></svg></span><span class="dcat-num">01</span></div>
+          <h3>Prevención</h3><p class="dcat-sub">Para mantener tu boca sana.</p>
+          <ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A45C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Limpieza dental</b><span>Retira sarro y placa; previene caries y cuida tus encías.</span></div></li></ul>
+        </article>
+        <article class="dcat lift rv">
+          <div class="dcat-top"><span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 10 16c.6-1.2 3.4-1.2 4 0 1 2 1 5 2.5 5s2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"></path></svg></span><span class="dcat-num">02</span></div>
+          <h3>Restauración</h3><p class="dcat-sub">Para reparar y recuperar tus dientes.</p>
+          <ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A45C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Resinas</b><span>Rellenos del color de tu diente.</span></div></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A45C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Endodoncia</b><span>Tratamiento de conductos para salvar el diente.</span></div></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A45C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Prótesis dentales</b><span>Reemplazo de piezas perdidas.</span></div></li></ul>
+        </article>
+        <article class="dcat lift rv">
+          <div class="dcat-top"><span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18v6H3zM7 9v6M12 9v6M17 9v6M3 12h18"></path></svg></span><span class="dcat-num">03</span></div>
+          <h3>Ortodoncia</h3><p class="dcat-sub">Para alinear tu sonrisa.</p>
+          <ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A45C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Brackets</b><span>Corrigen la posición de los dientes y la mordida.</span></div></li></ul>
+        </article>
+        <article class="dcat lift rv">
+          <div class="dcat-top"><span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7A8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4l5.5 5.5M4 20l7-7M9.5 9.5l5 5M13 6l5 5-6.5 6.5-5-5z"></path></svg></span><span class="dcat-num">04</span></div>
+          <h3>Cirugía</h3><p class="dcat-sub">Procedimientos con valoración previa.</p>
+          <ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A45C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Extracciones</b><span>Retiro seguro de piezas dañadas.</span></div></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A45C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><div><b>Cirugía de muelas del juicio</b><span>Extracción quirúrgica con cuidado posoperatorio.</span></div></li></ul>
+        </article>
         </div>
-    <a class="dent-card dent-more lift rv" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20informes%20de%20un%20tratamiento%20dental">
-          <span class="dent-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E3C98F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg></span>
-          <h3>¿Buscas otro tratamiento?</h3><p>Escríbenos y la doctora te orienta.</p><span class="dent-more-cta">Preguntar por WhatsApp →</span>
-        </a>
-    </div>
+    <a class="dent-bar rv" href="https://wa.me/527124342542?text=Hola%2C%20quiero%20informes%20de%20un%20tratamiento%20dental"><span><b>¿Buscas otro tratamiento?</b> Escríbenos y la doctora te orienta. Los tratamientos se cotizan después de tu valoración.</span><span class="dent-bar-cta">Preguntar por WhatsApp →</span></a>
   </div>
 </section>
 
